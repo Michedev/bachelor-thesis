@@ -24,7 +24,11 @@ Nella parte bassa invece c'e' una \textit{textbox} contenente il log che verra' 
 \end{figure}
 
 \section*{Persistenza dei dati}
-L'applicazione consente anche di serializzare tutti i dati registrati fino a quel momento nel formato standard JSON tramite la libreria \textit{gson} che fornisce dei metodi semplificati per il linguaggio Java per la serializzazione/de-serializzazione di oggetti. Il file viene salvato nella cartella dati dell'applicazione non visibile all'utente.
+L'applicazione consente anche di serializzare tutti i dati registrati fino a quel momento nel formato standard JSON tramite la libreria \textit{gson} che fornisce delle funzioni  per il linguaggio Java per la serializzazione/de-serializzazione di oggetti. Il file viene salvato nella cartella dati dell'applicazione non visibile all'utente.
 
 \section*{Struttura del codice e design pattern}
 Nello sviluppo del software sono stati applicati vari \textit{design pattern} visti durante i vari corsi e principi di programmazione. Fra questi ultimi abbiamo il \textit{dependency inversion principle}, il \textit{open closed principle}. Riguardo i \textit{design pattern}, ho usato molto l'\textit{observer}, il \textit{template} e \textit{factory}.
+
+
+\section*{Analisi dei dati}
+La predizione dei risultati e' stata implementata sia nel software \textit{Android} sia sul computer. Nel codice mobile e' stato adoperato solamente il KNN per via della facilita' d'implementazione da zero, anche se non e' stato  utilizzato per testare la precisione, ma per verificare il corretto funzionamento dell'applicazione. Invcece su computer, presi i dati serializzati dal software mobile, sono stati applicati tutti gli algoritmi di apprendimento elencati precedentemente e gia' tutti implementati da librerie di terze parti per verificare la precisione dei dati. Il linguaggio scelto su computer e' \textit{Python} per via del suo buon supporto all' apprendimento automatico.

@@ -1,0 +1,15 @@
+% A simple cycle
+% Author : Jerome Tremblay
+\documentclass{article}
+\usepackage{tikz}
+
+
+\begin{document}
+	\begin{tikzpicture} 
+	
+	\node[draw, circle](0){Play}
+		child{ node(1)[draw, circle, left]{Sunny}}
+		child{	 	node(2)[draw, circle]{Rainy}}
+		child{	  node(3)[draw, circle, right]{Overcast} };
+	\end{tikzpicture}}
+\end{document}

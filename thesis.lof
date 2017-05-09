@@ -2,11 +2,13 @@
 \select@language {italian}
 \deactivateaddvspace 
 \contentsline {figure}{\numberline {1}{\ignorespaces Raffigurazione grafica delle onde raccolte\relax }}{8}{figure.caption.4}
-\contentsline {figure}{\numberline {2}{\ignorespaces Esempio grafico dell'algoritmo KNN\relax }}{10}{figure.caption.5}
-\contentsline {figure}{\numberline {3}{\ignorespaces Esempio di rete bayesiana\relax }}{12}{figure.caption.6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Esempio di rete bayesiana ingenua\relax }}{12}{figure.caption.7}
-\contentsline {figure}{\numberline {5}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{13}{figure.caption.8}
-\contentsline {figure}{\numberline {6}{\ignorespaces Tabella degli attributi meteorologici con valore associato un booleano che stabilisce se la partita e' stata giocata o no\relax }}{15}{figure.caption.9}
-\contentsline {figure}{\numberline {7}{\ignorespaces Albero di decisione ricavato dalla tabella precedente\relax }}{15}{figure.caption.10}
-\contentsline {figure}{\numberline {8}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{18}{figure.caption.12}
-\contentsline {figure}{\numberline {9}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{20}{figure.caption.13}
+\contentsline {figure}{\numberline {2}{\ignorespaces Un esempio grafico di insieme d'addestramento ed una sua classificazione\relax }}{10}{figure.caption.5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Classificazione e regressione a confronto\relax }}{10}{figure.caption.6}
+\contentsline {figure}{\numberline {4}{\ignorespaces Esempio grafico dell'algoritmo KNN\relax }}{12}{figure.caption.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Esempio di rete bayesiana\relax }}{13}{figure.caption.8}
+\contentsline {figure}{\numberline {6}{\ignorespaces Esempio di rete bayesiana ingenua\relax }}{14}{figure.caption.9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{16}{figure.caption.10}
+\contentsline {figure}{\numberline {8}{\ignorespaces Tabella degli attributi meteorologici con valore associato un booleano che stabilisce se la partita e' stata giocata o no\relax }}{18}{figure.caption.11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Albero di decisione ricavato dalla tabella precedente\relax }}{18}{figure.caption.12}
+\contentsline {figure}{\numberline {10}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {11}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{22}{figure.caption.15}

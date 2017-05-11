@@ -64,7 +64,10 @@ Dopo aver scansionato l'ambiente questa fase viene eseguita dal cliente durante 
 \newpage
 
 \section*{Apprendimento supervisionato}
-Gli algoritmi usati rientrano tutti sotto la categoria di apprendimento supervisionato, quindi dovremo fornire degli esempi con un valore associato. In termini piu' formali si parla di un insieme di addestramento \textbf{X}, \textbf{y} dove $\forall x_i \in \textbf{X},\,\,x_i$ e' un insieme di attributi mentre $y_j \in \textbf{y}$ rappresenta il valore associato a quell'insieme di attributi.\ Quest'ultimo puo' essere discreto che continuo: nel primo caso si parla di classificazione mentre nel secondo di regressione.\\
+Gli algoritmi usati rientrano tutti sotto la categoria di apprendimento supervisionato, quindi dovremo fornire degli esempi con un valore associato. In termini piu' formali si parla di un insieme di addestramento \textbf{X}, \textbf{y} dove $\forall x_i \in \textbf{X},\,\,x_i$ e' un insieme di attributi mentre $y_j \in \textbf{y}$ rappresenta il valore associato a quell'insieme di attributi.
+
+\subsection*{Classificazione e regressione}
+Si parla di classificazione quando la variabile $y$ da stimare e' discreta mentre nel continuo si tratta di regressione.
 
 \begin{figure}[H]
 	\centering
@@ -84,9 +87,27 @@ Gli algoritmi usati rientrano tutti sotto la categoria di apprendimento supervis
 \subsection*{Verifica delle presatzioni}
 Per verificare la correttezza del classificatore viene diviso in 2 parti il \textit{dataset} a nostra disposizione: il primo si chiamera' insieme di addestramento mentre il secondo insieme di test. Il nostro classificatore si allenera' sull'insieme di addestramento ed effetuera' le predizioni sull'insieme di test, su cui verranno misurate le \textit{performance} in base alle predizioni corrette.
 
+\subsection*{Rumore e sovradattamento}
+Un problema molto comune durante l'addestramento dei classificatori e' il rumore: durante la discriminazione degli esempi, ci ritroviamo ad un punto in cui gli attributi rimanenti sono identici ma con etichetta differente. Una probabile causa potrebbe essere la presenza di errori nei dati mentre una possibile soluzione consisterebbe nel voto di maggioranza.
+Un'altro problema e' il sovradattamento: la costruzione di un classificatore consistente con tutti gli esempi a causa dell'utilizzo di attributi irrilevanti nella classificazione. Supponiamo di voler predire l'esito del lancio di un dado e fra gli attributi di avere ora, giorno, mese ed anno; ecco un esempio lampante di sovradattemento. Nei casi reali tuttavia non sono cosi' evidenti gli attributi insignificanti e, per esempio, una tecnica utilizzata  negli alberi di decisione e' la potatura.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/overfitting}
+	\caption{}
+	\label{fig:overfitting}
+\end{figure}
+
 
 \subsection*{Cross validation}
 Per migliorare le performance di un classificatore si suddivide l'intero \textit{dataset} in $n$ parti uguali (di solito 10), ognuna delle quali svolgera' per una volta il ruolo di insieme di test mentre il resto sara' l'insieme di addestramento. Questa tecnica risolve vari problemi tra i quali l'\textit{overfitting}.\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/crossvalidation}
+	\caption{Rappresentazione grafica della Cross Validation}
+	\label{fig:crossvalidation}
+\end{figure}
 
 
 \section*{K Nearest Neightbour}
@@ -135,22 +156,26 @@ Naive bayes e' una rete bayesiana in cui si assume l'indipendenza condizionale f
 Preso l'insieme di esempi, ricavare la tabella di distribuzione delle probabilita' al variare di tutti i valori che la variabile dipendente puo' assumere. Successivamente costruire un grafo che ha come nodo radice la variabile dipendente e come figli tutte le variabili indipendenti.
 \medskip
 \subsection*{Predizione di risultati}
-Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti i valori della variabile dipendente $\textbf{y}=y_1y_2y_3...y_m$ , per classificare l'insieme bastera' applicare il teorema di bayes nel seguente modo:\\
+Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti i valori della variabile dipendente $\textbf{y}=y_1y_2y_3...y_m$ , per classificare l'insieme applicheremo il teorema di bayes con un'approssimazione molto usata nel campo scientifico chiamata MAP (Massima ipotesi a posteriori)
 \begin{align*}
-		etichetta &=y_j \, in \, \max_i\,P(y_j|X_1=x_1, X_2=x_2...X_N=x_n) \\
-		&= \max_i \dfrac{P(X_1=x_1,X_2=x_2...X_N=x_n|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}
+		etichetta &=y_j \, in \, \max_j\,P(y_j|X_1=x_1, X_2=x_2...X_N=x_n) \\
+		&= \max_j \dfrac{P(X_1=x_1,X_2=x_2...X_N=x_n|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}\\
+		&= \max_j \dfrac{\prod_iP(x_i|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}
 \end{align*}
 
 i cui valori della precedente equazione si possono ricavare dalla tabella di distribuzione delle probabilita'.
 
 \subsection*{Modelli generativi e discriminativi}
-L'espressione $P(y_j|\textbf{x})$ puo' essere calcolata in modi differenti in base al modello trattato: nel caso di modelli discriminativi, l'espressione viene ricavata direttamente dai dati sorgente mentre nei modelli generativi l'obbiettivo e' di costruire una distribuzione congiunta di probabilita' per $P(\textbf{x}, y_j)$ direttamente oppure ricavando prima $P(\textbf{x}| y_j)$ e $P(y_j)$. La maggior parte di tutti gli algoritmi di classificazione rientrano nell'insieme dei modelli discriminativi mentre \textit{Bayes ingenguo} e' uno dei pochi generativi. Per questo motivo, non esiste un unico \textit{Bayes ingenuo} ma diversi, che si diversificano in base al tipo di attributi che andiamo a trattare. Essi sono:
+L'espressione $P(y_j|\textbf{x})$ puo' essere calcolata in modi differenti in base al modello trattato: nel caso di modelli discriminativi, l'espressione viene ricavata direttamente dai dati sorgente mentre nei modelli generativi l'obbiettivo e' di costruire una distribuzione congiunta di probabilita' per $P(\textbf{x}, y_j)$ oppure da $P(\textbf{x}| y_j)$ e $P(y_j)$.
+
+\subsection*{Calcolo della probabilita' a priori}
+  Per calcolare la probabilita' a priori esistono varie tecniche: l'equiprobabilita' $\left(\dfrac{1}{|\textbf{y}|}\right)$, rapporto fra esempi di classe $j$ e il totale degli esempi dall'insieme di addestramento, le distribuzione di probabilita' oppure un modello non parametrico dall'insieme di addestramento. Ci sono 3 distribuzioni molto popolari che differiscono in base al tipo di attributi da generare:
 \begin{itemize}
 	\item Bernoulli: gli attributi sono di tipo \textit{booleano} e l'attributo $x_i \in \textbf{x}=(x_1,x_2,...,x_n)$ vale 1 se l'evento $i$ e' avvenuto, 0 altrimenti. Nel caso bernoulliano possiamo valutare $P(\textbf{x}|y_j)$ come
 	\begin{center}
 	 $P(\textbf{x}|y_j) = \prod_{j=1}^{n} P_{ij}^{x_i} (1-P_{ij})^{(1-x_i)}$
 	\end{center}
-	Dove $P_{ij}$ e' la probabilita' per $y_j$ che $x_i$ sia vero. Un esempio canonico e' quello della classificazione dei documenti, dove $x_i$ rappresenta la presenza del termine $w_j$ nei documenti di classe $y_j$ e di conseguenza $P_{ij}$ la probabilita' di trovarlo. Da notare bene che Bernoulli non e' una semplice multinomiale che conta 0 ed 1 ma considera anche la probabilita' che $w_j$ non sia presente.
+	Dove $P_{ij}$ e' la probabilita' per $y_j$ che $x_i$ sia vero. Un esempio canonico e' quello della classificazione dei documenti, dove $x_i$ rappresenta la presenza del termine $w_j$ nei documenti di classe $y_j$ e di conseguenza $P_{ij}$ la probabilita' di trovarlo. Dobbiamo notar bene che Bernoulli a differenza della multinomiale valuta nella produttoria anche la probabilita' che l'evento $i$ non avvenga.
 	
 
 	\item Multinomiale: Nella multinomiale gli esempi rappresentano la frequenza con il quale gli eventi sono stati generati dalla multinomiale $(p_1...p_n)$ dove $p_i$ e' la probabilita' che $i$ occorra. Gli attributi $\textbf{x}=(x_1,x_2...x_n)$ contano quante volte l'evento $i$ e' avvenuto. La probabilita' condizionata  $P(\textbf{x}|y_j)$ e' stimata come

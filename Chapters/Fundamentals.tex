@@ -13,20 +13,36 @@ La scansione a sua volta composta da diverse sotto-fasi cio\`{e}:
 	\item Estrazione del magnitudo
 	\item Raggruppamento
 	\item Estrazione degli attributi
+	\item Costruzione di un modello
+	\item Ricerca della posizione
 \end{enumerate}
 \newpage
 \subsection*{Raccoglimento dei dati}
-Innanzitutto esaminiamo la composizione dei dati che stiamo andando ad estrarre: si tratta di onde magnetiche quindi strutturate nel seguente modo:\\
-\begin{center}
-	$(x,\, y,\, z)$
-\end{center}
-I tre valori sono espressi in $ \mu T $ (micro Tesla), unita' di misura della densita' di un flusso magnetico. Ad ogni onda magnetica viene assegnata una \textit{label}: una stringa od un numero che identifica univocamente una parte dell'ambiente chiuso
+Il raccoglimento dei dati avviene tramite il magnetometro del nostro \textit{smartphone} da cui viene catturato diverse volte in un secondo il campo magnetico intorno ad esso.
+Ad ogni onda magnetica viene assegnata una \textit{label}: un numero che identifica univocamente una parte dell'ambiente chiuso il cui uso verra' definito durante la fase di costruzione del modello.
+
+\subsection*{Onde Magnetiche}
+Le onde magnetiche sono un vettore di 3 elementi, quindi in $R^3$ che classifica. Il primo valore rappresenta la forza del campo magnetico lungo l'asse X, il secondo lungo Y ed il terzo lungo Z.
+
+
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.20\linewidth]{./img/axis_magnetic_field.png}
-\caption{Raffigurazione grafica delle onde raccolte}
-\label{fig:axis_magnetic_field}
+	\centering
+	\includegraphics[width=0.20\linewidth]{./img/axis_magnetic_field.png}
+	\caption{Assi x, y, z centrati sul cellulare}
+	\label{fig:axis_magnetic_field}
 \end{figure}
+
+
+I tre valori sono espressi in $ \mu T $ (micro Tesla), unita' di misura della densita' di un flusso magnetico.
+Le onde magnetiche raccolte sono dati continui sia positivi che negativi. L'intensita' dell'onda deriva dalla distorsione del campo magnetico generata dagli oggetti statici intorno al punto e dipende anche dalla velocita' con cui ci muoviamo per cui, per semplicita', assumeremo d'ora in poi una velocita' costante di 3 passi al secondo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/magnetic_field_map}
+	\caption[Un esempio di mappa del campo magnetico]{Mappa del campo magnetico all'universita' di Oulu: Discus Entrance hall}
+	\label{fig:magneticfieldmap}
+\end{figure}
+
 
 \subsection*{Estrazione del magnitudo}
 Per estrarre l'intensit\`{a} di ogni onda magnetica eseguiamo semplicemente la norma euclidea di un vettore:\\
@@ -54,35 +70,69 @@ Per ogni \textit{fingerprint}, l'estrazione delle \textit{features} consiste nel
 
 
 
-\section*{Ricerca della posizione}
-Dopo aver scansionato l'ambiente questa fase viene eseguita dal cliente durante l'utilizzo dell'applicazione. La ricerca consiste nel creare sul momento una \textit{fingerprint} e poi, tramite un algoritmo di classificazione, cercare di inferire la \textit{label}  su cui ci troviamo. Gli algoritmi utilizzati per analizzare il problema sono i seguenti
-\begin{enumerate}
-	\item \textit{K Nearest Neightbour}
-	\item Bayes ingenuo
-	\item  Alberi di decisione
-\end{enumerate}
+
+
+\section*{Costruzione di un modello}
+
+Dopo aver raccolto ed elaborato le onde magnetiche, un algoritmo creera' un classificatore in grado di assegnare un'etichetta ai nuovi input ricevuti durante l'uso dell'utente finale.
+Sono stati utilizzati vari classificatori per cercare il piu' preciso fra tutti. Qui di seguito introdurremo la teoria dietro ad ogni classificatore utilizzato.
 \newpage
+\section*{IA ed Apprendimento}
+La definizione secondo wikipedia\footnote{\url{https://it.wikipedia.org/wiki/Intelligenza_artificiale}} di IA e' la seguente:\\
 
-\section*{Apprendimento supervisionato}
-Gli algoritmi usati rientrano tutti sotto la categoria di apprendimento supervisionato, quindi dovremo fornire degli esempi con un valore associato. In termini piu' formali si parla di un insieme di addestramento \textbf{X}, \textbf{y} dove $\forall x_i \in \textbf{X},\,\,x_i$ e' un insieme di attributi mentre $y_j \in \textbf{y}$ rappresenta il valore associato a quell'insieme di attributi.
+Definizioni specifiche possono essere date focalizzandosi o sui processi interni di ragionamento o sul comportamento esterno del sistema intelligente ed utilizzando come misura di efficacia o la somiglianza con il comportamento umano o con un comportamento ideale, detto razionale:
+\begin{itemize}
+	\item Agire umanamente: il risultato dell'operazione compiuta dal sistema intelligente non e' distinguibile da quella svolta da un umano.
+	\item Pensare umanamente: il processo che porta il sistema intelligente a risolvere un problema ricalca quello umano. Questo approccio è associato alle scienze cognitive.
+	\item Pensare razionalmente: il processo che porta il sistema intelligente a risolvere un problema è un procedimento formale che si rifà alla logica.
+	\item Agire razionalmente: il processo che porta il sistema
+\end{itemize} 
+L'apprendimento automatico e' una branca dell'intelligenza artificiale che permette al computer di apprendere da insiemi di dati per generare conoscenza con lo scopo di effettuare previsioni.
 
-\subsection*{Classificazione e regressione}
-Si parla di classificazione quando la variabile $y$ da stimare e' discreta mentre nel continuo si tratta di regressione.
+\section*{Tipi di apprendimento}
+Esistono 3 tipi di apprendimento:
+\begin{itemize}
+	\item Apprendimento supervisionato: al calcolatore vengono forniti esempi del tipo (\textbf{x}, y) per poter apprendere. L'obbiettivo della predizione per nuovi input sara' quello di calcolare la variabile dipendente. Y puo' essere sia dicreta che continua: nel primo caso si parla di classificazione, nel secondo di regressione.
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/supervised_learning_example}
+		\caption{Un esempio grafico di insieme d'addestramento ed una sua classificazione}
+		\label{fig:supervisedlearningexample}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/Classification_Regression}
+		\caption{Classificazione e regressione a confronto}
+		\label{fig:classificationregression}
+	\end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{img/supervised_learning_example}
-	\caption{Un esempio grafico di insieme d'addestramento ed una sua classificazione}
-	\label{fig:supervisedlearningexample}
-\end{figure}
+	\item Apprendimento non supervisionato: Gli esempi non contengono una variabile dipendente ma solo un insieme di attributi \textbf{x}. L'obbietto e' quello di inferire pattern nascosti dai dati non etichettati. Un'importante applicazione e' il \textit{clustering}: raggruppare i dati in base ad una similarita' fra di essi.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/supervised_and_unsupervised_learning}
+		\caption{Apprendimento supervisiono e non supervisionato a confronto}
+		\label{fig:supervisedandunsupervisedlearning}
+	\end{figure}
+	
+	
+	\item Apprendimento con rinforzo: per apprendere viene fornita una funzione ricompensa cioe' una funzione che, data un'azione effettuata dall'agente, restituira' una ricompensa di tipo numerico.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/pacman}
+		\caption{L'apprendimento con rinforzo e' molto adatto ai giochi, come per esempio pacman}
+		\label{fig:pacman}
+	\end{figure}
+	
+	
+\end{itemize}
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{img/Classification_Regression}
-	\caption{Classificazione e regressione a confronto}
-	\label{fig:classificationregression}
-\end{figure}
 
 \subsection*{Verifica delle presatzioni}
 Per verificare la correttezza del classificatore viene diviso in 2 parti il \textit{dataset} a nostra disposizione: il primo si chiamera' insieme di addestramento mentre il secondo insieme di test. Il nostro classificatore si allenera' sull'insieme di addestramento ed effetuera' le predizioni sull'insieme di test, su cui verranno misurate le \textit{performance} in base alle predizioni corrette.
@@ -169,7 +219,10 @@ i cui valori della precedente equazione si possono ricavare dalla tabella di dis
 L'espressione $P(y_j|\textbf{x})$ puo' essere calcolata in modi differenti in base al modello trattato: nel caso di modelli discriminativi, l'espressione viene ricavata direttamente dai dati sorgente mentre nei modelli generativi l'obbiettivo e' di costruire una distribuzione congiunta di probabilita' per $P(\textbf{x}, y_j)$ oppure da $P(\textbf{x}| y_j)$ e $P(y_j)$.
 
 \subsection*{Calcolo della probabilita' a priori}
-  Per calcolare la probabilita' a priori esistono varie tecniche: l'equiprobabilita' $\left(\dfrac{1}{|\textbf{y}|}\right)$, rapporto fra esempi di classe $j$ e il totale degli esempi dall'insieme di addestramento, le distribuzione di probabilita' oppure un modello non parametrico dall'insieme di addestramento. Ci sono 3 distribuzioni molto popolari che differiscono in base al tipo di attributi da generare:
+  Per calcolare la probabilita' a priori esistono varie tecniche: l'equiprobabilita' $\left(\dfrac{1}{|\textbf{y}|}\right)$, rapporto fra esempi di classe $j$ e il totale degli esempi dall'insieme di addestramento, le distribuzione di probabilita' oppure un modello non parametrico dall'insieme di addestramento.
+  
+\subsection*{Modelli ad eventi}  
+   La distribuzione viene anche chiamata modello ad eventi perche' tratta gli attributi come probabilita' di eventi. Ci sono 3 modelli usati con $\textit{Naive Bayes}$ che sono:
 \begin{itemize}
 	\item Bernoulli: gli attributi sono di tipo \textit{booleano} e l'attributo $x_i \in \textbf{x}=(x_1,x_2,...,x_n)$ vale 1 se l'evento $i$ e' avvenuto, 0 altrimenti. Nel caso bernoulliano possiamo valutare $P(\textbf{x}|y_j)$ come
 	\begin{center}
@@ -231,4 +284,11 @@ da cui possiamo ricavare il seguente albero di decisione:
 	\label{fig:decisiontreetreetennis}
 \end{figure}
 
-
+\section*{Ricerca della posizione}
+Dopo la costruzione del modello esso viene adoperato per predire la posizione corrente dell'utente che esegue l'applicazione. La ricerca consiste nel creare sul momento una \textit{fingerprint} e poi, tramite un algoritmo di classificazione, cercare di inferire la \textit{label}  su cui ci troviamo. Gli algoritmi utilizzati per analizzare il problema sono quelli descritti in precedenza quindi
+\begin{enumerate}
+	\item \textit{K Nearest Neightbour}
+	\item Bayes ingenuo
+	\item  Alberi di decisione
+\end{enumerate}
+\newpage

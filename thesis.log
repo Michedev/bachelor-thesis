@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.24)  11 MAY 2017 01:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.24)  12 MAY 2017 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1695,7 +1695,7 @@ LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 Package tocbasic Info: character protrusion at lof deactivated on input line 10
 9.
  (./thesis.lof
-Overfull \hbox (6.16368pt too wide) in paragraph at lines 8--8
+Overfull \hbox (6.16368pt too wide) in paragraph at lines 11--11
  [][] [][]\T1/pplj/m/n/12 (-20) Rappresentazione gra-fi-ca del-la Cross Va-li-d
 a-tion[] []  
  []
@@ -1722,148 +1722,170 @@ Package microtype Info: Character `029' is missing
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-<./img/axis_magnetic_field.png, id=105, 225.84375pt x 270.00874pt>
+<./img/axis_magnetic_field.png, id=115, 225.84375pt x 270.00874pt>
 File: ./img/axis_magnetic_field.png Graphic file (type png)
 
 <use ./img/axis_magnetic_field.png>
-Package pdftex.def Info: ./img/axis_magnetic_field.png used on input line 26.
+Package pdftex.def Info: ./img/axis_magnetic_field.png used on input line 30.
 (pdftex.def)             Requested size: 76.82126pt x 91.84294pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+<img/magnetic_field_map.jpg, id=117, 401.5pt x 321.2pt>
+File: img/magnetic_field_map.jpg Graphic file (type jpg)
+
+<use img/magnetic_field_map.jpg>
+Package pdftex.def Info: img/magnetic_field_map.jpg used on input line 41.
+(pdftex.def)             Requested size: 268.87737pt x 215.11465pt.
+ [8 <./img/axis_magnetic_field.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[8 <./img/axis_magnetic_field.png>] [9]
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 67.
+[9 <./img/magnetic_field_map.jpg>] [10]
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 6.46004pt on input line 81.
 
-<img/supervised_learning_example.png, id=123, 244.0755pt x 189.873pt>
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 95.
+<img/supervised_learning_example.png, id=136, 244.0755pt x 189.873pt>
 File: img/supervised_learning_example.png Graphic file (type png)
 
 <use img/supervised_learning_example.png>
 Package pdftex.def Info: img/supervised_learning_example.png used on input line
- 74.
+ 100.
 (pdftex.def)             Requested size: 268.87737pt x 209.17673pt.
 
-Underfull \hbox (badness 1902) in paragraph at lines 75--75
+Underfull \hbox (badness 1902) in paragraph at lines 101--101
 [][]|\T1/pplj/m/n/10.95 (+20) Un esem-pio gra-fi-co di in-sie-me d'ad-de-stra-m
 en-to ed una sua
  []
 
-<img/Classification_Regression.png, id=124, 433.62pt x 216.81pt>
+[11] <img/Classification_Regression.png, id=144, 433.62pt x 216.81pt>
 File: img/Classification_Regression.png Graphic file (type png)
 
 <use img/Classification_Regression.png>
-Package pdftex.def Info: img/Classification_Regression.png used on input line 8
-2.
+Package pdftex.def Info: img/Classification_Regression.png used on input line 1
+08.
 (pdftex.def)             Requested size: 268.87737pt x 134.44395pt.
- [10 <./img/supervised_learning_example.png>] <img/overfitting.jpg, id=131, 511
-.9125pt x 269.005pt>
+
+<img/supervised_and_unsupervised_learning.png, id=145, 915.9018pt x 403.2666pt>
+File: img/supervised_and_unsupervised_learning.png Graphic file (type png)
+<use img/supervised_and_unsupervised_learning.png>
+Package pdftex.def Info: img/supervised_and_unsupervised_learning.png used on i
+nput line 117.
+(pdftex.def)             Requested size: 268.87737pt x 118.3842pt.
+ [12 <./img/supervised_learning_example.png> <./img/Classification_Regression.p
+ng>]
+<img/pacman.png, id=152, 569.12625pt x 206.7725pt>
+File: img/pacman.png Graphic file (type png)
+ <use img/pacman.png>
+Package pdftex.def Info: img/pacman.png used on input line 127.
+(pdftex.def)             Requested size: 268.87737pt x 97.69106pt.
+
+[13 <./img/supervised_and_unsupervised_learning.png> <./img/pacman.png>]
+<img/overfitting.jpg, id=159, 511.9125pt x 269.005pt>
 File: img/overfitting.jpg Graphic file (type jpg)
 
 <use img/overfitting.jpg>
-Package pdftex.def Info: img/overfitting.jpg used on input line 96.
+Package pdftex.def Info: img/overfitting.jpg used on input line 146.
 (pdftex.def)             Requested size: 268.87737pt x 141.2913pt.
- [11 <./img/Classification_Regression.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
-<img/crossvalidation.jpg, id=138, 271.2534pt x 108.405pt>
+<img/crossvalidation.jpg, id=160, 271.2534pt x 108.405pt>
 File: img/crossvalidation.jpg Graphic file (type jpg)
 
 <use img/crossvalidation.jpg>
-Package pdftex.def Info: img/crossvalidation.jpg used on input line 107.
+Package pdftex.def Info: img/crossvalidation.jpg used on input line 157.
 (pdftex.def)             Requested size: 268.87737pt x 107.45525pt.
-
-<img/knn_example.png, id=139, 356.33125pt x 322.20375pt>
+ [14 <./img/overfitting.jpg> <./img/crossvalidation.jpg>] <img/knn_example.png,
+ id=165, 356.33125pt x 322.20375pt>
 File: img/knn_example.png Graphic file (type png)
 
 <use img/knn_example.png>
-Package pdftex.def Info: img/knn_example.png used on input line 119.
+Package pdftex.def Info: img/knn_example.png used on input line 169.
 (pdftex.def)             Requested size: 268.87737pt x 243.13698pt.
- [12 <./img/overfitting.jpg> <./img/crossvalidation.jpg>] [13 <./img/knn_exampl
-e.png>]
-<img/rete-bayesiana-grafo.png, id=149, 338.76563pt x 263.48438pt>
+ [15 <./img/knn_example.png>]
+<img/rete-bayesiana-grafo.png, id=171, 338.76563pt x 263.48438pt>
 File: img/rete-bayesiana-grafo.png Graphic file (type png)
 
 <use img/rete-bayesiana-grafo.png>
-Package pdftex.def Info: img/rete-bayesiana-grafo.png used on input line 140.
+Package pdftex.def Info: img/rete-bayesiana-grafo.png used on input line 190.
 (pdftex.def)             Requested size: 268.87737pt x 209.13538pt.
-
-<img/naive_bayes_example.jpg, id=150, 357.335pt x 200.75pt>
+ [16 <./img/rete-bayesiana-grafo.png (PNG copy)>] <img/naive_bayes_example.jpg,
+ id=177, 357.335pt x 200.75pt>
 File: img/naive_bayes_example.jpg Graphic file (type jpg)
 
 <use img/naive_bayes_example.jpg>
-Package pdftex.def Info: img/naive_bayes_example.jpg used on input line 150.
+Package pdftex.def Info: img/naive_bayes_example.jpg used on input line 200.
 (pdftex.def)             Requested size: 153.64253pt x 86.31468pt.
- [14 <./img/rete-bayesiana-grafo.png (PNG copy)>] [15 <./img/naive_bayes_exampl
-e.jpg>]
-<img/Bayes_tennis_sample.png, id=162, 864.22874pt x 315.1775pt>
+ [17 <./img/naive_bayes_example.jpg>] [18]
+<img/Bayes_tennis_sample.png, id=189, 864.22874pt x 315.1775pt>
 File: img/Bayes_tennis_sample.png Graphic file (type png)
 
 <use img/Bayes_tennis_sample.png>
-Package pdftex.def Info: img/Bayes_tennis_sample.png used on input line 196.
+Package pdftex.def Info: img/Bayes_tennis_sample.png used on input line 249.
 (pdftex.def)             Requested size: 268.87737pt x 98.05508pt.
 
-Underfull \hbox (badness 2932) in paragraph at lines 197--197
+Underfull \hbox (badness 2111) in paragraph at lines 250--250
 [][]|\T1/pplj/m/n/10.95 (+20) Esem-pi di par-ti-te di ten-nis gio-ca-te in ba-s
 e al-le con-di-zio-ni
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 201--208
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--261
 
  []
 
-[17 <./img/Bayes_tennis_sample.png>]
-<img/decision-_tree_table_tennis.png, id=174, 492.33937pt x 383.18156pt>
+[19 <./img/Bayes_tennis_sample.png>]
+<img/decision-_tree_table_tennis.png, id=195, 492.33937pt x 383.18156pt>
 File: img/decision-_tree_table_tennis.png Graphic file (type png)
 
 <use img/decision-_tree_table_tennis.png>
 Package pdftex.def Info: img/decision-_tree_table_tennis.png used on input line
- 222.
+ 275.
 (pdftex.def)             Requested size: 268.87737pt x 209.27124pt.
- [18]
-<img/decision_tree_tree_tennis.png, id=179, 416.30531pt x 280.79906pt>
+ [20]
+<img/decision_tree_tree_tennis.png, id=200, 416.30531pt x 280.79906pt>
 File: img/decision_tree_tree_tennis.png Graphic file (type png)
 
 <use img/decision_tree_tree_tennis.png>
 Package pdftex.def Info: img/decision_tree_tree_tennis.png used on input line 2
-29.
+82.
 (pdftex.def)             Requested size: 268.87737pt x 181.36465pt.
-) [19 <./img/decision-_tree_table_tennis.png (PNG copy)> <./img/decision_tree_t
-ree_tennis.png (PNG copy)>]
+ [21 <./img/decision-_tree_table_tennis.png (PNG copy)> <./img/decision_tree_tr
+ee_tennis.png (PNG copy)>] [22])
 \openout2 = `Chapters/Software_Structure.aux'.
 
 
-(./Chapters/Software_Structure.tex [20
-
-
-
-
-]
-<img/app_screen.png, id=188, 722.7pt x 1284.8pt>
+(./Chapters/Software_Structure.tex
+<img/app_screen.png, id=212, 722.7pt x 1284.8pt>
 File: img/app_screen.png Graphic file (type png)
  <use img/app_screen.png>
 Package pdftex.def Info: img/app_screen.png used on input line 21.
 (pdftex.def)             Requested size: 115.23482pt x 204.84683pt.
 
-[21]) [22 <./img/app_screen.png>] [23]
+[23
+
+
+
+
+]) [24 <./img/app_screen.png>] [25]
 \openout2 = `Chapters/Test.aux'.
 
  (./Chapters/Test.tex
-<img/test_pianta_casa.png, id=203, 606.76688pt x 474.27188pt>
+<img/test_pianta_casa.png, id=227, 606.76688pt x 474.27188pt>
 File: img/test_pianta_casa.png Graphic file (type png)
 
 <use img/test_pianta_casa.png>
 Package pdftex.def Info: img/test_pianta_casa.png used on input line 6.
 (pdftex.def)             Requested size: 268.87737pt x 210.16382pt.
-) [24
+) [26
 
 
  <./img/test_pianta_casa.png>]
@@ -1877,13 +1899,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36909 strings out of 493013
- 698976 string characters out of 6139317
- 891140 words of memory out of 5000000
- 39380 multiletter control sequences out of 15000+600000
- 88675 words of font info for 379 fonts, out of 8000000 for 9000
+ 36993 strings out of 493013
+ 700345 string characters out of 6139317
+ 890141 words of memory out of 5000000
+ 39420 multiletter control sequences out of 15000+600000
+ 99346 words of font info for 412 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,14n,73p,10375b,840s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,14n,73p,10375b,901s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/eul
@@ -1891,13 +1913,14 @@ er/euex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.p
 fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/fpl/fplrc8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb
-8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/t
-exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (26 pages, 625105 bytes).
+pe1/public/fpl/fplrc8a.pfb></usr/share/texmf-dist/fonts/type1/public/bera/fvmr8
+a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/te
+xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1
+/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (28 pages, 703960 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
- 82003 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 288 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 90722 words of extra memory for PDF output out of 106986 (max. 10000000)
 

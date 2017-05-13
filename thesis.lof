@@ -1,16 +1,19 @@
 \select@language {italian}
 \select@language {italian}
 \deactivateaddvspace 
-\contentsline {figure}{\numberline {1}{\ignorespaces Raffigurazione grafica delle onde raccolte\relax }}{8}{figure.caption.4}
-\contentsline {figure}{\numberline {2}{\ignorespaces Un esempio grafico di insieme d'addestramento ed una sua classificazione\relax }}{10}{figure.caption.5}
-\contentsline {figure}{\numberline {3}{\ignorespaces Classificazione e regressione a confronto\relax }}{11}{figure.caption.6}
-\contentsline {figure}{\numberline {4}{\ignorespaces \relax }}{12}{figure.caption.7}
-\contentsline {figure}{\numberline {5}{\ignorespaces Rappresentazione grafica della Cross Validation\relax }}{12}{figure.caption.8}
-\contentsline {figure}{\numberline {6}{\ignorespaces Esempio grafico dell'algoritmo KNN\relax }}{13}{figure.caption.9}
-\contentsline {figure}{\numberline {7}{\ignorespaces Esempio di rete bayesiana\relax }}{14}{figure.caption.10}
-\contentsline {figure}{\numberline {8}{\ignorespaces Esempio di rete bayesiana ingenua\relax }}{15}{figure.caption.11}
-\contentsline {figure}{\numberline {9}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{17}{figure.caption.12}
-\contentsline {figure}{\numberline {10}{\ignorespaces Tabella degli attributi meteorologici con valore associato un booleano che stabilisce se la partita e' stata giocata o no\relax }}{19}{figure.caption.13}
-\contentsline {figure}{\numberline {11}{\ignorespaces Albero di decisione ricavato dalla tabella precedente\relax }}{19}{figure.caption.14}
-\contentsline {figure}{\numberline {12}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{22}{figure.caption.16}
-\contentsline {figure}{\numberline {13}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{24}{figure.caption.17}
+\contentsline {figure}{\numberline {1}{\ignorespaces Assi x, y, z centrati sul cellulare\relax }}{8}{figure.caption.4}
+\contentsline {figure}{\numberline {2}{\ignorespaces Un esempio di mappa del campo magnetico}}{9}{figure.caption.5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Un esempio grafico di insieme d'addestramento ed una sua classificazione\relax }}{12}{figure.caption.6}
+\contentsline {figure}{\numberline {4}{\ignorespaces Classificazione e regressione a confronto\relax }}{12}{figure.caption.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Apprendimento supervisiono e non supervisionato a confronto\relax }}{13}{figure.caption.8}
+\contentsline {figure}{\numberline {6}{\ignorespaces L'apprendimento con rinforzo e' molto adatto ai giochi, come per esempio pacman\relax }}{13}{figure.caption.9}
+\contentsline {figure}{\numberline {7}{\ignorespaces \relax }}{14}{figure.caption.10}
+\contentsline {figure}{\numberline {8}{\ignorespaces Rappresentazione grafica della Cross Validation\relax }}{14}{figure.caption.11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Esempio grafico dell'algoritmo KNN\relax }}{15}{figure.caption.12}
+\contentsline {figure}{\numberline {10}{\ignorespaces Esempio di rete bayesiana\relax }}{16}{figure.caption.13}
+\contentsline {figure}{\numberline {11}{\ignorespaces Esempio di rete bayesiana ingenua\relax }}{17}{figure.caption.14}
+\contentsline {figure}{\numberline {12}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{19}{figure.caption.15}
+\contentsline {figure}{\numberline {13}{\ignorespaces Tabella degli attributi meteorologici con valore associato un booleano che stabilisce se la partita e' stata giocata o no\relax }}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {14}{\ignorespaces Albero di decisione ricavato dalla tabella precedente\relax }}{21}{figure.caption.17}
+\contentsline {figure}{\numberline {15}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{24}{figure.caption.19}
+\contentsline {figure}{\numberline {16}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{26}{figure.caption.20}

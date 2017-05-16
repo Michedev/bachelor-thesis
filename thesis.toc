@@ -1,3 +1,4 @@
 \select@language {italian}
 \select@language {italian}
 \vspace {-\cftbeforepartskip }
+\contentsline {section}{\numberline {0.1}Caratteristiche}{26}{section.0.1}

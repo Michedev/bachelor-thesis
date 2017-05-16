@@ -8,6 +8,49 @@ Per testare l'effettivo funzionamento dell'applicazione ho usato alcune stanze d
 \label{fig:test_pianta_casa}
 \end{figure}
 
-\section*{Risultati dei test}
+Sono state raccolte circa 18000 campioni di onde magnetiche. La suddivione fra addestramento e test e' 70/30.
+
+\section{Caratteristiche}
+Dai grafici qui di seguito possiamo notare che c'e' sovrapposizione fra i dati, quindi e' presente del rumore nei dati.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{img/plot_features}
+	\caption{Grafico in 2 dimensioni della media e varianza di tutte le onde magnetiche. I colori dei punti rappresentano le etichette}
+	\label{fig:plotfeatures}
+\end{figure}
+
+La causa del rumore sono i sensori che offrono una misurazione non precisa. Un possibile riparo al problema e' il \textit{filtro di Kalman}
+
+\section*{Classificatori a confronto}
+Qui di seguito vediamo i risultati ottenuti da ciascun classificatore con un istogramma:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/test_errors}
+	\caption{}
+	\label{fig:testerrors}
+\end{figure}
+
+come possiamo notare \textit{Gaussian Naive Bayes} e' totalmente inadatto alla classificazione di onde magnetiche mentre gli alberi di decisione e \textit{K Nearest Neightbours} si comportano molto bene, con risultati leggermente migliori in quest'ultimo.
+A questo punto qualcuno potrebbe pero' pensare che gli ultimi 2 modelli si sono sovradattati agli esempi (\textit{overfitting}) ed avrebbe ragione, perche' applicando la \textit{cross validation} abbiamo risultati diversi da quelli precedenti.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/test_errors_cross_validation}
+	\caption{}
+	\label{fig:testerrorscrossvalidation}
+\end{figure}
+
+
+\section*{Un rimedio ingenuo al rumore}
+Un approccio ingenuo per risolvere il problema al rumore potrebbe essere quello di prendere meno dati per etichetta. Il seguente grafico pero' ci mostra che cio' non e' vero
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/rumor_graph_knn}
+	\caption{}
+	\label{fig:rumorgraphknn}
+\end{figure}
+
 
 %Ricorda di far vedere falsi positivi e veri negativi nei test

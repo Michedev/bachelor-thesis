@@ -1,0 +1,7 @@
+\chapter{Miglioramenti}
+\section{Possibili miglioramenti per la raccolta di dati}
+\begin{itemize}
+	\item L'architettura \textit{client-server} e' necessaria per avere un'applicazione che riesca a gestire con fluidita' la ricerca all'interno di grandi edifici. In rifermento alla memoria del telefono poiche' nella maggior parte dei casi possiede un quantitativo di \textit{RAM} e memoria permanente molto limitati, ma anche rispetto al processore perche' la ricerca della posizione, assumendo di usare il \textit{KNN}, ha bisogno di confrontare i propri attributi con tutti gli altri e va da se che piu' e' grande il dataset, piu' potenza di calcolo ci vorra' per ottenere una risposta in tempi umani.
+	\item Durante la raccolta sarebbe opportuno applicare il \textit{filtro di Kalman} per ridurre il rumore causato dall'imprecisione dei sensori.
+	\item Per migliorare la precisione sarebbe opportuno appoggiarsi anche ad altri sensori presenti sullo \textit{smartphone}. Prendiamo come esempio il Wi-Fi, se il dispositivo e' connesso alla rete dell'edificio potrebbe sfruttare la potenza di segnale per avere una precisione maggiore; sfruttare l'accelerometro per stimare la velocita' del telefono e quindi standardizzare tutte le rilevazioni effettuate col magnetometro. Questa tecnica viene chiamata \textit{sensor fusion}(Link a qualche paper)
+\end{itemize}

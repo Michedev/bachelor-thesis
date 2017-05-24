@@ -1,4 +1,6 @@
-\section*{Base dei test}
+\chapter{Test}
+
+\section{Base dei test}
 Per testare l'effettivo funzionamento dell'applicazione ho usato alcune stanze di casa mia ed ho assegnato a ciascuna di esse una \textit{label}. Qui di seguito una piccola piantina rappresentante le stanze utilizzate:
 
 \begin{figure}[H]
@@ -8,7 +10,7 @@ Per testare l'effettivo funzionamento dell'applicazione ho usato alcune stanze d
 \label{fig:test_pianta_casa}
 \end{figure}
 
-Sono state raccolte circa 18000 campioni di onde magnetiche. La suddivione fra addestramento e test e' 70/30.
+Sono stati raccolti circa 18000 campioni di onde magnetiche. La suddivisione fra addestramento e test e' 70/30.
 
 \section{Caratteristiche}
 Dai grafici qui di seguito possiamo notare che c'e' sovrapposizione fra i dati, quindi e' presente del rumore nei dati.
@@ -21,7 +23,7 @@ Dai grafici qui di seguito possiamo notare che c'e' sovrapposizione fra i dati, 
 
 La causa del rumore sono i sensori che offrono una misurazione non precisa. Un possibile riparo al problema e' il \textit{filtro di Kalman}
 
-\section*{Classificatori a confronto}
+\section{Classificatori a confronto}
 Qui di seguito vediamo i risultati ottenuti da ciascun classificatore con un istogramma:
 
 \begin{figure}[H]
@@ -41,8 +43,24 @@ A questo punto qualcuno potrebbe pero' pensare che gli ultimi 2 modelli si sono 
 	\label{fig:testerrorscrossvalidation}
 \end{figure}
 
+Adesso visualizziamo gli errori per etichetta:
 
-\section*{Un rimedio ingenuo al rumore}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/test_error_per_label}
+	\caption{Numero di errori nella predizione per etichetta}
+	\label{fig:testerrorperlabel}
+\end{figure}
+\medskip
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/percentage_test_errors_per_label}
+	\caption{Percentuale di errore nella predizione per etichetta}
+	\label{fig:percentagetesterrorsperlabel}
+\end{figure}
+
+
+\section{Un rimedio ingenuo al rumore}
 Un approccio ingenuo per risolvere il problema al rumore potrebbe essere quello di prendere meno dati per etichetta. Il seguente grafico pero' ci mostra che cio' non e' vero
 
 \begin{figure}[H]

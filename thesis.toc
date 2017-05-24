@@ -1,4 +1,50 @@
 \select@language {italian}
 \select@language {italian}
 \vspace {-\cftbeforepartskip }
-\contentsline {section}{\numberline {0.1}Caratteristiche}{26}{section.0.1}
+\contentsline {chapter}{\numberline {1}Introduzione}{7}{chapter.1}
+\contentsline {chapter}{\numberline {2}Fondamentali}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Scansione dell'ambiente}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Raccoglimento dei dati}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Onde Magnetiche}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Elaborazione dei dati}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Estrazione del magnitudo}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Raggruppamento}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Estrazione degli attributi}{12}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Costruzione di un modello}{12}{section.2.5}
+\contentsline {section}{\numberline {2.6}IA ed Apprendimento}{13}{section.2.6}
+\contentsline {section}{\numberline {2.7}Tipi di apprendimento}{13}{section.2.7}
+\contentsline {section}{\numberline {2.8}Alcune nozioni sull'apprendimento automatico}{15}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Verifica delle prestazioni}{15}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Rumore e sovradattamento}{16}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Cross validation}{16}{subsection.2.8.3}
+\contentsline {section}{\numberline {2.9}K Nearest Neightbour}{17}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}Scelta del parametro k}{18}{subsection.2.9.1}
+\contentsline {section}{\numberline {2.10}Naive bayes}{18}{section.2.10}
+\contentsline {subsection}{\numberline {2.10.1}Teorema di bayes}{18}{subsection.2.10.1}
+\contentsline {subsection}{\numberline {2.10.2}Rete bayesiana}{18}{subsection.2.10.2}
+\contentsline {subsection}{\numberline {2.10.3}Naive Bayes}{19}{subsection.2.10.3}
+\contentsline {subsection}{\numberline {2.10.4}Costruzione di una rete bayesiana ingenua}{19}{subsection.2.10.4}
+\contentsline {subsection}{\numberline {2.10.5}Predizione di risultati}{20}{subsection.2.10.5}
+\contentsline {subsection}{\numberline {2.10.6}Modelli generativi e discriminativi}{20}{subsection.2.10.6}
+\contentsline {subsection}{\numberline {2.10.7}Calcolo della probabilita' a priori}{20}{subsection.2.10.7}
+\contentsline {subsection}{\numberline {2.10.8}Modelli ad eventi}{20}{subsection.2.10.8}
+\contentsline {subsection}{\numberline {2.10.9}Un piccolo esempio basato su naive bayes}{21}{subsection.2.10.9}
+\contentsline {section}{\numberline {2.11}Alberi di decisione}{22}{section.2.11}
+\contentsline {subsection}{\numberline {2.11.1}Costruzione di un albero di decisione}{23}{subsection.2.11.1}
+\contentsline {subsection}{\numberline {2.11.2}Classificazione dei nuovi elementi}{23}{subsection.2.11.2}
+\contentsline {subsection}{\numberline {2.11.3}Un esempio di albero di decisione}{23}{subsection.2.11.3}
+\contentsline {section}{\numberline {2.12}Ricerca della posizione}{24}{section.2.12}
+\contentsline {chapter}{\numberline {3}Struttura del software}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Linguaggi e framework}{27}{section.3.1}
+\contentsline {section}{\numberline {3.2}Interfaccia grafica}{27}{section.3.2}
+\contentsline {section}{\numberline {3.3}Persistenza dei dati}{28}{section.3.3}
+\contentsline {section}{\numberline {3.4}Struttura del codice e design pattern}{28}{section.3.4}
+\contentsline {section}{\numberline {3.5}Analisi dei dati}{29}{section.3.5}
+\contentsline {section}{\numberline {3.6}Codice usato per l'analisi}{29}{section.3.6}
+\contentsline {chapter}{\numberline {4}Test}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Base dei test}{31}{section.4.1}
+\contentsline {section}{\numberline {4.2}Caratteristiche}{32}{section.4.2}
+\contentsline {section}{\numberline {4.3}Classificatori a confronto}{32}{section.4.3}
+\contentsline {section}{\numberline {4.4}Un rimedio ingenuo al rumore}{34}{section.4.4}
+\contentsline {chapter}{\numberline {5}Miglioramenti}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Possibili miglioramenti per la raccolta di dati}{37}{section.5.1}

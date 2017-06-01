@@ -7,28 +7,28 @@
 \BOOKMARK [2][-]{subsection.2.4.1}{Estrazione del magnitudo}{section.2.4}% 7
 \BOOKMARK [2][-]{subsection.2.4.2}{Raggruppamento}{section.2.4}% 8
 \BOOKMARK [2][-]{subsection.2.4.3}{Estrazione degli attributi}{section.2.4}% 9
-\BOOKMARK [1][-]{section.2.5}{Costruzione di un modello}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.5}{Fase 2: elaborazione dei dati}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.6}{IA ed Apprendimento}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.7}{Tipi di apprendimento}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.8}{Alcune nozioni sull'apprendimento automatico}{chapter.2}% 13
 \BOOKMARK [2][-]{subsection.2.8.1}{Verifica delle prestazioni}{section.2.8}% 14
 \BOOKMARK [2][-]{subsection.2.8.2}{Rumore e sovradattamento}{section.2.8}% 15
-\BOOKMARK [2][-]{subsection.2.8.3}{Cross validation}{section.2.8}% 16
-\BOOKMARK [1][-]{section.2.9}{K Nearest Neightbour}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.9.1}{Scelta del parametro k}{section.2.9}% 18
-\BOOKMARK [1][-]{section.2.10}{Naive bayes}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.10.1}{Teorema di bayes}{section.2.10}% 20
-\BOOKMARK [2][-]{subsection.2.10.2}{Rete bayesiana}{section.2.10}% 21
-\BOOKMARK [2][-]{subsection.2.10.3}{Naive Bayes}{section.2.10}% 22
-\BOOKMARK [2][-]{subsection.2.10.4}{Costruzione di una rete bayesiana ingenua}{section.2.10}% 23
-\BOOKMARK [2][-]{subsection.2.10.5}{Predizione di risultati}{section.2.10}% 24
-\BOOKMARK [2][-]{subsection.2.10.6}{Modelli generativi e discriminativi}{section.2.10}% 25
-\BOOKMARK [2][-]{subsection.2.10.7}{Calcolo della probabilita' a priori}{section.2.10}% 26
-\BOOKMARK [2][-]{subsection.2.10.8}{Modelli ad eventi}{section.2.10}% 27
-\BOOKMARK [2][-]{subsection.2.10.9}{Un piccolo esempio basato su naive bayes}{section.2.10}% 28
+\BOOKMARK [2][-]{subsection.2.8.3}{Insieme di validazione}{section.2.8}% 16
+\BOOKMARK [2][-]{subsection.2.8.4}{Cross validation}{section.2.8}% 17
+\BOOKMARK [1][-]{section.2.9}{K Nearest Neightbour}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.9.1}{Scelta del parametro k}{section.2.9}% 19
+\BOOKMARK [1][-]{section.2.10}{Naive bayes}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.10.1}{Teorema di bayes}{section.2.10}% 21
+\BOOKMARK [2][-]{subsection.2.10.2}{Rete bayesiana}{section.2.10}% 22
+\BOOKMARK [2][-]{subsection.2.10.3}{Naive Bayes}{section.2.10}% 23
+\BOOKMARK [2][-]{subsection.2.10.4}{Predizione di risultati}{section.2.10}% 24
+\BOOKMARK [2][-]{subsection.2.10.5}{Modelli generativi e discriminativi}{section.2.10}% 25
+\BOOKMARK [2][-]{subsection.2.10.6}{Calcolo della probabilita' a priori}{section.2.10}% 26
+\BOOKMARK [2][-]{subsection.2.10.7}{Modelli ad eventi}{section.2.10}% 27
+\BOOKMARK [2][-]{subsection.2.10.8}{Un piccolo esempio basato su naive bayes}{section.2.10}% 28
 \BOOKMARK [1][-]{section.2.11}{Alberi di decisione}{chapter.2}% 29
-\BOOKMARK [2][-]{subsection.2.11.1}{Costruzione di un albero di decisione}{section.2.11}% 30
-\BOOKMARK [2][-]{subsection.2.11.2}{Classificazione dei nuovi elementi}{section.2.11}% 31
+\BOOKMARK [2][-]{subsection.2.11.1}{Classificazione dei nuovi elementi}{section.2.11}% 30
+\BOOKMARK [2][-]{subsection.2.11.2}{Costruzione di un albero di decisione}{section.2.11}% 31
 \BOOKMARK [2][-]{subsection.2.11.3}{Un esempio di albero di decisione}{section.2.11}% 32
 \BOOKMARK [1][-]{section.2.12}{Ricerca della posizione}{chapter.2}% 33
 \BOOKMARK [0][-]{chapter.3}{Struttura del software}{}% 34

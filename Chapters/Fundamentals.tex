@@ -64,7 +64,7 @@ Per ogni \textit{fingerprint}, l'estrazione delle \textit{features} consiste nel
 
 
 
-\section{Costruzione di un modello}
+\section{Fase 2: elaborazione dei dati}
 
 Dopo aver raccolto ed elaborato le onde magnetiche, un algoritmo creera' un classificatore in grado di assegnare un'etichetta ai nuovi input ricevuti durante l'uso dell'utente finale.
 Sono stati utilizzati vari classificatori per cercare il piu' preciso fra tutti. Qui di seguito introdurremo la teoria dietro ad ogni classificatore utilizzato.
@@ -129,6 +129,16 @@ Esistono 3 tipi di apprendimento:
 \subsection{Verifica delle prestazioni}
 Per verificare la correttezza del classificatore viene diviso in 2 parti il \textit{dataset} a nostra disposizione: il primo si chiama insieme di addestramento mentre il secondo insieme di test. Il nostro classificatore si allenera' sull'insieme di addestramento, cioe' imparera' dagli esempi come classificare i nuovi input ed effetuera' le predizioni sull'insieme di test, su cui verranno misurate le prestazioni in base al rapporto fra predizioni corrette e totali.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/training_test_flow}
+	\caption{Un diagramma di flusso che mostra le operazioni di verifica delle prestazioni}
+	\label{fig:trainingtestflow}
+\end{figure}
+
+
+
+
 \subsection{Rumore e sovradattamento}
 Un problema molto comune durante l'addestramento dei classificatori e' il rumore: durante la discriminazione degli esempi, ci ritroviamo ad un punto in cui gli attributi rimanenti sono identici ma con etichetta differente. Una probabile causa potrebbe essere la presenza di errori nei dati mentre una possibile soluzione consisterebbe nel voto di maggioranza.
 Un'altro problema e' il sovradattamento: la costruzione di un classificatore consistente con tutti gli esempi a causa dell'utilizzo di attributi irrilevanti nella classificazione. Supponiamo di voler predire l'esito del lancio di un dado e fra gli attributi di avere ora, giorno, mese ed anno; ecco un esempio lampante di sovradattemento. Nei casi reali tuttavia non sono cosi' evidenti gli attributi insignificanti e, per esempio, una tecnica utilizzata  negli alberi di decisione e' la potatura.
@@ -140,9 +150,11 @@ Un'altro problema e' il sovradattamento: la costruzione di un classificatore con
 	\label{fig:overfitting}
 \end{figure}
 
+\subsection{Insieme di validazione}
+Per poter stimare il miglior valore da assegnare ai iperparametri del nostro modello, e' opportuno creare un altro insieme dal nostro dataset di partenza: l'insieme di validazione. Notiamo che non e' possibile utilizzare l'insieme di test per questo scopo perche' incapperemo in sovradattamento.
 
 \subsection{Cross validation}
-Per migliorare le performance di un classificatore si suddivide l'intero \textit{dataset} in $n$ parti uguali (di solito 10), ognuna delle quali svolgera' per una volta il ruolo di insieme di test mentre il resto sara' l'insieme di addestramento. Questa tecnica risolve vari problemi tra i quali l'\textit{overfitting}.\\
+Un'alternativa all'insieme di validazione, specie se abbiamo un dataset piccolo, potrebbe essere la \textit{cross validation}. Inizialmente si suddivide l'intero dataset in $n$ parti (di solito 10). A turno una singola parte svolgera' il ruolo di insieme di validazione mentre tutto il resto sara' l'insieme di addestramento. Per valutare le prestazioni verra' fatta una media dell'accuratezza nelle predizioni in modo da avere un risultato piu' preciso rispetto al singolo insieme di validazione. Questa tecnica e' anche utile per evitare sovradattamento sui dati.
 
 \begin{figure}[H]
 	\centering
@@ -153,7 +165,7 @@ Per migliorare le performance di un classificatore si suddivide l'intero \textit
 
 
 \section{K Nearest Neightbour}
-Uno degli algoritmi piu' semplici di apprendimento automatico, e' il \textit{k-nearest-neightbours} dove l'input consiste in $k$ elementi presi dal \textit{training set} piu' vicini in base ad un criterio scelto da chi utilizza l'algoritmo (per esempio la distanza euclidea o di Mahalanobis). Il KNN viene definito un algoritmo pigro(\textit{lazy}) perche' non ha bisogno di apprendere dall'insieme di addestramento per poter creare un classificatore ma puo' usare direttamente i dati forniti per classificare i nuovi esempi. L'inconveniente che abbiamo ricade sul costo computazione: esso e' proporziale alla grandezza del dataset.
+Uno degli algoritmi piu' semplici di apprendimento automatico, e' il \textit{k-nearest-neightbours} dove l'input consiste in $k$ elementi presi dal \textit{training set} piu' vicini in base ad un criterio scelto da chi utilizza l'algoritmo (per esempio la distanza euclidea o di Mahalanobis). Il KNN viene definito un algoritmo pigro (\textit{lazy}) perche' non ha bisogno di apprendere dall'insieme di addestramento per poter creare un classificatore ma puo' usare direttamente i dati forniti per classificare i nuovi esempi. Questo vantaggio ha un prezzo da pagare: durante la predizione abbiamo una complessita' di tempo proporzionale alla grandezza del dataset.
 
 
 \begin{figure}[H]
@@ -185,7 +197,7 @@ Una rete bayesiana e' un grafo diretto aciclico i cui nodi sono le variabili cas
 \end{figure}
 \medskip
 \subsection{Naive Bayes}
-Naive bayes e' una rete bayesiana in cui si assume l'indipendenza condizionale fra tutte le variabili casuali del sistema data la classe. Questa forte assunzione non mira a modellare esattamente la realta' ma fornisce delle buone performance sulla predizione di una classe.
+Naive bayes e' una rete bayesiana in cui si assume l'indipendenza condizionale fra tutte le variabili casuali del sistema data la classe. Questa forte assunzione non mira a modellare esattamente la realta' ma nonostante cio' fornisce delle buone performance sulla predizione di una classe.
 
 \begin{figure}[H]
 	\centering
@@ -194,11 +206,9 @@ Naive bayes e' una rete bayesiana in cui si assume l'indipendenza condizionale f
 	\label{fig:naivebayesexample}
 \end{figure}
 
-\subsection{Costruzione di una rete bayesiana ingenua}
-Preso l'insieme di esempi, ricavare la tabella di distribuzione delle probabilita' al variare di tutti i valori che la variabile dipendente puo' assumere. Successivamente costruire un grafo che ha come nodo radice la variabile dipendente e come figli tutte le variabili indipendenti.
 \medskip
 \subsection{Predizione di risultati}
-Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti i valori della variabile dipendente $\textbf{y}=y_1y_2y_3...y_m$ , per classificare l'insieme applicheremo il teorema di bayes con un'approssimazione molto usata nel campo scientifico chiamata MAP (Massima ipotesi a posteriori)
+Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti i valori possibili della variabile dipendente $\textbf{y}=y_1y_2y_3...y_m$ , per classificare l'insieme applicheremo il teorema di bayes con un'approssimazione molto usata nel campo scientifico chiamata MAP (Massima ipotesi a posteriori)
 \begin{align*}
 		etichetta &=y_j \, in \, \max_j\,P(y_j|X_1=x_1, X_2=x_2...X_N=x_n) \\
 		&= \max_j \dfrac{P(X_1=x_1,X_2=x_2...X_N=x_n|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}\\
@@ -208,13 +218,13 @@ Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti 
 i cui valori della precedente equazione si possono ricavare dalla tabella di distribuzione delle probabilita'.
 
 \subsection{Modelli generativi e discriminativi}
-L'espressione $P(y_j|\textbf{x})$ puo' essere calcolata in modi differenti in base al modello trattato: nel caso di modelli discriminativi, l'espressione viene ricavata direttamente dai dati sorgente mentre nei modelli generativi l'obbiettivo e' di costruire una distribuzione congiunta di probabilita' per $P(\textbf{x}, y_j)$ oppure da $P(\textbf{x}| y_j)$ e $P(y_j)$.
+Una distinzione fra classificatori e' possibile farla nel modo in cui viene calcolata l'espressione $P(y_j|\textbf{x})$: nel caso di modelli discriminativi  (ad esempio \textit{knn} e alberi di decisione), l'obbiettivo e' discriminare, cioe' suddividere i dati originale per poter assegnare un'etichetta ai nuovi input mentre nei modelli generativi) l'obbiettivo e' di generare una distribuzione congiunta di probabilita' per $P(\textbf{x}, y_j)$ oppure da $P(\textbf{x}| y_j)$ e $P(y_j)$ per poter trovare l'etichetta piu' probabile. Fra questi ultimi ricade \textit{Naive Bayes}.
 
 \subsection{Calcolo della probabilita' a priori}
-  Per calcolare la probabilita' a priori esistono varie tecniche: l'equiprobabilita' $\left(\dfrac{1}{|\textbf{y}|}\right)$, rapporto fra esempi di classe $j$ e il totale degli esempi dall'insieme di addestramento, le distribuzioni di probabilita' oppure un modello non parametrico dall'insieme di addestramento.
+  Per calcolare la probabilita' a priori esistono varie tecniche: l'equiprobabilita' $\left(\dfrac{1}{|\textbf{y}|}\right)$, rapporto fra esempi di classe $j$ e il totale degli esempi dall'insieme di addestramento, modelli ad eventi oppure un modello non parametrico dall'insieme di addestramento.
   
 \subsection{Modelli ad eventi}  
-   La distribuzione viene anche chiamata modello ad eventi perche' tratta gli attributi come probabilita' di eventi. Ci sono 3 modelli usati con $\textit{Naive Bayes}$ che sono:
+   I modelli ad eventi sono distribuzioni di probabilita' che considerano gli attributi come probabilita' di eventi. Ci sono 3 modelli usati con $\textit{Naive Bayes}$ che sono:
 \begin{itemize}
 	\item Bernoulli: gli attributi sono di tipo \textit{booleano} e l'attributo $x_i \in \textbf{x}=(x_1,x_2,...,x_n)$ vale 1 se l'evento $i$ e' avvenuto, 0 altrimenti. Nel caso bernoulliano possiamo valutare $P(\textbf{x}|y_j)$ come
 	\begin{center}
@@ -259,14 +269,24 @@ Ecco una rappresentazione grafica di \textit{Naive Bayes}:\\\\
 %		child{	  node(3)[draw, circle, right]{Overcast} };
 %	\end{tikzpicture}
 \section{Alberi di decisione}
-Gli alberi di decisione sono un altro tipo di apprendimento supervisionato, quindi dovremmo avere 
-Da un punto di vista strutturale, l'albero di decisione e' un albero (inteso come struttura dati) dove i nodi interni sono gli attributi, i rami tutti i possibili valori assumibili dall'attributo (oppure un range nel caso continuo) e le foglie sono la predizione da scegliere\\D'ora in poi parleremo, per semplicita', solo di classificazione quando non espresso chiaramente.
-
-\subsection{Costruzione di un albero di decisione}
-L'albero di decisione si potrebbe definire prendendo a caso un attributo ed iniziare a dividere gli esempi fino ad ottenere foglie, anche se cosi' otterremo un albero  non molto utile in tutti i casi in cui non abbiamo gli esempi. Quindi quale albero scegliere fra tutti quelli possibili? In questo caso ci aiuta il rasoio di Occam, che ci dice di scegliere quello piu' piccolo fra tutti. Per generare l'albero piu' piccolo dovremmo scegliere gli attributi piu' significativi per generare l'albero. Cosa intendiamo per significativo? Intendiamo l'attributo che genera figli con meno varieta' di classi presenti all'interno di essi.\\ Un esempio: immaginiamo di avere 10 esempi con attributi A e B e come valore associato un booleano. se abbiamo l'attributo A che genera due figli con esempi aventi meta' valore vero e falso mentre se suddividiamo secondo B abbiamo figli con esempi esclusivamente veri oppure falsi. In questo caso indubbiamente l'attributo piu' significativo e' B.
+Da un punto di vista strutturale, l'albero di decisione e' un albero (inteso come struttura dati) dove i nodi interni sono gli attributi, i rami tutti i possibili valori assumibili dall'attributo (oppure un range nel caso continuo) e le foglie sono la predizione da scegliere.
 
 \subsection{Classificazione dei nuovi elementi}
 Quando dovremmo predire l'etichetta di un nuovo insieme di attributi $x$ bastera' semplicemente scorrere l'albero di decisione dalla radice fino ad una foglia, che sara' l'etichetta da assegnare.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/dectree}
+	\caption{Un albero e un albero di decisione a confronto. Nel secondo abbiamo come attributi \textit{Smoker, Age, Diet} e come etichetta \textit{Less Risk, More Risk} riferito alle malattie cardiache. }
+	\label{fig:dectree}
+\end{figure}
+
+
+\subsection{Costruzione di un albero di decisione}
+La costruzione dell'albero e' molto semplice: basta prendere gli attributi ed iniziare a suddividere a caso fino ad ottenere nodi con esempi di un solo tipo di etichetta.
+In questo modo pero' otterremmo un albero  non molto utile in tutti i casi diversi dagli esempi (sovradattamento). Quindi quale albero scegliere fra tutti quelli possibili? In questo caso ci aiuta un principio filosofico, il rasoio di Occam, che ci consiglia di scegliere quello piu' piccolo fra tutti. Per generare l'albero piu' piccolo dovremmo scegliere gli attributi piu' significativi per generare l'albero. Cosa intendiamo per significativo? Intendiamo l'attributo che genera figli con meno varieta' di classi presenti all'interno di essi, cioe' che discrimina meglio degli altri.\\ Un esempio: immaginiamo di avere 10 esempi con attributi A e B e come etichetta ${0,1}$. Ipotizziamo che suddividendo tramite l'attributo A avremmo due figli con esempi aventi meta' valore 0 e meta' 1 mentre se suddividiamo secondo B abbiamo nodi figli con esempi esclusivamente 1 oppure 0. In questo caso indubbiamente l'attributo piu' significativo e' B.
+
+
 
 \subsection{Un esempio di albero di decisione}
 Riprendiamo l'esempio della partita di tennis, questa volta con qualche attributo in piu'. La tabella e' la seguente:

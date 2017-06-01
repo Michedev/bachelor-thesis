@@ -9,23 +9,25 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces Classificazione e regressione a confronto\relax }}{14}{figure.caption.6}
 \contentsline {figure}{\numberline {5}{\ignorespaces Apprendimento supervisiono e non supervisionato a confronto\relax }}{15}{figure.caption.7}
 \contentsline {figure}{\numberline {6}{\ignorespaces L'apprendimento con rinforzo e' molto adatto ai giochi, come per esempio pacman\relax }}{15}{figure.caption.8}
-\contentsline {figure}{\numberline {7}{\ignorespaces Effetti del sovradattamento\relax }}{16}{figure.caption.9}
-\contentsline {figure}{\numberline {8}{\ignorespaces Rappresentazione grafica della Cross Validation\relax }}{17}{figure.caption.10}
-\contentsline {figure}{\numberline {9}{\ignorespaces Esempio grafico dell'algoritmo KNN\relax }}{17}{figure.caption.11}
-\contentsline {figure}{\numberline {10}{\ignorespaces Esempio di rete bayesiana\relax }}{19}{figure.caption.12}
-\contentsline {figure}{\numberline {11}{\ignorespaces Esempio di rete bayesiana ingenua\relax }}{19}{figure.caption.13}
-\contentsline {figure}{\numberline {12}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{22}{figure.caption.14}
-\contentsline {figure}{\numberline {13}{\ignorespaces Rappresentazione grafica di \textit {Naive bayes} nell'esempio del tennis\relax }}{22}{figure.caption.15}
-\contentsline {figure}{\numberline {14}{\ignorespaces Tabella degli attributi meteorologici con valore associato un booleano che stabilisce se la partita e' stata giocata o no\relax }}{24}{figure.caption.16}
-\contentsline {figure}{\numberline {15}{\ignorespaces Albero di decisione ricavato dalla tabella precedente\relax }}{24}{figure.caption.17}
+\contentsline {figure}{\numberline {7}{\ignorespaces Un diagramma di flusso che mostra le operazioni di verifica delle prestazioni\relax }}{16}{figure.caption.9}
+\contentsline {figure}{\numberline {8}{\ignorespaces Effetti del sovradattamento\relax }}{16}{figure.caption.10}
+\contentsline {figure}{\numberline {9}{\ignorespaces Rappresentazione grafica della Cross Validation\relax }}{17}{figure.caption.11}
+\contentsline {figure}{\numberline {10}{\ignorespaces Esempio grafico dell'algoritmo KNN\relax }}{18}{figure.caption.12}
+\contentsline {figure}{\numberline {11}{\ignorespaces Esempio di rete bayesiana\relax }}{19}{figure.caption.13}
+\contentsline {figure}{\numberline {12}{\ignorespaces Esempio di rete bayesiana ingenua\relax }}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {13}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{22}{figure.caption.15}
+\contentsline {figure}{\numberline {14}{\ignorespaces Rappresentazione grafica di \textit {Naive bayes} nell'esempio del tennis\relax }}{23}{figure.caption.16}
+\contentsline {figure}{\numberline {15}{\ignorespaces Un albero e un albero di decisione a confronto. Nel secondo abbiamo come attributi \textit {Smoker, Age, Diet} e come etichetta \textit {Less Risk, More Risk} riferito alle malattie cardiache. \relax }}{23}{figure.caption.17}
+\contentsline {figure}{\numberline {16}{\ignorespaces Tabella degli attributi meteorologici con valore associato un booleano che stabilisce se la partita e' stata giocata o no\relax }}{25}{figure.caption.18}
+\contentsline {figure}{\numberline {17}{\ignorespaces Albero di decisione ricavato dalla tabella precedente\relax }}{25}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {16}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{28}{figure.caption.18}
+\contentsline {figure}{\numberline {18}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{28}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {17}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{31}{figure.caption.19}
-\contentsline {figure}{\numberline {18}{\ignorespaces Grafico in 2 dimensioni della media e varianza di tutte le onde magnetiche. I colori dei punti rappresentano le etichette\relax }}{32}{figure.caption.20}
-\contentsline {figure}{\numberline {19}{\ignorespaces Percentuale d'errore nei test dei classificatori\relax }}{33}{figure.caption.21}
-\contentsline {figure}{\numberline {20}{\ignorespaces Percentuale d'errore nei test dei classificatori con la \textit {cross validation}\relax }}{33}{figure.caption.22}
-\contentsline {figure}{\numberline {21}{\ignorespaces Numero di errori nella predizione per etichetta\relax }}{34}{figure.caption.23}
-\contentsline {figure}{\numberline {22}{\ignorespaces Percentuale di errore nella predizione per etichetta\relax }}{34}{figure.caption.24}
-\contentsline {figure}{\numberline {23}{\ignorespaces Percentuale d'errore al variare della grandezza dell'insieme di addestramento con KNN\relax }}{35}{figure.caption.25}
+\contentsline {figure}{\numberline {19}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{31}{figure.caption.21}
+\contentsline {figure}{\numberline {20}{\ignorespaces Grafico in 2 dimensioni della media e varianza di tutte le onde magnetiche. I colori dei punti rappresentano le etichette\relax }}{32}{figure.caption.22}
+\contentsline {figure}{\numberline {21}{\ignorespaces Percentuale d'errore nei test dei classificatori\relax }}{33}{figure.caption.23}
+\contentsline {figure}{\numberline {22}{\ignorespaces Percentuale d'errore nei test dei classificatori con la \textit {cross validation}\relax }}{33}{figure.caption.24}
+\contentsline {figure}{\numberline {23}{\ignorespaces Numero di errori nella predizione per etichetta\relax }}{34}{figure.caption.25}
+\contentsline {figure}{\numberline {24}{\ignorespaces Percentuale di errore nella predizione per etichetta\relax }}{34}{figure.caption.26}
+\contentsline {figure}{\numberline {25}{\ignorespaces Percentuale d'errore al variare della grandezza dell'insieme di addestramento con KNN\relax }}{35}{figure.caption.27}
 \addvspace {10\p@ }

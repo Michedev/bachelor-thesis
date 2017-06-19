@@ -3,6 +3,14 @@
 \section{Linguaggi e framework}
 L'applicazione ha come \textit{target platform} Android percio' il linguaggio usato principalmente e' stato Java. Da notare che su Android e' presente nella versione 7, percio' non sono disponibili alcune funzionalita' di Java 8 come i metodi di default, \textit{stream}, \textit{lambda expression} ecc. Sono state usate delle librerie esterne fra i quali \textit{Gson} che consente la serializzazione/de-serializzazione dei dati, \textit{lombok} che fornisce delle annotazioni che abbreviano il codice mantenendo una buona espressivita', varie librerie di supporto Android ed una libreria \textit{Apache} che fornisce molte utilita' matematiche. Mosso dalla curiosita', ho provato ed alla fine utilizzato nel progetto \textit{Kotlin}, un linguaggio che compila in \textit{bytecode} per la JVM $100 \%$ interoperabile con \textit{Java} 6 $(e successivi)$ che, fra le varie cose, fornisce le funzionalita' sopracitate mancanti a Java 7.
 
+\section{Applicazione}
+L'applicazione ha lo scopo di catturare le onde magnetiche presenti all'interno di un edificio tramite i sensori presenti sullo smartphone. Per poter ricevere le onde magnetiche dal magnetometro e' necessario dare un'istanza \textit{SensorListener} alla libreria Android. Il codice che implementa l'interfaccia \textit{SensorListener} e' il seguente:
+\lstinputlisting[language=Java]{code/sensorlistener.java}
+
+Sono state omesse alcune parti per non allungare ulteriormente il codice e concentrarci sulla parte essenziale della classe. Il metodo \textit{onSensorChanged} viene chiamato da Android quando rileva un cambiamento nel campo magnetico. La condizione dell'\textit{if} ci permette di registrare le onde magnetiche ad intervalli regolari a patto che \textit{recordingRate} sia diverso da -1 (che rappresenta la  disattivazione della registrazione di onde ad intervalli regolari).
+\\\\
+Adesso vediamo alcune statistiche sul codice Java scritto: il numero di righe scritto e' pari a 1443 linee di codice in 43 file quindi 43 classi od interfacce mentre con kotlin sono state scritte 742 linee di codice in 16 file.
+
 \section{Interfaccia grafica}
 L'interfaccia e' stata realizzata ai fini di test pratici delle funzionalita' finali dell'applicazione quindi non ha una grande cura da un punto di vista estetico come vedremo piu' avanti.
 La parte alta contiene delle label raffiguranti i 3 valori catturati tramite il magnetometro e presi tramite le API di Android. \\
@@ -23,20 +31,24 @@ Nella parte bassa invece c'e' una \textit{textbox} contenente il log che verra' 
 \label{fig:app_screen}
 \end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/app1}
+	\caption{Immagine dell'applicazione durante la raccolta dati}
+	\label{fig:app1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/app2}
+	\caption{Immagine dell'applicazione durante la ricerca della posizione}
+	\label{fig:app2}
+\end{figure}
+
+
 \section{Persistenza dei dati}
 L'applicazione consente anche di serializzare tutti i dati registrati fino a quel momento nel formato standard JSON tramite la libreria \textit{gson} che fornisce delle funzioni  per il linguaggio Java per la serializzazione/de-serializzazione di oggetti. Il file viene salvato nella cartella dati dell'applicazione non visibile all'utente.
 
 \section{Struttura del codice e design pattern}
 Nello sviluppo del software sono stati applicati vari \textit{design pattern} visti durante i vari corsi e principi di programmazione. Fra questi ultimi abbiamo il \textit{dependency inversion principle}, \textit{open closed principle}. Riguardo i \textit{design pattern}, sono stati usati frequentemente l'\textit{observer}, il \textit{template} e \textit{factory}.
 
-\section{Analisi dei dati}
-La predizione dei risultati e' stata implementata sia nel software \textit{Android} sia sul computer. Nel codice mobile e' stato adoperato solamente il KNN per via della facilita' d'implementazione da zero e non e' stato  utilizzato per testare la precisione, ma per verificare il corretto funzionamento dell'applicazione. Invece su computer, presi i dati serializzati dal software mobile, sono stati applicati tutti gli algoritmi di apprendimento elencati precedentemente e gia' tutti implementati da librerie di terze parti per verificare la precisione dei dati. Il linguaggio scelto su computer e' \textit{Python} per via del suo buon supporto all' apprendimento automatico tramite la libreria \textit{sklearn}.
-
-
-\section{Codice usato per l'analisi}
-\lstinputlisting[language=Python, firstline=6]{code/sklearn_classify.py}
-Visto che ogni classificatore condivide i metodi per l'addestramento e la predizione con tutti gli altri, ho creato una funzione generica che  dato in input il dataset, un'instanza del classificatore ed un flag per la \textit{cross validation}, ritorni la percentuale d'errore sull'insieme di test.\\
-Un semplice uso della funzione precedente e':\\
-	\noindent
-	\lstinline[language=Python]|decision_tree, test_error = train_model(dataset, DecisionTreeClassifier())|
-	\lstinline[language=Python]|print("Test error with decision tree = %d" % test_error)|

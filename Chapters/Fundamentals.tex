@@ -1,19 +1,19 @@
 \chapter{Fondamentali}
-L'identificazione della posizione all'interno di un edificio si svolge in 2 fasi:
+L'identificazione della posizione all'interno di un edificio si svolge in 3 fasi:
 \begin{enumerate}
 	\item Scansione dell'ambiente
+	\item Costruzione di un modello
 	\item Ricerca della posizione
 \end{enumerate}
 
-\section{Scansione dell'ambiente}
-La scansione dell'ambiente consiste in un'analisi dell'ambiente per mezzo del magnetometro con lo scopo di registrare tutte le distorsioni del campo magnetico presenti in modo da permettere la ricerca della posizione.
+Nelle successive 3 sezioni discuteremo dei fondamenti teorici dietro ciascuna di queste fasi.
 
 \newpage
-\section{Raccoglimento dei dati}
+\section{Fase 1: Raccoglimento ed elaborazione dei dati}
 Il raccoglimento dei dati avviene tramite il magnetometro del nostro \textit{smartphone} da cui viene catturato diverse volte in un secondo il campo magnetico intorno ad esso.
 Ad ogni onda magnetica viene assegnata una \textit{label}: un numero che identifica univocamente una parte dell'ambiente chiuso il cui uso verra' definito durante la fase di costruzione del modello.
 
-\section{Onde Magnetiche}
+\subsection{Onde Magnetiche}
 Le onde magnetiche sono un vettore di 3 elementi, quindi in $R^3$ che classifica. Il primo valore rappresenta la forza del campo magnetico lungo l'asse X, il secondo lungo Y ed il terzo lungo Z.
 
 
@@ -35,7 +35,6 @@ Le onde magnetiche raccolte sono dati continui sia positivi che negativi. L'inte
 	\label{fig:magneticfieldmap}
 \end{figure}
 
-\section{Elaborazione dei dati}
 \subsection{Estrazione del magnitudo}
 Per estrarre l'intensit\`{a} di ogni onda magnetica eseguiamo semplicemente la norma euclidea di un vettore:\\
 \begin{center}
@@ -64,24 +63,24 @@ Per ogni \textit{fingerprint}, l'estrazione delle \textit{features} consiste nel
 
 
 
-\section{Fase 2: elaborazione dei dati}
+\section{Fase 2: costruzione di un modello}
 
 Dopo aver raccolto ed elaborato le onde magnetiche, un algoritmo creera' un classificatore in grado di assegnare un'etichetta ai nuovi input ricevuti durante l'uso dell'utente finale.
 Sono stati utilizzati vari classificatori per cercare il piu' preciso fra tutti. Qui di seguito introdurremo la teoria dietro ad ogni classificatore utilizzato.
 \newpage
-\section{IA ed Apprendimento}
-La definizione secondo wikipedia\footnote{\url{https://it.wikipedia.org/wiki/Intelligenza_artificiale}} di IA e' la seguente:\\
+\subsection{IA ed Apprendimento}
+La definizione secondo wikipedia \footnote{\url{https://it.wikipedia.org/wiki/Intelligenza_artificiale}} di IA e' la seguente:\\
 
 Definizioni specifiche possono essere date focalizzandosi o sui processi interni di ragionamento o sul comportamento esterno del sistema intelligente ed utilizzando come misura di efficacia o la somiglianza con il comportamento umano o con un comportamento ideale, detto razionale:
 \begin{itemize}
 	\item Agire umanamente: il risultato dell'operazione compiuta dal sistema intelligente non e' distinguibile da quella svolta da un umano.
-	\item Pensare umanamente: il processo che porta il sistema intelligente a risolvere un problema ricalca quello umano. Questo approccio √® associato alle scienze cognitive.
-	\item Pensare razionalmente: il processo che porta il sistema intelligente a risolvere un problema √® un procedimento formale che si rif√† alla logica.
+	\item Pensare umanamente: il processo che porta il sistema intelligente a risolvere un problema ricalca quello umano. Questo approccio Ë associato alle scienze cognitive.
+	\item Pensare razionalmente: il processo che porta il sistema intelligente a risolvere un problema Ë un procedimento formale che si rif‡ alla logica.
 	\item Agire razionalmente: il processo che porta il sistema
 \end{itemize} 
 L'apprendimento automatico e' una branca dell'intelligenza artificiale che permette al computer di apprendere da insiemi di dati per generare conoscenza con lo scopo di effettuare previsioni.
 
-\section{Tipi di apprendimento}
+\subsection{Tipi di apprendimento}
 Esistono 3 tipi di apprendimento:
 \begin{itemize}
 	\item Apprendimento supervisionato: al calcolatore vengono forniti esempi del tipo (\textbf{x}, y) per poter apprendere. L'obbiettivo della predizione per nuovi input sara' quello di calcolare la variabile dipendente. Y puo' essere sia dicreta che continua: nel primo caso si parla di classificazione, nel secondo di regressione.
@@ -125,9 +124,9 @@ Esistono 3 tipi di apprendimento:
 \end{itemize}
 
 
-\section{Alcune nozioni sull'apprendimento automatico}
-\subsection{Verifica delle prestazioni}
-Per verificare la correttezza del classificatore viene diviso in 2 parti il \textit{dataset} a nostra disposizione: il primo si chiama insieme di addestramento mentre il secondo insieme di test. Il nostro classificatore si allenera' sull'insieme di addestramento, cioe' imparera' dagli esempi come classificare i nuovi input ed effetuera' le predizioni sull'insieme di test, su cui verranno misurate le prestazioni in base al rapporto fra predizioni corrette e totali.
+\subsection{Alcune nozioni sull'apprendimento automatico}
+\subsubsection{Verifica delle prestazioni}
+Per verificare la correttezza del classificatore viene diviso in 2 parti il \textit{dataset} a nostra disposizione: il primo si chiama insieme di addestramento mentre il secondo insieme di test. Il nostro classificatore si allenera' sull'insieme di addestramento, cioe' imparera' dagli esempi come classificare i nuovi input e verifichera' l'efficacia dell'apprendimento sugli esempi in base ad una metrica. Ne esistono diverse ma noi useremo l'accuratezza, ovvero il numero di classificazioni corrette diviso il numero di esempi nell'insieme di test
 
 \begin{figure}[H]
 	\centering
@@ -136,12 +135,11 @@ Per verificare la correttezza del classificatore viene diviso in 2 parti il \tex
 	\label{fig:trainingtestflow}
 \end{figure}
 
+\subsubsection{Parametri ed iperparametri}
+Ogni modello e' composto da 2 tipi di valori che ne stabiliscono l'efficacia: i parametri, i quali sono determinati internamente dal modello in base al dataset mentre gli iperparametri sono stabiliti dall'utente prima dell'addestramento del modello e  modificano profondamente l'efficacia di predizione. Un esempio che vedremo e' l'iperparametro $k$ del $knn$.
 
 
 
-\subsection{Rumore e sovradattamento}
-Un problema molto comune durante l'addestramento dei classificatori e' il rumore: durante la discriminazione degli esempi, ci ritroviamo ad un punto in cui gli attributi rimanenti sono identici ma con etichetta differente. Una probabile causa potrebbe essere la presenza di errori nei dati mentre una possibile soluzione consisterebbe nel voto di maggioranza.
-Un'altro problema e' il sovradattamento: la costruzione di un classificatore consistente con tutti gli esempi a causa dell'utilizzo di attributi irrilevanti nella classificazione. Supponiamo di voler predire l'esito del lancio di un dado e fra gli attributi di avere ora, giorno, mese ed anno; ecco un esempio lampante di sovradattemento. Nei casi reali tuttavia non sono cosi' evidenti gli attributi insignificanti e, per esempio, una tecnica utilizzata  negli alberi di decisione e' la potatura.
 
 \begin{figure}[H]
 	\centering
@@ -150,10 +148,10 @@ Un'altro problema e' il sovradattamento: la costruzione di un classificatore con
 	\label{fig:overfitting}
 \end{figure}
 
-\subsection{Insieme di validazione}
+\subsubsection{Insieme di validazione}
 Per poter stimare il miglior valore da assegnare ai iperparametri del nostro modello, e' opportuno creare un altro insieme dal nostro dataset di partenza: l'insieme di validazione. Notiamo che non e' possibile utilizzare l'insieme di test per questo scopo perche' incapperemo in sovradattamento.
 
-\subsection{Cross validation}
+\subsubsection{Cross validation}
 Un'alternativa all'insieme di validazione, specie se abbiamo un dataset piccolo, potrebbe essere la \textit{cross validation}. Inizialmente si suddivide l'intero dataset in $n$ parti (di solito 10). A turno una singola parte svolgera' il ruolo di insieme di validazione mentre tutto il resto sara' l'insieme di addestramento. Per valutare le prestazioni verra' fatta una media dell'accuratezza nelle predizioni in modo da avere un risultato piu' preciso rispetto al singolo insieme di validazione. Questa tecnica e' anche utile per evitare sovradattamento sui dati.
 
 \begin{figure}[H]
@@ -163,8 +161,11 @@ Un'alternativa all'insieme di validazione, specie se abbiamo un dataset piccolo,
 	\label{fig:crossvalidation}
 \end{figure}
 
+\subsubsection{Rumore e sovradattamento}
+Un problema molto comune durante l'addestramento dei classificatori e' il rumore: durante la discriminazione degli esempi, ci potrebbe capitare di avere vari esempi con attributi identici ma con etichetta differente. Una probabile causa potrebbe essere la presenza di errori nei dati mentre una possibile soluzione e' il voto di maggioranza fra gli esempi rimanenti.\\
+Un'altro problema e' il sovradattamento: la costruzione di un classificatore consistente con tutti gli esempi porta ad inaccuratezza nei casi reali d'uso. Una possibile causa e' l'utilizzo di attributi irrilevanti nella classificazione. Supponiamo di voler predire l'esito del lancio di un dado e fra gli attributi di avere ora, giorno, mese ed anno; ecco un esempio lampante di sovradattemento. Nei casi reali tuttavia non sono cosi' evidenti gli attributi insignificanti e, per esempio, una tecnica utilizzata  negli alberi di decisione e' la potatura.
 
-\section{K Nearest Neightbour}
+\subsection{K Nearest Neightbour}
 Uno degli algoritmi piu' semplici di apprendimento automatico, e' il \textit{k-nearest-neightbours} dove l'input consiste in $k$ elementi presi dal \textit{training set} piu' vicini in base ad un criterio scelto da chi utilizza l'algoritmo (per esempio la distanza euclidea o di Mahalanobis). Il KNN viene definito un algoritmo pigro (\textit{lazy}) perche' non ha bisogno di apprendere dall'insieme di addestramento per poter creare un classificatore ma puo' usare direttamente i dati forniti per classificare i nuovi esempi. Questo vantaggio ha un prezzo da pagare: durante la predizione abbiamo una complessita' di tempo proporzionale alla grandezza del dataset.
 
 
@@ -176,17 +177,20 @@ Uno degli algoritmi piu' semplici di apprendimento automatico, e' il \textit{k-n
 \end{figure}
 
 
-\subsection{Scelta del parametro k}
+\subsubsection{Scelta del parametro k}
 La scelta del parametro dipende, ovviamente, dal tipo dei dati che abbiamo e dalla quantita', anche se in generale piu' e' grande $k$ meno rumore viene generato da questo algoritmo. Un buon metodo per trovare il giusto valore e' l'uso di tecniche euristiche, come la \textit{cross validation}. Un altra fonte di rumore di cui bisogna stare attenti e' la presenza di \textit{features} insignificanti nella ricerca del vicino. Per porre rimedio possiamo, ad esempio, usare un algoritmo genetico per selezionare le \textit{features} piu' significative
 
-\section{Naive bayes}
+\subsubsection{\textit{Curse of dimensionality}}
+Un problema di cui soffrono vari modelli fra cui $knn$ e' la maledizione della dimensionalita' ovvero quando abbiamo dataset con elevata dimensionalita' come 50 attributi, modelli come $knn$ diventano molto imprecisi. Nel nostro classificatore la motivazione e' semplice: con tanti attributi la distanza tra punti incorrelati fra loro potrebbe diventare bassa soprattuto se presente del rumore nei dati oppure attributi insignificanti. Nel nostro problema non soffriamo della maledizione della dimensionalita' perche' abbiamo solo 3 attributi.
+
+\subsection{Naive bayes}
 Un altro tipo di apprendimento usato per classificare le \textit{label} e' Naive bayes: un algoritmo di classificazione e regressione basato sulla statistica. Prima di spiegare in cosa consiste occorre spiegare un paio di concetti:
-\subsection{Teorema di bayes}
+\subsubsection{Teorema di bayes}
 Il teorema di bayes ci fornisce una relazione fra probabilita' condizionate molto utile nel calcolo probabilistico ma anche per l'apprendimento automatico. L'equazione e' la seguente:
 \begin{center}
 	$P(B|A) = \dfrac{P(A|B)P(B)}{P(A)}$
 \end{center}
-\subsection{Rete bayesiana}
+\subsubsection{Rete bayesiana}
 Una rete bayesiana e' un grafo diretto aciclico i cui nodi sono le variabili casuali del sistema mentre gli archi rappresentato la condizione di dipendenza fra nodi.
  Ad ogni nodo e' associata una tabella di distribuzione delle probabilita' la cui complessita' e' proporzionale al numero di archi entranti.\\ Per esempio se il nodo con variabile casuale Leggere ha un arco verso Istruito allora possiamo dire che Istruito e' condizionalmente dipendente da Leggere. Qui sotto potete vedere una raffigurazione grafica di una semplice rete bayesiana formata da nodi padre ed un figlio:
 \begin{figure}[H]
@@ -196,7 +200,7 @@ Una rete bayesiana e' un grafo diretto aciclico i cui nodi sono le variabili cas
 	\label{fig:rete-bayesiana-grafo}
 \end{figure}
 \medskip
-\subsection{Naive Bayes}
+\subsubsection{Naive Bayes}
 Naive bayes e' una rete bayesiana in cui si assume l'indipendenza condizionale fra tutte le variabili casuali del sistema data la classe. Questa forte assunzione non mira a modellare esattamente la realta' ma nonostante cio' fornisce delle buone performance sulla predizione di una classe.
 
 \begin{figure}[H]
@@ -207,7 +211,7 @@ Naive bayes e' una rete bayesiana in cui si assume l'indipendenza condizionale f
 \end{figure}
 
 \medskip
-\subsection{Predizione di risultati}
+\subsubsection{Predizione di risultati}
 Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti i valori possibili della variabile dipendente $\textbf{y}=y_1y_2y_3...y_m$ , per classificare l'insieme applicheremo il teorema di bayes con un'approssimazione molto usata nel campo scientifico chiamata MAP (Massima ipotesi a posteriori)
 \begin{align*}
 		etichetta &=y_j \, in \, \max_j\,P(y_j|X_1=x_1, X_2=x_2...X_N=x_n) \\
@@ -217,13 +221,13 @@ Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti 
 
 i cui valori della precedente equazione si possono ricavare dalla tabella di distribuzione delle probabilita'.
 
-\subsection{Modelli generativi e discriminativi}
+\subsubsection{Modelli generativi e discriminativi}
 Una distinzione fra classificatori e' possibile farla nel modo in cui viene calcolata l'espressione $P(y_j|\textbf{x})$: nel caso di modelli discriminativi  (ad esempio \textit{knn} e alberi di decisione), l'obbiettivo e' discriminare, cioe' suddividere i dati originale per poter assegnare un'etichetta ai nuovi input mentre nei modelli generativi) l'obbiettivo e' di generare una distribuzione congiunta di probabilita' per $P(\textbf{x}, y_j)$ oppure da $P(\textbf{x}| y_j)$ e $P(y_j)$ per poter trovare l'etichetta piu' probabile. Fra questi ultimi ricade \textit{Naive Bayes}.
 
-\subsection{Calcolo della probabilita' a priori}
+\subsubsection{Calcolo della probabilita' a priori}
   Per calcolare la probabilita' a priori esistono varie tecniche: l'equiprobabilita' $\left(\dfrac{1}{|\textbf{y}|}\right)$, rapporto fra esempi di classe $j$ e il totale degli esempi dall'insieme di addestramento, modelli ad eventi oppure un modello non parametrico dall'insieme di addestramento.
   
-\subsection{Modelli ad eventi}  
+\subsubsection{Modelli ad eventi}  
    I modelli ad eventi sono distribuzioni di probabilita' che considerano gli attributi come probabilita' di eventi. Ci sono 3 modelli usati con $\textit{Naive Bayes}$ che sono:
 \begin{itemize}
 	\item Bernoulli: gli attributi sono di tipo \textit{booleano} e l'attributo $x_i \in \textbf{x}=(x_1,x_2,...,x_n)$ vale 1 se l'evento $i$ e' avvenuto, 0 altrimenti. Nel caso bernoulliano possiamo valutare $P(\textbf{x}|y_j)$ come
@@ -244,7 +248,7 @@ Una distinzione fra classificatori e' possibile farla nel modo in cui viene calc
 	Un'altra possibile opzione per trattare valori continui e' la discretizzazione da cui possiamo utilizzare Bernoulli/Multinomiale anche se bisogna stare attenti a non perdere informazioni discriminanti.
 \end{itemize}
 
-\subsection{Un piccolo esempio basato su naive bayes}
+\subsubsection{Un piccolo esempio basato su naive bayes}
 Supponiamo di dover usare Naive Bayes per predire se giocare una partita di tennis o no in base alle condizioni meteorologiche. Dati gli esempi qui sotto a sinistra, possiamo ricavare la tabella di distribuzione delle probabilita' generale come qui di seguito:
 \begin{figure}[H]
 	\centering
@@ -268,10 +272,10 @@ Ecco una rappresentazione grafica di \textit{Naive Bayes}:\\\\
 %		child{	 	node(2)[draw, circle]{Rainy}}
 %		child{	  node(3)[draw, circle, right]{Overcast} };
 %	\end{tikzpicture}
-\section{Alberi di decisione}
+\subsection{Alberi di decisione}
 Da un punto di vista strutturale, l'albero di decisione e' un albero (inteso come struttura dati) dove i nodi interni sono gli attributi, i rami tutti i possibili valori assumibili dall'attributo (oppure un range nel caso continuo) e le foglie sono la predizione da scegliere.
 
-\subsection{Classificazione dei nuovi elementi}
+\subsubsection{Classificazione dei nuovi elementi}
 Quando dovremmo predire l'etichetta di un nuovo insieme di attributi $x$ bastera' semplicemente scorrere l'albero di decisione dalla radice fino ad una foglia, che sara' l'etichetta da assegnare.
 
 \begin{figure}[H]
@@ -282,13 +286,16 @@ Quando dovremmo predire l'etichetta di un nuovo insieme di attributi $x$ bastera
 \end{figure}
 
 
-\subsection{Costruzione di un albero di decisione}
+\subsubsection{Costruzione di un albero di decisione}
 La costruzione dell'albero e' molto semplice: basta prendere gli attributi ed iniziare a suddividere a caso fino ad ottenere nodi con esempi di un solo tipo di etichetta.
-In questo modo pero' otterremmo un albero  non molto utile in tutti i casi diversi dagli esempi (sovradattamento). Quindi quale albero scegliere fra tutti quelli possibili? In questo caso ci aiuta un principio filosofico, il rasoio di Occam, che ci consiglia di scegliere quello piu' piccolo fra tutti. Per generare l'albero piu' piccolo dovremmo scegliere gli attributi piu' significativi per generare l'albero. Cosa intendiamo per significativo? Intendiamo l'attributo che genera figli con meno varieta' di classi presenti all'interno di essi, cioe' che discrimina meglio degli altri.\\ Un esempio: immaginiamo di avere 10 esempi con attributi A e B e come etichetta ${0,1}$. Ipotizziamo che suddividendo tramite l'attributo A avremmo due figli con esempi aventi meta' valore 0 e meta' 1 mentre se suddividiamo secondo B abbiamo nodi figli con esempi esclusivamente 1 oppure 0. In questo caso indubbiamente l'attributo piu' significativo e' B.
+In questo modo pero' otterremmo un albero  non molto utile in tutti i casi diversi dagli esempi. Quindi quale albero scegliere fra tutti quelli possibili? In questo caso ci aiuta un principio filosofico, il rasoio di Occam, che ci consiglia di scegliere quello piu' piccolo fra tutti. Per generare l'albero piu' piccolo dovremmo scegliere gli attributi piu' significativi per generare l'albero. Cosa intendiamo per significativo? Intendiamo l'attributo che genera figli con meno varieta' di classi presenti all'interno di essi, cioe' che discrimina meglio degli altri.\\ Un esempio: immaginiamo di avere 10 esempi con attributi A e B e come etichetta ${0,1}$. Ipotizziamo che suddividendo tramite l'attributo A avremmo due figli con esempi aventi meta' valore 0 e meta' 1 mentre se suddividiamo secondo B abbiamo nodi figli con esempi esclusivamente 1 oppure 0. In questo caso indubbiamente l'attributo piu' significativo e' B.\\Esistono vari criteri per misurare l'attributo piu' significato su cui suddividere il nodo che in termini tecnici vengono chiamate misure d'impurita'. Una misura e' l'indice di Gini il quale corrisponde alla seguente formula:
+\begin{center}
+	$\sum_{j} p(j|n)(1-p(j|n))$
+\end{center}
+dove $p(j|n)$ e' la percentuale di esempi con classe $j$ nel nodo $n$
 
 
-
-\subsection{Un esempio di albero di decisione}
+\subsubsection{Un esempio di albero di decisione}
 Riprendiamo l'esempio della partita di tennis, questa volta con qualche attributo in piu'. La tabella e' la seguente:
 \begin{figure}[H]
 	\centering
@@ -304,7 +311,7 @@ da cui possiamo ricavare il seguente albero di decisione:
 	\label{fig:decisiontreetreetennis}
 \end{figure}
 
-\section{Ricerca della posizione}
+\section{Fase 3: Ricerca della posizione}
 Dopo la costruzione del modello esso viene adoperato per predire la posizione corrente dell'utente che esegue l'applicazione. La ricerca consiste nel creare sul momento una \textit{fingerprint} e poi, tramite un algoritmo di classificazione, cercare di inferire la \textit{label}  su cui ci troviamo. Gli algoritmi utilizzati per analizzare il problema sono quelli descritti in precedenza quindi
 \begin{enumerate}
 	\item \textit{K Nearest Neightbour}

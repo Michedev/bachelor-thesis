@@ -1,33 +1,25 @@
-from functools import reduce
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import train_test_split
+#before each hyper param there is 'estimator__' because OneVsRest classifier
+h_params_knn = {'estimator__n_neighbors': range(5,61,2)}
+knn = KNeighborsClassifier()
+#Incapsulation of knn model into OneVsOneClassifier is necessary to multiclass prediction
+multiclass_knn = OneVsOneClassifier(knn)
+grid_src_knn = GridSearchCV(multiclass_knn, h_params_knn, cv=5, scoring='accuracy')
 
+grid_src_knn.fit(X_train, y_train)
 
-def train_model(dataset: list, model, cross_validation=True):
-    """
-    
-    :param dataset: List of tuples (label, features).
-    :param model: a model instance
-    :param cross_validation: flag for cross validation
-    :return: the model and the test error predictions. In case of cross validation the mean of all the errors
-    """
-    y, X = zip(*dataset)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
-    model = model.fit(X_train, y_train)
-    test = list(zip(X_test, y_test))
-    return model, test_model(model, test, cross_validation)
+#Now grid_src_knn.best_params_ contains the n_neightbors to maximize the accuracy
 
+best_params_knn = {k[len('estimator__'):]:v for k,v in grid_src_knn.best_params_.items()}
 
-add = lambda a, b: a + b
+knn_val = KNeighborsClassifier(**best_params_knn)
+knn = KNeighborsClassifier()
+multiclass_knn = OneVsRestClassifier(knn)
+multiclass_knn_val = OneVsRestClassifier(knn_val)
+multiclass_knn.fit(X_train, y_train)
+multiclass_knn_val.fit(X_train, y_train)
 
+predictions_knn = multiclass_knn.predict(X_test)
+predictions_knn_val = multiclass_knn_val.predict(X_test)
 
-def test_model(model: {'predict'}, test: list, cross_validation):
-
-    if cross_validation:
-        X_test, y_test = zip(*test)
-        scores = cross_val_score(model, X_test, y_test, cv=10, scoring='accuracy')
-        return 1 - scores.mean()
-    else:
-        predictions = [(model.predict([X_i])[0], y_i) for X_i, y_i in test]
-        wrong_predictions = reduce(add, [1 for prediction, real_label in predictions if prediction != real_label], 0)
-        return wrong_predictions / float(len(test))
+accuracy_knn = np.sum(predictions_knn == y_test) / len(y_test)
+accuracy_knn_val = np.sum(predictions_knn_val == y_test) / len(y_test)

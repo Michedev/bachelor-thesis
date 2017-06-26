@@ -9,11 +9,27 @@ L'applicazione ha lo scopo di catturare le onde magnetiche presenti all'interno 
 
 Sono state omesse alcune parti per non allungare ulteriormente il codice e concentrarci sulla parte essenziale della classe. Il metodo \textit{onSensorChanged} viene chiamato da Android quando rileva un cambiamento nel campo magnetico. La condizione dell'\textit{if} ci permette di registrare le onde magnetiche ad intervalli regolari a patto che \textit{recordingRate} sia diverso da -1 (che rappresenta la  disattivazione della registrazione di onde ad intervalli regolari).
 \\\\
+Questo codice viene utilizzato sia durante la scansione dell'ambiente, cioe' quando viene costruita per la prima volta la mappa delle distorsioni magnetiche all'interno dell'edificio, sia quando 
+\\\\
 Adesso vediamo alcune statistiche sul codice Java scritto: il numero di righe scritto e' pari a 1443 linee di codice in 43 file quindi 43 classi od interfacce mentre con kotlin sono state scritte 742 linee di codice in 16 file.
+\\\\
+Ad ogni onda magnetica registrata viene assegnata un'etichetta, ovvero un numero intero rappresentante una zona della mappa che stiamo scansionando. Visto che in un secondo vengono raccolte molte onde magnetiche, quando ne abbiamo un numero abbastanza grande si creano delle \textit{fingerprint} che identificano un singolo punto della zona. Di solito un'etichetta identifica un'area (in genere una stanza) rispetto alla \textit{fingerprint} che rappresenta un singolo punto.
+
+
+\section{UML del codice}
+Vediamo adesso un diagramma delle classi del codice \textit{Android} sviluppato. Sono state omesse alcune classi dall'UML perche' futili al fine di comprendere la struttura del programma.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{img/class_diagram}
+	\caption{Diagramma delle classi dell'applicazione}
+	\label{fig:classdiagram}
+\end{figure}
+
 
 \section{Interfaccia grafica}
 L'interfaccia e' stata realizzata ai fini di test pratici delle funzionalita' finali dell'applicazione quindi non ha una grande cura da un punto di vista estetico come vedremo piu' avanti.
-La parte alta contiene delle label raffiguranti i 3 valori catturati tramite il magnetometro e presi tramite le API di Android. \\
+La parte alta contiene delle \textit{label} raffiguranti i 3 valori catturati tramite il magnetometro e presi tramite le API di Android. \\
 Nel mezzo ci sono dei pulsanti per:
 \begin{itemize}
 	\item Iniziare/Terminare la scansione dell'ambiente.
@@ -47,6 +63,7 @@ Nella parte bassa invece c'e' una \textit{textbox} contenente il log che verra' 
 
 
 \section{Persistenza dei dati}
+Innanzitutto spieghiamo che cos'e' la serializzazione: e' una procedura che consente di salvare su supporti di memorizzazione (hard disk, chiavetta usb) dei dati della nostra applicazione mentre la deserializzazione e' il procedimento inverso.
 L'applicazione consente anche di serializzare tutti i dati registrati fino a quel momento nel formato standard JSON tramite la libreria \textit{gson} che fornisce delle funzioni  per il linguaggio Java per la serializzazione/de-serializzazione di oggetti. Il file viene salvato nella cartella dati dell'applicazione non visibile all'utente.
 
 \section{Struttura del codice e design pattern}

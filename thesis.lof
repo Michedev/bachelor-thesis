@@ -4,38 +4,39 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1}{\ignorespaces Assi x, y, z centrati sul cellulare\relax }}{10}{figure.caption.3}
-\contentsline {figure}{\numberline {2}{\ignorespaces Un esempio di mappa del campo magnetico}}{11}{figure.caption.4}
-\contentsline {figure}{\numberline {3}{\ignorespaces Un esempio grafico di insieme d'addestramento ed una sua classificazione\relax }}{14}{figure.caption.5}
+\contentsline {figure}{\numberline {2}{\ignorespaces Un esempio di mappa del campo magnetico}}{10}{figure.caption.4}
+\contentsline {figure}{\numberline {3}{\ignorespaces Un esempio grafico di insieme d'addestramento ed una sua classificazione\relax }}{13}{figure.caption.5}
 \contentsline {figure}{\numberline {4}{\ignorespaces Classificazione e regressione a confronto\relax }}{14}{figure.caption.6}
-\contentsline {figure}{\numberline {5}{\ignorespaces Apprendimento supervisiono e non supervisionato a confronto\relax }}{15}{figure.caption.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Apprendimento supervisiono e non supervisionato a confronto\relax }}{14}{figure.caption.7}
 \contentsline {figure}{\numberline {6}{\ignorespaces L'apprendimento con rinforzo e' molto adatto ai giochi, come per esempio pacman\relax }}{15}{figure.caption.8}
-\contentsline {figure}{\numberline {7}{\ignorespaces Un diagramma di flusso che mostra le operazioni di verifica delle prestazioni\relax }}{16}{figure.caption.9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Un diagramma di flusso che mostra le operazioni di verifica delle prestazioni\relax }}{15}{figure.caption.9}
 \contentsline {figure}{\numberline {8}{\ignorespaces Effetti del sovradattamento\relax }}{16}{figure.caption.10}
-\contentsline {figure}{\numberline {9}{\ignorespaces Rappresentazione grafica della Cross Validation\relax }}{17}{figure.caption.11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Rappresentazione grafica della Cross Validation\relax }}{16}{figure.caption.11}
 \contentsline {figure}{\numberline {10}{\ignorespaces Esempio grafico dell'algoritmo KNN\relax }}{18}{figure.caption.12}
 \contentsline {figure}{\numberline {11}{\ignorespaces Esempio di rete bayesiana\relax }}{20}{figure.caption.13}
 \contentsline {figure}{\numberline {12}{\ignorespaces Esempio di rete bayesiana ingenua\relax }}{20}{figure.caption.14}
-\contentsline {figure}{\numberline {13}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{23}{figure.caption.15}
+\contentsline {figure}{\numberline {13}{\ignorespaces Esempi di partite di tennis giocate in base alle condizioni meteorologiche e tabella di distribuzione delle probabilita'\relax }}{22}{figure.caption.15}
 \contentsline {figure}{\numberline {14}{\ignorespaces Rappresentazione grafica di \textit {Naive bayes} nell'esempio del tennis\relax }}{23}{figure.caption.16}
-\contentsline {figure}{\numberline {15}{\ignorespaces Un albero e un albero di decisione a confronto. Nel secondo abbiamo come attributi \textit {Smoker, Age, Diet} e come etichetta \textit {Less Risk, More Risk} riferito alle malattie cardiache. \relax }}{24}{figure.caption.17}
+\contentsline {figure}{\numberline {15}{\ignorespaces Un albero e un albero di decisione a confronto. Nel secondo abbiamo come attributi \textit {Smoker, Age, Diet} e come etichetta \textit {Less Risk, More Risk} riferito alle malattie cardiache. \relax }}{23}{figure.caption.17}
 \contentsline {figure}{\numberline {16}{\ignorespaces Tabella degli attributi meteorologici con valore associato un booleano che stabilisce se la partita e' stata giocata o no\relax }}{25}{figure.caption.18}
 \contentsline {figure}{\numberline {17}{\ignorespaces Albero di decisione ricavato dalla tabella precedente\relax }}{25}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {18}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{30}{figure.caption.20}
-\contentsline {figure}{\numberline {19}{\ignorespaces Immagine dell'applicazione durante la raccolta dati\relax }}{31}{figure.caption.21}
-\contentsline {figure}{\numberline {20}{\ignorespaces Immagine dell'applicazione durante la ricerca della posizione\relax }}{32}{figure.caption.22}
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagramma delle classi dell'applicazione\relax }}{32}{figure.caption.20}
+\contentsline {figure}{\numberline {19}{\ignorespaces Interfaccia grafica all'avvio dell'applicazione\relax }}{33}{figure.caption.21}
+\contentsline {figure}{\numberline {20}{\ignorespaces Immagine dell'applicazione durante la raccolta dati\relax }}{34}{figure.caption.22}
+\contentsline {figure}{\numberline {21}{\ignorespaces Immagine dell'applicazione durante la ricerca della posizione\relax }}{35}{figure.caption.23}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {21}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{36}{figure.caption.23}
-\contentsline {figure}{\numberline {22}{\ignorespaces Grafico in 2 dimensioni della media e varianza di tutte le onde magnetiche. I colori dei punti rappresentano le etichette\relax }}{37}{figure.caption.24}
-\contentsline {figure}{\numberline {23}{\ignorespaces Percentuale d'errore nei test dei classificatori\relax }}{39}{figure.caption.25}
-\contentsline {figure}{\numberline {24}{\ignorespaces Percentuale d'errore nei test dei classificatori con la \textit {cross validation}\relax }}{39}{figure.caption.26}
-\contentsline {figure}{\numberline {25}{\ignorespaces Numero di errori nella predizione per etichetta\relax }}{40}{figure.caption.27}
-\contentsline {figure}{\numberline {26}{\ignorespaces Percentuale di errore nella predizione per etichetta\relax }}{40}{figure.caption.28}
-\contentsline {figure}{\numberline {27}{\ignorespaces Accuratezza del knn al variare di K\relax }}{41}{figure.caption.29}
-\contentsline {figure}{\numberline {28}{\ignorespaces Classificazione binaria con il 1-nn\relax }}{42}{figure.caption.30}
-\contentsline {figure}{\numberline {29}{\ignorespaces Classificazione binaria con il 20-nn\relax }}{42}{figure.caption.31}
-\contentsline {figure}{\numberline {30}{\ignorespaces \textit {Underfitting} ed \textit {overfitting} nella regressione\relax }}{43}{figure.caption.32}
-\contentsline {figure}{\numberline {31}{\ignorespaces Curve di validazione\relax }}{43}{figure.caption.33}
-\contentsline {figure}{\numberline {32}{\ignorespaces Valori del magnetometro rispetto agli assi x ed y stando fermo\relax }}{44}{figure.caption.34}
-\contentsline {figure}{\numberline {33}{\ignorespaces Percentuale d'errore al variare della grandezza dell'insieme di addestramento con KNN\relax }}{45}{figure.caption.35}
+\contentsline {figure}{\numberline {22}{\ignorespaces Una piccola raffigurazione delle stanze usate per le prove con sopra scritto la \textit {label} assegnata\relax }}{38}{figure.caption.24}
+\contentsline {figure}{\numberline {23}{\ignorespaces Grafico in 2 dimensioni della media e varianza di tutte le onde magnetiche. I colori dei punti rappresentano le etichette\relax }}{39}{figure.caption.25}
+\contentsline {figure}{\numberline {24}{\ignorespaces Percentuale d'errore nei test dei classificatori\relax }}{41}{figure.caption.26}
+\contentsline {figure}{\numberline {25}{\ignorespaces Percentuale d'errore nei test dei classificatori con la \textit {cross validation}\relax }}{41}{figure.caption.27}
+\contentsline {figure}{\numberline {26}{\ignorespaces Numero di errori nella predizione per etichetta\relax }}{42}{figure.caption.28}
+\contentsline {figure}{\numberline {27}{\ignorespaces Percentuale di errore nella predizione per etichetta. Le barre blu rappresentano i risultati dei classificatori \textit {cross-validati} mentre i rossi sono quelli senza.\relax }}{42}{figure.caption.29}
+\contentsline {figure}{\numberline {28}{\ignorespaces Accuratezza del knn al variare di K\relax }}{43}{figure.caption.30}
+\contentsline {figure}{\numberline {29}{\ignorespaces Classificazione binaria con il 1-nn\relax }}{44}{figure.caption.31}
+\contentsline {figure}{\numberline {30}{\ignorespaces Classificazione binaria con il 20-nn\relax }}{44}{figure.caption.32}
+\contentsline {figure}{\numberline {31}{\ignorespaces \textit {Underfitting} ed \textit {overfitting} nella regressione\relax }}{45}{figure.caption.33}
+\contentsline {figure}{\numberline {32}{\ignorespaces Curve di validazione\relax }}{45}{figure.caption.34}
+\contentsline {figure}{\numberline {33}{\ignorespaces Valori del magnetometro rispetto agli assi x ed y stando fermo\relax }}{46}{figure.caption.35}
+\contentsline {figure}{\numberline {34}{\ignorespaces Percentuale d'errore al variare della grandezza dell'insieme di addestramento con KNN\relax }}{47}{figure.caption.36}
 \addvspace {10\p@ }

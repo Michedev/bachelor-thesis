@@ -8,7 +8,6 @@ L'identificazione della posizione all'interno di un edificio si svolge in 3 fasi
 
 Nelle successive 3 sezioni discuteremo dei fondamenti teorici dietro ciascuna di queste fasi.
 
-\newpage
 \section{Fase 1: Raccoglimento ed elaborazione dei dati}
 Il raccoglimento dei dati avviene tramite il magnetometro del nostro \textit{smartphone} da cui viene catturato diverse volte in un secondo il campo magnetico intorno ad esso.
 Ad ogni onda magnetica viene assegnata una \textit{label}: un numero che identifica univocamente una parte dell'ambiente chiuso il cui uso verra' definito durante la fase di costruzione del modello.
@@ -23,8 +22,6 @@ Le onde magnetiche sono un vettore di 3 elementi, quindi in $R^3$ che classifica
 	\caption{Assi x, y, z centrati sul cellulare}
 	\label{fig:axis_magnetic_field}
 \end{figure}
-
-
 I tre valori sono espressi in $ \mu T $ (micro Tesla), unita' di misura della densita' di un flusso magnetico.
 Le onde magnetiche raccolte sono dati continui sia positivi che negativi. L'intensita' dell'onda deriva dalla distorsione del campo magnetico generata dagli oggetti statici intorno al punto e dipende anche dalla velocita' con cui ci muoviamo per cui, per semplicita', assumeremo d'ora in poi una velocita' costante di 3 piedi al secondo.
 
@@ -45,7 +42,7 @@ Per estrarre l'intensit\`{a} di ogni onda magnetica eseguiamo semplicemente la n
 Le onde magnetiche con la stessa \textit{label} vengono raggruppate in \textit{fingerprints}, insiemi di dimensione prefissata. A livello logico, ogni \textit{fingerprint} cerca di identificare univocamente un punto all'interno di una zona, identificata con una \textit{label}. L'insieme di \textit{fingerprints} quindi, cerca di distinguere, tramite le caratteristiche dei campi elettromagnetici di ciascun punto, ogni \textit{label} dall'altra.
 
 \subsection{Estrazione degli attributi}
-Per ogni \textit{fingerprint}, l'estrazione delle \textit{features} consiste nell'estrazione di variabili statistiche. In questo specifico caso sono:
+Per ogni \textit{fingerprint}, l'estrazione degli attributi consiste nel creare nuovi attributi in funzione di quelli gia' esistenti. Una possibile applicazione e' l'estrazione di variabili statistiche dagli attributi gia' presenti come per esempio:
 \begin{itemize}
 	\item Media
 	\item Varianza
@@ -59,18 +56,25 @@ Per ogni \textit{fingerprint}, l'estrazione delle \textit{features} consiste nel
 	\item $ 1^{\circ}, 2^{\circ}, 3^{\circ} $ quartile
 \end{itemize}
 
-
-
-
+\subsection{Normalizzazione e standardizzazione}
+2 tecniche molto usate per poter confrontare i valori dei nostri attributi in una scala comune sono la normalizzazione e la standardizzazione. La prima centra porta la media dei valori di quell'attributo a 0 e la deviazione standard ad 1 mentre la seconda porta tutti i valori in un intervallo $[0 , 1]$\\
+L'equazione della normalizzazione per il j$-$esimo attributo di tipo $x_i$ e' la seguente:
+\begin{center}
+	$x_{ij} = \dfrac{x_{ij} - \mu_i}{\sigma_i}$
+\end{center}
+dove $\mu_i$ e' la media per gli attributi di tipo $i$ e $\sigma_i$ la deviazione standard.
+Adesso vediamo la standardizzazione:
+\begin{center}
+	$x_{ij} = \dfrac{x_{ij} - x_{min}}{x_{max} - x_{min}}$
+\end{center}
 
 \section{Fase 2: costruzione di un modello}
 
 Dopo aver raccolto ed elaborato le onde magnetiche, un algoritmo creera' un classificatore in grado di assegnare un'etichetta ai nuovi input ricevuti durante l'uso dell'utente finale.
 Sono stati utilizzati vari classificatori per cercare il piu' preciso fra tutti. Qui di seguito introdurremo la teoria dietro ad ogni classificatore utilizzato.
-\newpage
+
 \subsection{IA ed Apprendimento}
 La definizione secondo wikipedia \footnote{\url{https://it.wikipedia.org/wiki/Intelligenza_artificiale}} di IA e' la seguente:\\
-
 Definizioni specifiche possono essere date focalizzandosi o sui processi interni di ragionamento o sul comportamento esterno del sistema intelligente ed utilizzando come misura di efficacia o la somiglianza con il comportamento umano o con un comportamento ideale, detto razionale:
 \begin{itemize}
 	\item Agire umanamente: il risultato dell'operazione compiuta dal sistema intelligente non e' distinguibile da quella svolta da un umano.
@@ -166,7 +170,7 @@ Un problema molto comune durante l'addestramento dei classificatori e' il rumore
 Un'altro problema e' il sovradattamento: la costruzione di un classificatore consistente con tutti gli esempi porta ad inaccuratezza nei casi reali d'uso. Una possibile causa e' l'utilizzo di attributi irrilevanti nella classificazione. Supponiamo di voler predire l'esito del lancio di un dado e fra gli attributi di avere ora, giorno, mese ed anno; ecco un esempio lampante di sovradattemento. Nei casi reali tuttavia non sono cosi' evidenti gli attributi insignificanti e, per esempio, una tecnica utilizzata  negli alberi di decisione e' la potatura.
 
 \subsection{K Nearest Neightbour}
-Uno degli algoritmi piu' semplici di apprendimento automatico, e' il \textit{k-nearest-neightbours} dove l'input consiste in $k$ elementi presi dal \textit{training set} piu' vicini in base ad un criterio scelto da chi utilizza l'algoritmo (per esempio la distanza euclidea o di Mahalanobis). Il KNN viene definito un algoritmo pigro (\textit{lazy}) perche' non ha bisogno di apprendere dall'insieme di addestramento per poter creare un classificatore ma puo' usare direttamente i dati forniti per classificare i nuovi esempi. Questo vantaggio ha un prezzo da pagare: durante la predizione abbiamo una complessita' di tempo proporzionale alla grandezza del dataset.
+Uno degli algoritmi piu' semplici di apprendimento automatico, e' il \textit{k-nearest-neightbours} Il KNN viene definito un algoritmo pigro (\textit{lazy}) perche' non ha bisogno di apprendere dall'insieme di addestramento per poter creare un classificatore ma puo' usare direttamente i dati forniti per classificare i nuovi esempi. Questo vantaggio ha un prezzo da pagare: durante la predizione abbiamo una complessita' di tempo proporzionale alla grandezza del dataset.
 
 
 \begin{figure}[H]
@@ -211,15 +215,7 @@ Naive bayes e' una rete bayesiana in cui si assume l'indipendenza condizionale f
 \end{figure}
 
 \medskip
-\subsubsection{Predizione di risultati}
-Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti i valori possibili della variabile dipendente $\textbf{y}=y_1y_2y_3...y_m$ , per classificare l'insieme applicheremo il teorema di bayes con un'approssimazione molto usata nel campo scientifico chiamata MAP (Massima ipotesi a posteriori)
-\begin{align*}
-		etichetta &=y_j \, in \, \max_j\,P(y_j|X_1=x_1, X_2=x_2...X_N=x_n) \\
-		&= \max_j \dfrac{P(X_1=x_1,X_2=x_2...X_N=x_n|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}\\
-		&= \max_j \dfrac{\prod_iP(x_i|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}
-\end{align*}
 
-i cui valori della precedente equazione si possono ricavare dalla tabella di distribuzione delle probabilita'.
 
 \subsubsection{Modelli generativi e discriminativi}
 Una distinzione fra classificatori e' possibile farla nel modo in cui viene calcolata l'espressione $P(y_j|\textbf{x})$: nel caso di modelli discriminativi  (ad esempio \textit{knn} e alberi di decisione), l'obbiettivo e' discriminare, cioe' suddividere i dati originale per poter assegnare un'etichetta ai nuovi input mentre nei modelli generativi) l'obbiettivo e' di generare una distribuzione congiunta di probabilita' per $P(\textbf{x}, y_j)$ oppure da $P(\textbf{x}| y_j)$ e $P(y_j)$ per poter trovare l'etichetta piu' probabile. Fra questi ultimi ricade \textit{Naive Bayes}.
@@ -318,4 +314,26 @@ Dopo la costruzione del modello esso viene adoperato per predire la posizione co
 	\item Bayes ingenuo
 	\item  Alberi di decisione
 \end{enumerate}
-\newpage
+\subsection{Ricerca di nuovi elementi nei classificatori}
+Adesso vedremo come avviene la ricerca della posizione (quindi l'etichetta) nel Knn, naive bayes, alberi di decisione.
+\subsubsection{\textit{K nearest neightbours}}
+Preso un nuovo insieme di attributi $\overline{\textbf{x}}=\overline{x}_1\overline{x}_2\ldots\overline{x}_n$ saranno presi i primi k elementi che minimizzeranno la distanza euclidea tra $\overline{\textbf{x}}$ e tutti gli altri esempi gia' conosciuti precedentemente dal dataset d.
+\begin{center}
+	$\forall x \in d \,\,\,\min_k\,\,\, \sqrt{(\overline{\textbf{x}_1} - x_1)^2 + \ldots (\overline{\textbf{x}_n} - x_n)^2 }$
+\end{center}
+
+Una volta presi questi k elementi verra' trovata l'etichetta piu' frequente tra di essi e questa sara' l'etichetta di $\overline{\textbf{x}}$
+
+\subsubsection{Naive bayes}
+
+Preso un insieme di attributi $\textbf{x}$ con valori $x_1x_2x_3...x_n$ e tutti i valori possibili della variabile dipendente $\textbf{y}=y_1y_2y_3...y_m$ , per classificare l'insieme applicheremo il teorema di bayes con un'approssimazione molto usata nel campo scientifico chiamata MAP (Massima ipotesi a posteriori)
+\begin{align*}
+		etichetta &=y_j \, in \, \max_j\,P(y_j|X_1=x_1, X_2=x_2...X_N=x_n) \\
+		&= \max_j \dfrac{P(X_1=x_1,X_2=x_2...X_N=x_n|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}\\
+		&= \max_j \dfrac{\prod_iP(x_i|y_j)P(y_j)}{P(X_1=x_1, X_2=x_2...X_N=x_n)}
+\end{align*}
+
+i cui valori della precedente equazione si possono ricavare dalla tabella di distribuzione delle probabilita'.
+
+\subsubsection{Alberi di decisione}
+Per ottenere la nuova etichetta di un insieme di attributi $\overline{\textbf{x}}$ e' sufficiente scorrere l'albero dalla radice fino ad uno dei nodi che sara' la nostra etichetta. Per scorrere l'albero e' sufficiente scegliere il ramo giusto in base al valore dell'attributo $\overline{\textbf{x}}$. Per fare un esempio pratico, in un certo nodo interno potremmo andare a sinitra se avessimo il valore di $x_3$ ed altrimenti a destra.

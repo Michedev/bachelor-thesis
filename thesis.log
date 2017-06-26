@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.24)  14 JUN 2017 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.26)  26 JUN 2017 02:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,6 +933,48 @@ File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 \Gin@req@height=\dimen180
 \Gin@req@width=\dimen181
 )
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/02/22 v2.0g Standard LaTeX package
+
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/02/22 v2.0g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
 (/usr/share/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2016/05/21 v1.39 Bibliographical back referencing
 )) (./classicthesis.sty
@@ -1172,33 +1214,33 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (./Chapters/Improvements.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 97.
  (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Try loading font information for T1+pplj on input line 96.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Try loading font information for T1+pplj on input line 97.
 (/usr/share/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 )
-LaTeX Info: Redefining \it@ocap on input line 96.
-LaTeX Info: Redefining \it@ccap on input line 96.
-LaTeX Info: Redefining \dots on input line 96.
+LaTeX Info: Redefining \it@ocap on input line 97.
+LaTeX Info: Redefining \it@ccap on input line 97.
+LaTeX Info: Redefining \dots on input line 97.
 \c@lstlisting=\count275
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -1214,7 +1256,7 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/03/23 v2.7f siunitx: Abbreviated units
 )
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring ON on input line 96.
+Package hyperref Info: Link coloring ON on input line 97.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1224,9 +1266,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count276
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
+LaTeX Info: Redefining \ref on input line 97.
+LaTeX Info: Redefining \pageref on input line 97.
+LaTeX Info: Redefining \nameref on input line 97.
  (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
@@ -1261,8 +1303,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package backref Info: ** backref set up for natbib ** on input line 96.
-LaTeX Info: Redefining \microtypecontext on input line 96.
+Package backref Info: ** backref set up for natbib ** on input line 97.
+LaTeX Info: Redefining \microtypecontext on input line 97.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1312,14 +1354,14 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c__siunitx_mathsf_int=\count283
-LaTeX Font Info:    Try loading font information for U+zeur on input line 96.
+LaTeX Font Info:    Try loading font information for U+zeur on input line 97.
 (/usr/share/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeus on input line 96.
+LaTeX Font Info:    Try loading font information for U+zeus on input line 97.
 
 (/usr/share/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
@@ -1327,12 +1369,12 @@ File: uzeus.fd 2005/01/11 v4.0 (WaS)
 (/usr/share/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeuex on input line 96.
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 97.
 
 (/usr/share/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 96.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 97.
 
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -1342,35 +1384,35 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `zplm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 96.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 97.
 
-(/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+(/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic settings for font family
-(microtype)             `cmss' (encoding: T1).
+(microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 \c__siunitx_mathtt_int=\count284
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 96.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 97.
 
 (/usr/share/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 96.
+(Font)              scaled to size 10.20007pt on input line 97.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.65005pt on input line 96.
+(Font)              scaled to size 7.65005pt on input line 97.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 5.95004pt on input line 96.
+(Font)              scaled to size 5.95004pt on input line 97.
 \openout2 = `titlePage.aux'.
 
  (./titlePage.tex
-<logo/LOGO.pdf, id=132, 996.72375pt x 483.8075pt>
+<logo/LOGO.pdf, id=144, 996.72375pt x 483.8075pt>
 File: logo/LOGO.pdf Graphic file (type pdf)
  <use logo/LOGO.pdf>
 Package pdftex.def Info: logo/LOGO.pdf used on input line 10.
@@ -1397,13 +1439,13 @@ LaTeX Font Info:    Try loading font information for TS1+pplj on input line 44.
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )) [2]
 Package tocbasic Info: character protrusion at toc deactivated on input line 11
-2.
+3.
  (./thesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (4.41846pt too wide) in paragraph at lines 14--14
+Overfull \hbox (4.41846pt too wide) in paragraph at lines 15--15
  [][] [][][]\T1/pplj/m/n/12 (-20) Alcune no-zio-ni sul-l'ap-pren-di-men-to au-t
 o-ma-ti-co[][] []  
  []
@@ -1413,9 +1455,9 @@ o-ma-ti-co[][] []
 \openout5 = `thesis.toc'.
 
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 113.
+(Font)              scaled to size 9.30756pt on input line 114.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 5.10004pt on input line 113.
+(Font)              scaled to size 5.10004pt on input line 114.
  [1
 
 
@@ -1425,7 +1467,7 @@ LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 11
-3.
+4.
  (./thesis.lof
 Overfull \hbox (6.16368pt too wide) in paragraph at lines 14--14
  [][] [][][]\T1/pplj/m/n/12 (-20) Rappresentazione gra-fi-ca del-la Cross Va-li
@@ -1433,7 +1475,7 @@ Overfull \hbox (6.16368pt too wide) in paragraph at lines 14--14
  []
 
 [3]
-Overfull \hbox (0.73901pt too wide) in paragraph at lines 32--32
+Overfull \hbox (0.73901pt too wide) in paragraph at lines 33--33
  [][] [][][]\T1/pplj/m/n/12 (-20) Numero di er-ro-ri nel-la pre-di-zio-ne per e
 ti-chet-ta[][] []  
  []
@@ -1469,22 +1511,27 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              deprecated \float@addtolist interface .
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--122
+Underfull \hbox (badness 10000) in paragraph at lines 2--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--122
+Underfull \hbox (badness 10000) in paragraph at lines 2--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--122
+Underfull \hbox (badness 10000) in paragraph at lines 2--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--122
+Underfull \hbox (badness 10000) in paragraph at lines 2--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--123
 
  []
 
@@ -1493,247 +1540,263 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--122
 
 
 ]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+ [8]
 \openout2 = `Chapters/Fundamentals.aux'.
 
- (./Chapters/Fundamentals.tex [8
+ (./Chapters/Fundamentals.tex
+chapter 2.
+<./img/axis_magnetic_field.png, id=337, 225.84375pt x 270.00874pt>
+File: ./img/axis_magnetic_field.png Graphic file (type png)
+
+<use ./img/axis_magnetic_field.png>
+Package pdftex.def Info: ./img/axis_magnetic_field.png used on input line 21.
+(pdftex.def)             Requested size: 76.82126pt x 91.84294pt.
+ [9
 
 
 
 
 ]
-chapter 2.
-[9] <./img/axis_magnetic_field.png, id=325, 225.84375pt x 270.00874pt>
-File: ./img/axis_magnetic_field.png Graphic file (type png)
-
-<use ./img/axis_magnetic_field.png>
-Package pdftex.def Info: ./img/axis_magnetic_field.png used on input line 22.
-(pdftex.def)             Requested size: 76.82126pt x 91.84294pt.
-
-<img/magnetic_field_map.jpg, id=327, 401.5pt x 321.2pt>
+<img/magnetic_field_map.jpg, id=346, 401.5pt x 321.2pt>
 File: img/magnetic_field_map.jpg Graphic file (type jpg)
 
 <use img/magnetic_field_map.jpg>
-Package pdftex.def Info: img/magnetic_field_map.jpg used on input line 33.
+Package pdftex.def Info: img/magnetic_field_map.jpg used on input line 30.
 (pdftex.def)             Requested size: 268.87737pt x 215.11465pt.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplj/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
- [10 <./img/axis_magnetic_field.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-[11 <./img/magnetic_field_map.jpg>] [12]
+[10 <./img/axis_magnetic_field.png> <./img/magnetic_field_map.jpg>] [11]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.46004pt on input line 72.
+(Font)              scaled to size 6.46004pt on input line 77.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-
- []
-
+[12]
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 86.
-<img/supervised_learning_example.png, id=347, 244.0755pt x 189.873pt>
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 90.
+ <img/supervised_learning_example.png, id=368, 244.0755pt x 189.873pt>
 File: img/supervised_learning_example.png Graphic file (type png)
 
 <use img/supervised_learning_example.png>
 Package pdftex.def Info: img/supervised_learning_example.png used on input line
- 91.
+ 95.
 (pdftex.def)             Requested size: 268.87737pt x 209.17673pt.
 
-Underfull \hbox (badness 1902) in paragraph at lines 92--92
+Underfull \hbox (badness 1902) in paragraph at lines 96--96
 [][]|\T1/pplj/m/n/10.95 (+20) Un esem-pio gra-fi-co di in-sie-me d'ad-de-stra-m
 en-to ed una sua
  []
 
-[13] <img/Classification_Regression.png, id=355, 433.62pt x 216.81pt>
+<img/Classification_Regression.png, id=369, 433.62pt x 216.81pt>
 File: img/Classification_Regression.png Graphic file (type png)
 
 <use img/Classification_Regression.png>
-Package pdftex.def Info: img/Classification_Regression.png used on input line 9
-9.
+Package pdftex.def Info: img/Classification_Regression.png used on input line 1
+03.
 (pdftex.def)             Requested size: 268.87737pt x 134.44395pt.
-
-<img/supervised_and_unsupervised_learning.png, id=356, 915.9018pt x 403.2666pt>
+ [13 <./img/supervised_learning_example.png>]
+<img/supervised_and_unsupervised_learning.png, id=376, 915.9018pt x 403.2666pt>
 File: img/supervised_and_unsupervised_learning.png Graphic file (type png)
 <use img/supervised_and_unsupervised_learning.png>
 Package pdftex.def Info: img/supervised_and_unsupervised_learning.png used on i
-nput line 108.
+nput line 112.
 (pdftex.def)             Requested size: 268.87737pt x 118.3842pt.
- [14 <./img/supervised_learning_example.png> <./img/Classification_Regression.p
-ng>]
-<img/pacman.png, id=363, 569.12625pt x 206.7725pt>
+
+<img/pacman.png, id=377, 569.12625pt x 206.7725pt>
 File: img/pacman.png Graphic file (type png)
  <use img/pacman.png>
-Package pdftex.def Info: img/pacman.png used on input line 118.
+Package pdftex.def Info: img/pacman.png used on input line 122.
 (pdftex.def)             Requested size: 268.87737pt x 97.69106pt.
 
-<img/training_test_flow.png, id=364, 505.89pt x 198.7425pt>
+[14 <./img/Classification_Regression.png> <./img/supervised_and_unsupervised_le
+arning.png>] <img/training_test_flow.png, id=384, 505.89pt x 198.7425pt>
 File: img/training_test_flow.png Graphic file (type png)
 
 <use img/training_test_flow.png>
-Package pdftex.def Info: img/training_test_flow.png used on input line 133.
+Package pdftex.def Info: img/training_test_flow.png used on input line 137.
 (pdftex.def)             Requested size: 268.87737pt x 105.63324pt.
- [15 <./img/supervised_and_unsupervised_learning.png> <./img/pacman.png>]
-<img/overfitting.jpg, id=371, 511.9125pt x 269.005pt>
+
+<img/overfitting.jpg, id=385, 511.9125pt x 269.005pt>
 File: img/overfitting.jpg Graphic file (type jpg)
 
 <use img/overfitting.jpg>
-Package pdftex.def Info: img/overfitting.jpg used on input line 146.
+Package pdftex.def Info: img/overfitting.jpg used on input line 150.
 (pdftex.def)             Requested size: 268.87737pt x 141.2913pt.
- [16 <./img/training_test_flow.png> <./img/overfitting.jpg>] <img/crossvalidati
-on.jpg, id=379, 271.2534pt x 108.405pt>
+ [15 <./img/pacman.png> <./img/training_test_flow.png>] <img/crossvalidation.jp
+g, id=392, 271.2534pt x 108.405pt>
 File: img/crossvalidation.jpg Graphic file (type jpg)
 
 <use img/crossvalidation.jpg>
-Package pdftex.def Info: img/crossvalidation.jpg used on input line 159.
+Package pdftex.def Info: img/crossvalidation.jpg used on input line 163.
 (pdftex.def)             Requested size: 268.87737pt x 107.45525pt.
- [17 <./img/crossvalidation.jpg>]
-<img/knn_example.png, id=386, 356.33125pt x 322.20375pt>
+ [16 <./img/overfitting.jpg> <./img/crossvalidation.jpg>] <img/knn_example.png,
+ id=400, 356.33125pt x 322.20375pt>
 File: img/knn_example.png Graphic file (type png)
 
 <use img/knn_example.png>
-Package pdftex.def Info: img/knn_example.png used on input line 174.
+Package pdftex.def Info: img/knn_example.png used on input line 178.
 (pdftex.def)             Requested size: 268.87737pt x 243.13698pt.
- [18 <./img/knn_example.png>]
-<img/rete-bayesiana-grafo.png, id=394, 338.76563pt x 263.48438pt>
+ [17] [18 <./img/knn_example.png>]
+<img/rete-bayesiana-grafo.png, id=413, 338.76563pt x 263.48438pt>
 File: img/rete-bayesiana-grafo.png Graphic file (type png)
 
 <use img/rete-bayesiana-grafo.png>
-Package pdftex.def Info: img/rete-bayesiana-grafo.png used on input line 198.
+Package pdftex.def Info: img/rete-bayesiana-grafo.png used on input line 202.
 (pdftex.def)             Requested size: 268.87737pt x 209.13538pt.
  [19]
-<img/naive_bayes_example.jpg, id=402, 357.335pt x 200.75pt>
+<img/naive_bayes_example.jpg, id=421, 357.335pt x 200.75pt>
 File: img/naive_bayes_example.jpg Graphic file (type jpg)
 
 <use img/naive_bayes_example.jpg>
-Package pdftex.def Info: img/naive_bayes_example.jpg used on input line 208.
+Package pdftex.def Info: img/naive_bayes_example.jpg used on input line 212.
 (pdftex.def)             Requested size: 153.64253pt x 86.31468pt.
  [20 <./img/rete-bayesiana-grafo.png (PNG copy)> <./img/naive_bayes_example.jpg
 >] [21]
-<img/Bayes_tennis_sample.png, id=418, 864.22874pt x 315.1775pt>
+<img/Bayes_tennis_sample.png, id=436, 864.22874pt x 315.1775pt>
 File: img/Bayes_tennis_sample.png Graphic file (type png)
 
 <use img/Bayes_tennis_sample.png>
-Package pdftex.def Info: img/Bayes_tennis_sample.png used on input line 255.
+Package pdftex.def Info: img/Bayes_tennis_sample.png used on input line 251.
 (pdftex.def)             Requested size: 384.1122pt x 140.08281pt.
 
-Underfull \hbox (badness 2111) in paragraph at lines 256--256
+Underfull \hbox (badness 2111) in paragraph at lines 252--252
 [][]|\T1/pplj/m/n/10.95 (+20) Esem-pi di par-ti-te di ten-nis gio-ca-te in ba-s
 e al-le con-di-zio-ni
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
-<img/graph_naive_bayes.png, id=424, 384.6872pt x 200.24812pt>
+<img/graph_naive_bayes.png, id=437, 384.6872pt x 200.24812pt>
 File: img/graph_naive_bayes.png Graphic file (type png)
 
 <use img/graph_naive_bayes.png>
-Package pdftex.def Info: img/graph_naive_bayes.png used on input line 264.
+Package pdftex.def Info: img/graph_naive_bayes.png used on input line 260.
 (pdftex.def)             Requested size: 268.87737pt x 139.97412pt.
-
-<img/dectree.jpg, id=425, 451.6875pt x 269.50688pt>
+ [22 <./img/Bayes_tennis_sample.png>]
+<img/dectree.jpg, id=444, 451.6875pt x 269.50688pt>
 File: img/dectree.jpg Graphic file (type jpg)
  <use img/dectree.jpg>
-Package pdftex.def Info: img/dectree.jpg used on input line 283.
+Package pdftex.def Info: img/dectree.jpg used on input line 279.
 (pdftex.def)             Requested size: 268.87737pt x 160.43877pt.
 
-[23 <./img/Bayes_tennis_sample.png> <./img/graph_naive_bayes.png (PNG copy)>]
-<img/decision-_tree_table_tennis.png, id=433, 492.33937pt x 383.18156pt>
+[23 <./img/graph_naive_bayes.png (PNG copy)> <./img/dectree.jpg>]
+<img/decision-_tree_table_tennis.png, id=453, 492.33937pt x 383.18156pt>
 File: img/decision-_tree_table_tennis.png Graphic file (type png)
 
 <use img/decision-_tree_table_tennis.png>
 Package pdftex.def Info: img/decision-_tree_table_tennis.png used on input line
- 302.
+ 298.
 (pdftex.def)             Requested size: 268.87737pt x 209.27124pt.
- [24 <./img/dectree.jpg>]
-<img/decision_tree_tree_tennis.png, id=440, 416.30531pt x 280.79906pt>
+ [24]
+<img/decision_tree_tree_tennis.png, id=459, 416.30531pt x 280.79906pt>
 File: img/decision_tree_tree_tennis.png Graphic file (type png)
 
 <use img/decision_tree_tree_tennis.png>
 Package pdftex.def Info: img/decision_tree_tree_tennis.png used on input line 3
-09.
+05.
 (pdftex.def)             Requested size: 268.87737pt x 181.36465pt.
  [25 <./img/decision-_tree_table_tennis.png (PNG copy)> <./img/decision_tree_tr
-ee_tennis.png (PNG copy)>] [26])
+ee_tennis.png (PNG copy)>]) [26]
+[27]
 \openout2 = `Chapters/Software_Structure.aux'.
 
-
-(./Chapters/Software_Structure.tex
-chapter 3.
-(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-(./code/sensorlistener.java [27
-
-
-
-
-])
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
-
- []
-
-[28] <img/app_screen.png, id=501, 722.7pt x 1284.8pt>
-File: img/app_screen.png Graphic file (type png)
- <use img/app_screen.png>
-Package pdftex.def Info: img/app_screen.png used on input line 29.
-(pdftex.def)             Requested size: 115.23482pt x 204.84683pt.
-
-[29] <img/app1.jpg, id=507, 722.7pt x 1284.8pt>
-File: img/app1.jpg Graphic file (type jpg)
- <use img/app1.jpg>
-Package pdftex.def Info: img/app1.jpg used on input line 36.
-(pdftex.def)             Requested size: 268.87737pt x 477.99556pt.
- [30 <./img/app_screen.png>] <img/app2.jpg, id=512, 722.7pt x 1284.8pt>
-File: img/app2.jpg Graphic file (type jpg)
- <use img/app2.jpg>
-Package pdftex.def Info: img/app2.jpg used on input line 43.
-(pdftex.def)             Requested size: 268.87737pt x 477.99556pt.
-
-[31 <./img/app1.jpg>] [32 <./img/app2.jpg>]) [33]
-\openout2 = `Chapters/Test.aux'.
-
- (./Chapters/Test.tex [34
+ (./Chapters/Software_Structure.tex [28
 
 
 
 
 ]
+chapter 3.
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(./code/sensorlistener.java [29])
+Underfull \hbox (badness 10000) in paragraph at lines 10--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--17
+
+ []
+
+[30] <img/class_diagram.png, id=531, 654.94687pt x 456.20438pt>
+File: img/class_diagram.png Graphic file (type png)
+
+<use img/class_diagram.png>
+Package pdftex.def Info: img/class_diagram.png used on input line 24.
+(pdftex.def)             Requested size: 384.1122pt x 267.55022pt.
+ [31]
+<img/app_screen.png, id=536, 722.7pt x 1284.8pt>
+File: img/app_screen.png Graphic file (type png)
+ <use img/app_screen.png>
+Package pdftex.def Info: img/app_screen.png used on input line 45.
+(pdftex.def)             Requested size: 115.23482pt x 204.84683pt.
+
+[32 <./img/class_diagram.png (PNG copy)>]
+<img/app1.jpg, id=541, 722.7pt x 1284.8pt>
+File: img/app1.jpg Graphic file (type jpg)
+ <use img/app1.jpg>
+Package pdftex.def Info: img/app1.jpg used on input line 52.
+(pdftex.def)             Requested size: 268.87737pt x 477.99556pt.
+ [33 <./img/app_screen.png>] <img/app2.jpg, id=546, 722.7pt x 1284.8pt>
+File: img/app2.jpg Graphic file (type jpg)
+ <use img/app2.jpg>
+Package pdftex.def Info: img/app2.jpg used on input line 59.
+(pdftex.def)             Requested size: 268.87737pt x 477.99556pt.
+
+[34 <./img/app1.jpg>] [35 <./img/app2.jpg>]) [36]
+\openout2 = `Chapters/Test.aux'.
+
+ (./Chapters/Test.tex
 chapter 4.
-<img/test_pianta_casa.png, id=529, 606.76688pt x 474.27188pt>
+<img/test_pianta_casa.png, id=561, 606.76688pt x 474.27188pt>
 File: img/test_pianta_casa.png Graphic file (type png)
 
 <use img/test_pianta_casa.png>
 Package pdftex.def Info: img/test_pianta_casa.png used on input line 13.
 (pdftex.def)             Requested size: 268.87737pt x 210.16382pt.
- [35]
-<img/plot_features.png, id=535, 1387.584pt x 706.8006pt>
+ [37
+
+
+
+
+]
+<img/plot_features.png, id=566, 1387.584pt x 706.8006pt>
 File: img/plot_features.png Graphic file (type png)
 
 <use img/plot_features.png>
 Package pdftex.def Info: img/plot_features.png used on input line 24.
 (pdftex.def)             Requested size: 384.1122pt x 195.65955pt.
- [36 <./img/test_pianta_casa.png>]
+ [38 <./img/test_pianta_casa.png>]
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(./code/sklearn_classify.py [37 <./img/plot_features.png>])
-<img/test_errors.png, id=560, 462.528pt x 346.896pt>
+(./code/sklearn_classify.py [39 <./img/plot_features.png>])
+<img/test_errors.png, id=590, 462.528pt x 346.896pt>
 File: img/test_errors.png Graphic file (type png)
  <use img/test_errors.png>
 Package pdftex.def Info: img/test_errors.png used on input line 41.
 (pdftex.def)             Requested size: 268.87737pt x 201.6656pt.
 
-[38] <img/test_errors_cross_validation.png, id=579, 1181.41376pt x 570.13pt>
+[40] <img/test_errors_cross_validation.png, id=609, 1181.41376pt x 570.13pt>
 File: img/test_errors_cross_validation.png Graphic file (type png)
 
 <use img/test_errors_cross_validation.png>
@@ -1741,97 +1804,97 @@ Package pdftex.def Info: img/test_errors_cross_validation.png used on input lin
 e 51.
 (pdftex.def)             Requested size: 384.1122pt x 185.35965pt.
 
-<img/test_error_per_label.png, id=580, 462.528pt x 346.896pt>
+<img/test_error_per_label.png, id=610, 462.528pt x 346.896pt>
 File: img/test_error_per_label.png Graphic file (type png)
 
 <use img/test_error_per_label.png>
 Package pdftex.def Info: img/test_error_per_label.png used on input line 60.
 (pdftex.def)             Requested size: 268.87737pt x 201.6656pt.
 
-<img/percentage_test_errors_per_label.png, id=581, 462.528pt x 346.896pt>
+<img/percentage_test_errors_per_label.png, id=611, 462.528pt x 346.896pt>
 File: img/percentage_test_errors_per_label.png Graphic file (type png)
 
 <use img/percentage_test_errors_per_label.png>
 Package pdftex.def Info: img/percentage_test_errors_per_label.png used on input
  line 67.
 (pdftex.def)             Requested size: 268.87737pt x 201.6656pt.
- [39 <./img/test_errors.png> <./img/test_errors_cross_validation.png>]
-<img/accuracy_knn.png, id=588, 396.48125pt x 266.9975pt>
+ [41 <./img/test_errors.png> <./img/test_errors_cross_validation.png>]
+<img/accuracy_knn.png, id=619, 396.48125pt x 266.9975pt>
 File: img/accuracy_knn.png Graphic file (type png)
 
 <use img/accuracy_knn.png>
 Package pdftex.def Info: img/accuracy_knn.png used on input line 76.
 (pdftex.def)             Requested size: 268.87737pt x 181.07106pt.
- [40 <./img/test_error_per_label.png> <./img/percentage_test_errors_per_label.p
+ [42 <./img/test_error_per_label.png> <./img/percentage_test_errors_per_label.p
 ng>]
-<img/1nearestneigh.png, id=595, 477.785pt x 396.48125pt>
+<img/1nearestneigh.png, id=626, 477.785pt x 396.48125pt>
 File: img/1nearestneigh.png Graphic file (type png)
 
 <use img/1nearestneigh.png>
 Package pdftex.def Info: img/1nearestneigh.png used on input line 84.
 (pdftex.def)             Requested size: 268.87737pt x 223.12299pt.
- [41 <./img/accuracy_knn.png>]
-<img/20nearestneigh.png, id=602, 477.785pt x 396.48125pt>
+ [43 <./img/accuracy_knn.png>]
+<img/20nearestneigh.png, id=632, 477.785pt x 396.48125pt>
 File: img/20nearestneigh.png Graphic file (type png)
 
 <use img/20nearestneigh.png>
 Package pdftex.def Info: img/20nearestneigh.png used on input line 91.
 (pdftex.def)             Requested size: 268.87737pt x 223.12299pt.
- [42 <./img/1nearestneigh.png> <./img/20nearestneigh.png>] <img/underfittingove
-rfitting.png, id=609, 717.68124pt x 216.81pt>
+ [44 <./img/1nearestneigh.png> <./img/20nearestneigh.png>] <img/underfittingove
+rfitting.png, id=639, 717.68124pt x 216.81pt>
 File: img/underfittingoverfitting.png Graphic file (type png)
 
 <use img/underfittingoverfitting.png>
 Package pdftex.def Info: img/underfittingoverfitting.png used on input line 101
 .
-(pdftex.def)             Requested size: 268.87737pt x 81.22745pt.
+(pdftex.def)             Requested size: 384.1122pt x 116.04016pt.
 
-<img/validation_curve.png, id=610, 463.7325pt x 403.5075pt>
+<img/validation_curve.png, id=640, 463.7325pt x 403.5075pt>
 File: img/validation_curve.png Graphic file (type png)
 
 <use img/validation_curve.png>
 Package pdftex.def Info: img/validation_curve.png used on input line 110.
 (pdftex.def)             Requested size: 268.87737pt x 233.96063pt.
- [43 <./img/underfittingoverfitting.png> <./img/validation_curve.png>] <img/xys
-tand.png, id=617, 401.5pt x 266.9975pt>
+ [45 <./img/underfittingoverfitting.png> <./img/validation_curve.png>] <img/xys
+tand.png, id=647, 401.5pt x 266.9975pt>
 File: img/xystand.png Graphic file (type png)
 
 <use img/xystand.png>
 Package pdftex.def Info: img/xystand.png used on input line 121.
 (pdftex.def)             Requested size: 268.87737pt x 178.81404pt.
- <img/rumor_graph_knn.png, id=618, 462.528pt x 346.896pt>
+ <img/rumor_graph_knn.png, id=648, 462.528pt x 346.896pt>
 File: img/rumor_graph_knn.png Graphic file (type png)
 
 <use img/rumor_graph_knn.png>
 Package pdftex.def Info: img/rumor_graph_knn.png used on input line 133.
 (pdftex.def)             Requested size: 268.87737pt x 201.6656pt.
- [44 <./img/xystand.png>]) [45 <./img/rumor_graph_knn.png>]
+ [46 <./img/xystand.png>]) [47 <./img/rumor_graph_knn.png>]
 \openout2 = `Chapters/Improvements.aux'.
 
- (./Chapters/Improvements.tex [46
+ (./Chapters/Improvements.tex [48
 
 
 
 
 ]
 chapter 5.
-) [47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
+) [49]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
  (./thesis.aux (./titlePage.aux) (./Chapters/Intro.aux)
 (./Chapters/Fundamentals.aux) (./Chapters/Software_Structure.aux)
 (./Chapters/Test.aux) (./Chapters/Improvements.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 12CFD57A6784DF9EB0FFDE5DA6FD6BCE;2287.
+(rerunfilecheck)             Checksum: DE5B10DC7507B60A55B6AD901EDC379D;2535.
  ) 
 Here is how much of TeX's memory you used:
- 28612 strings out of 493013
- 507926 string characters out of 6139317
- 741884 words of memory out of 5000000
- 30945 multiletter control sequences out of 15000+600000
- 109149 words of font info for 499 fonts, out of 8000000 for 9000
+ 28685 strings out of 493013
+ 509043 string characters out of 6139317
+ 743053 words of memory out of 5000000
+ 30990 multiletter control sequences out of 15000+600000
+ 129024 words of font info for 512 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,14n,73p,10375b,2463s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
@@ -1846,10 +1909,10 @@ fpl/fplrc8a.pfb></usr/share/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></us
 r/share/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texmf-dist/fo
 nts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palati
 no/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (49 pages, 1945008 bytes).
+Output written on thesis.pdf (51 pages, 1987606 bytes).
 PDF statistics:
- 732 PDF objects out of 1000 (max. 8388607)
- 606 compressed objects within 7 object streams
- 208 named destinations out of 1000 (max. 500000)
- 95147 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 763 PDF objects out of 1000 (max. 8388607)
+ 634 compressed objects within 7 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 95688 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -1,6 +1,6 @@
 \chapter{Struttura del software}
 
-\section{Linguaggi e framework}
+\section{Linguaggi e \textit{framework}}
 L'applicazione ha come \textit{target platform} Android percio' il linguaggio usato principalmente e' stato Java. Da notare che su Android e' presente nella versione 7, percio' non sono disponibili alcune funzionalita' di Java 8 come i metodi di default, \textit{stream}, \textit{lambda expression} ecc. Sono state usate delle librerie esterne fra i quali \textit{Gson} che consente la serializzazione/de-serializzazione dei dati, \textit{lombok} che fornisce delle annotazioni che abbreviano il codice mantenendo una buona espressivita', varie librerie di supporto Android ed una libreria \textit{Apache} che fornisce molte utilita' matematiche. Mosso dalla curiosita', ho provato ed alla fine utilizzato nel progetto \textit{Kotlin}, un linguaggio che compila in \textit{bytecode} per la JVM $100 \%$ interoperabile con \textit{Java} 6 $(e successivi)$ che, fra le varie cose, fornisce le funzionalita' sopracitate mancanti a Java 7.
 
 \section{Applicazione}
@@ -11,9 +11,12 @@ Sono state omesse alcune parti per non allungare ulteriormente il codice e conce
 \\\\
 Questo codice viene utilizzato sia durante la scansione dell'ambiente, cioe' quando viene costruita per la prima volta la mappa delle distorsioni magnetiche all'interno dell'edificio, sia quando 
 \\\\
-Adesso vediamo alcune statistiche sul codice Java scritto: il numero di righe scritto e' pari a 1443 linee di codice in 43 file quindi 43 classi od interfacce mentre con kotlin sono state scritte 742 linee di codice in 16 file.
-\\\\
 Ad ogni onda magnetica registrata viene assegnata un'etichetta, ovvero un numero intero rappresentante una zona della mappa che stiamo scansionando. Visto che in un secondo vengono raccolte molte onde magnetiche, quando ne abbiamo un numero abbastanza grande si creano delle \textit{fingerprint} che identificano un singolo punto della zona. Di solito un'etichetta identifica un'area (in genere una stanza) rispetto alla \textit{fingerprint} che rappresenta un singolo punto.
+\\\\
+Appena i dati sono stati raccolti, inizia la fase di preprocessamento dei dati. In questo caso non e' stata fatta una normalizzazione/standardizzazione dei valori degli attributi perche', tramite test empirici si e' verificato che, portava ad una accuratezza piu' bassa. Da ogni \textit{fingerprint} sono state estratte nuove caratteristiche di natura statistica, tra le quali: Media, Varianza, Deviazione standard, Mediana, Media troncata, Coefficiente di variazione, Massimo, Minimo, $ 1^{\circ}, 5^{\circ}, 95^{\circ}, 99^{\circ} $ percentile, $ 1^{\circ}, 2^{\circ}, 3^{\circ} $ quartile.
+Dopo non abbiamo una fase di addestramento del modello perche' nel codice su dispositivo \text{Android} e' stato usato il \textit{knn} e quindi c'e' direttamente la fase di ricerca della posizione, od in termini piu' tecnici per quanto riguarda l'apprendimento automatico, la predizione dell'etichetta.
+\\\\
+Adesso vediamo alcune statistiche sul codice Java scritto: il numero di righe scritto e' pari a 1443 linee di codice in 43 file quindi 43 classi od interfacce mentre con kotlin sono state scritte 742 linee di codice in 16 file.
 
 
 \section{UML del codice}

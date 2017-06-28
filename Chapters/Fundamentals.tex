@@ -224,7 +224,7 @@ Una distinzione fra classificatori e' possibile farla nel modo in cui viene calc
   Per calcolare la probabilita' a priori esistono varie tecniche: l'equiprobabilita' $\left(\dfrac{1}{|\textbf{y}|}\right)$, rapporto fra esempi di classe $j$ e il totale degli esempi dall'insieme di addestramento, modelli ad eventi oppure un modello non parametrico dall'insieme di addestramento.
   
 \subsubsection{Modelli ad eventi}  
-   I modelli ad eventi sono distribuzioni di probabilita' che considerano gli attributi come probabilita' di eventi. Ci sono 3 modelli usati con $\textit{Naive Bayes}$ che sono:
+   I modelli ad eventi\citet{mccallum1998comparison} sono distribuzioni di probabilita' che considerano gli attributi come probabilita' di eventi. Ci sono 3 modelli usati con $\textit{Naive Bayes}$ che sono:
 \begin{itemize}
 	\item Bernoulli: gli attributi sono di tipo \textit{booleano} e l'attributo $x_i \in \textbf{x}=(x_1,x_2,...,x_n)$ vale 1 se l'evento $i$ e' avvenuto, 0 altrimenti. Nel caso bernoulliano possiamo valutare $P(\textbf{x}|y_j)$ come
 	\begin{center}
@@ -262,12 +262,6 @@ Ecco una rappresentazione grafica di \textit{Naive Bayes}:\\\\
 	\label{fig:graphnaivebayes}
 \end{figure}
 
-%	\begin{tikzpicture} 
-%		\node[draw, circle](0){Play}
-%		child{ node(1)[draw, circle, left]{Sunny}}
-%		child{	 	node(2)[draw, circle]{Rainy}}
-%		child{	  node(3)[draw, circle, right]{Overcast} };
-%	\end{tikzpicture}
 \subsection{Alberi di decisione}
 Da un punto di vista strutturale, l'albero di decisione e' un albero (inteso come struttura dati) dove i nodi interni sono gli attributi, i rami tutti i possibili valori assumibili dall'attributo (oppure un range nel caso continuo) e le foglie sono la predizione da scegliere.
 

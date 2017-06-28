@@ -1,0 +1,18 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[McCallum et~al.(1998)McCallum, Nigam, et~al.]{mccallum1998comparison}
+Andrew McCallum, Kamal Nigam, et~al.
+\newblock A comparison of event models for naive bayes text classification.
+\newblock In \emph{AAAI-98 workshop on learning for text categorization},
+  volume 752, pages 41--48. Madison, WI, 1998.
+
+\bibitem[Shala and Rodriguez(2011)]{shala2011indoor}
+Ubejd Shala and Angel Rodriguez.
+\newblock Indoor positioning using sensor-fusion in android devices, 2011.
+
+\end{thebibliography}

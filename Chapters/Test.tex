@@ -77,7 +77,7 @@ Un grafico interessante da analizzare \`e l'accuratezza del \textit{Knn} al vari
 	\caption{Accuratezza del knn al variare di K}
 	\label{fig:accuracyknn}
 \end{figure}
-In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma sarebbe un grave errore che porterebbe a pessimi risultati nel mondo reale. Come mai? Innanzitutto spieghiamo cio' che succede col 1-nn: per ogni nuovo punto la sua etichetta sara' quella del vicino piu' prossimo. I nostri problemi si possono ricondurre all'\textit{overfitting}, che riassumendo vuol dire che il nostro modello ha imparato troppo bene (a memoria) i nostri dati. Invece se impostiamo un k troppo alto avremo lo stesso risultato l'\textit{underfitting} ma per il motivo contrario, cioe' il nostro modello ha imparato troppo poco dai dati. Per notare veramente gli effetti dell'\textit{overfitting}, adesso vedremo su un piano cartesiano le sue conseguenze prendendo come esempio una classificazione binaria su due attributi dove ogni punto sara' colorato di blu e rosso in base alla sua etichetta. Nel grafico \`e stata tracciata una linea nera di separazione fra le due aree rosse e blu per indicare che i punti i quali andranno nell'area rossa saranno classificati come rossi dal knn e viceversa per i blu.
+In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma sarebbe un grave errore che porterebbe a pessimi risultati nel mondo reale. Come mai? Innanzitutto spieghiamo cio' che succede col 1-nn: per ogni nuovo punto la sua etichetta sara' quella del vicino piu' prossimo. I pessimi risultati nel mondo reale sono causati dall'\textit{overfitting}, cioe' che il nostro modello ha imparato troppo bene (a memoria) i nostri dati oppure, detta in termini statistici, vuol dire che il modello si e' adattato troppo al campione ed ha perso la "generalita'" necessaria per effettuare predizioni corrette sulla popolazione. Invece se impostiamo un k troppo alto avremo lo stesso risultato l'\textit{underfitting} ma per il motivo contrario, cioe' il nostro modello ha imparato troppo poco dai dati. Per notare veramente gli effetti dell'\textit{overfitting}, adesso vedremo su un piano cartesiano le sue conseguenze prendendo come esempio una classificazione binaria su due attributi dove ogni punto sara' colorato di blu e rosso in base alla sua etichetta. Nel grafico \`e stata tracciata una linea nera di separazione fra le due aree rosse e blu per indicare che i punti i quali andranno nell'area rossa saranno classificati come rossi dal knn e viceversa per i blu. 
 
 \begin{figure}[H]
 	\centering
@@ -92,9 +92,9 @@ In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma
 	\caption{Classificazione binaria con il 20-nn}
 	\label{fig:20nearestneigh}
 \end{figure}
+Come vediamo dal grafico, l'\textit{overfitting} (k=1) porta a linee di separazione tra rossi e blu molto piu' frastagliate mentre un normale adattamento (k=20) porta a una linea piu' smussata e ci possiamo immaginare che l'\textit{underfitting} porti ad una linea troppo smussata, che nel grafico precedente potrebbe essere una semplice bisettrice.
 
-Si puo' notare bene che con k=1 abbiamo sicuramente meno errori di classificazione nel nostro dataset, ma stiamo comunque ignorando il fatto che alcuni punti rossi fra i blu possono essere frutto di errore umano, sensori o di una qualsiasi fonte di dati e che quindi andrebbero ignorati. Questo risultato si ottiene andando a controllare l'etichetta di molti piu' vicini ed \`e cio' che avviene con k = 20.
-Per evitare problemi di \textit{overfitting} ed \textit{underfitting} \`e necessario usare altre metriche per valutare l'efficacia del nostro modello.
+Per evitare problemi di \textit{overfitting} ed \textit{underfitting} ci sono alcuni strumenti per capirlo anche se, il miglior strumento e' l'esperienza sul campo con il modello utilizzato la quale ti fa capire in anticipo se stai sbagliando o no perche' una delle cause principali sono gli iperparametri impostati male.
 
 \begin{figure}[H]
 	\centering
@@ -103,7 +103,7 @@ Per evitare problemi di \textit{overfitting} ed \textit{underfitting} \`e necess
 	\label{fig:underfittingoverfitting}
 \end{figure}
 
-Una soluzione a questo problema \`e possibile ottenerla dalle curve di validazione che mostrano a grafico la complessita' del modello sull'asse x, quindi per esempio al variare di uno o piu' iperparamentri mentre sull'asse y l'errore sia sull'insieme di validazione che sull'insieme di addestramento.
+Uno strumento per capire se  c'\`e \textit{overfitting/underfitting} sono le curve di validazione. Esse mostrano al variare della complessita' del modello l'errore sia sull'insieme di validazione che sull'insieme di addestramento.
 
 \begin{figure}[H]
 	\centering
@@ -112,7 +112,7 @@ Una soluzione a questo problema \`e possibile ottenerla dalle curve di validazio
 	\label{fig:validationcurve}
 \end{figure}
 
-Come si vede dal grafico, si dice che quando c'e' \textit{overfitting} si ha un altra varianza? Cosa vuol dire? Che stiamo modellando anche il rumore generato dai dati e cio' porta a cattive prestazioni quando ci arrivano nuove etichette da predire. Per \textit{High bias} si intente semplicemente un alto errore sulle predizioni delle etichette.
+Come si vede dal grafico dove c'e' \textit{overfitting} si ha un alta varianza. Cosa vuol dire? Che stiamo modellando anche il rumore generato dai dati e cio' porta a cattive prestazioni quando avremo nuove etichette da predire. Quindi si verifica \textit{overfitting} quando c'e' un alto errore di predizione sull'insieme di test e basso nell'insieme di addestramento. Si ha \textit{underfitting} quando c'e' \textit{High bias}, cioe' quando si ha un alto errore sulle predizioni delle etichette sia sull'insieme di test che di addestramento. Il punto ideale dove ci dovremo posizionare noi e' nel mezzo dove l'errore sull'insieme di test e di addestramento sono entrambi bassi.
 \section{Analisi del rumore durante la cattura dei dati}
 Per analizzare la correttezza dei nostri dati l'approccio usato \`e stato quello di posizionarsi fermo in un punto e verificare tramite grafico che tutti i punti catturati dal magnetometro fossero concentrati in una piccola area del grafico. Purtroppo non \`e stato cosi' e ce lo dimostrano i grafici dove \`e stato messo nell'asse X il valore X catturato e sull'asse Y il valore Y.
 

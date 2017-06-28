@@ -29,7 +29,7 @@
 \newcommand{\myUni}{\protect{
 	Universit\`a degli Studi di Firenze}\xspace}
 \newcommand{\myLocation}{Firenze\xspace}
-\newcommand{\myTime}{Anno Accademico 2014-2015\xspace}
+\newcommand{\myTime}{Anno Accademico 2016-2017\xspace}
 \newcommand{\myVersion}{Version 0.1\xspace}
 
 
@@ -48,6 +48,7 @@
 \usepackage{siunitx} 
 \usepackage{float}   
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
+
 
 
 %--------------------------------------------------------------
@@ -93,6 +94,8 @@ parts]{classicthesis}
   	breakatwhitespace=true,
   	tabsize=3
 }
+
+
 %--------------------------------------------------------------
 \begin{document}
 \frenchspacing
@@ -112,11 +115,12 @@ parts]{classicthesis}
 %\include{intro} % use \myChapter command instead of \chapter
 \tableofcontents
 \listoffigures
+
 \cleardoublepage
 \thispagestyle{empty}
 \begin{flushright}
 \null\vspace{\stretch {1}}
-\emph{"Inserire citazione" \break --- Inserire autore citazione} \vspace{\stretch{2}}\null
+\emph{"Puttana la madonna" \break --- Inserire autore citazione} \vspace{\stretch{2}}\null
 \end{flushright}
 \cleardoublepage
 
@@ -125,7 +129,11 @@ parts]{classicthesis}
 \include{Chapters/Software_Structure}
 \include{Chapters/Test}
 \include{Chapters/Improvements}
+
+\bibliographystyle{unsrtnat}
+\bibliography{cit}
 %--------------------------------------------------------------
+
 \end{document}
 %--------------------------------------------------------------
 \grid

@@ -1,6 +1,6 @@
 \chapter{Test}
 
-\section{Analisi dei dati}
+\section{Linguaggi e librerie utilizzate per i test}
 La predizione dei risultati \`e stata implementata sia nel software \textit{Android} sia sul computer. Nel codice eseguito su dispositivo mobile \`e stato adoperato solamente il KNN per via della facilita' d'implementazione e non \`e stato  utilizzato per testare la precisione, ma per verificare il corretto funzionamento dell'applicazione. Invece su computer, presi i dati serializzati dal software mobile, sono stati applicati tutti gli algoritmi di apprendimento elencati precedentemente e gia' tutti implementati da librerie di terze parti per verificare la precisione dei dati. Il linguaggio scelto su computer \`e \textit{Python} per via del suo buon supporto all' apprendimento automatico tramite la libreria \textit{sklearn}.
 
 
@@ -17,8 +17,8 @@ Per testare l'effettivo funzionamento dell'applicazione ho usato alcune stanze d
 
 Sono stati raccolti circa 18000 campioni di onde magnetiche. La suddivisione fra addestramento e test \`e 70/30. La misura delle performance \`e l'errore sui test quindi  $1 - \dfrac{\# predizioni\, azzecate}{\# predizioni\,totali}$
 
-\section{Caratteristiche dei dati}
-Dai grafici qui di seguito possiamo notare che c'e' sovrapposizione fra i dati, quindi \`e presente del rumore nei dati.
+\section{Analisi del rumore durante la cattura dei dati}
+Dal grafico qui di seguito possiamo notare che c'\'e sovrapposizione fra i dati, quindi ci\`o ci suggerisce che \`e presente del rumore nei dati.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{img/plot_features}
@@ -26,11 +26,36 @@ Dai grafici qui di seguito possiamo notare che c'e' sovrapposizione fra i dati, 
 	\label{fig:plotfeatures}
 \end{figure}
 
-La causa del rumore sono i sensori che offrono una misurazione non precisa. Per risolvere, almeno in parte questo problema, \`e stato usato il \textit{filtro di Kalman} durante il preprocessamento dei dati per pulire il rumore sui dati.
+
+
+Per essere certi che ci sia del rumore nei dati di partenza \`e stata avviata la cattura di onde magnetiche stando fermo per 30 secondi per poi verificare tramite grafico la dispersione dei punti rispetto al centro. L'immagine che vedremo di seguito ci conferma i nostri dubbi:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/xystand}
+	\caption{Valori del magnetometro rispetto agli assi x ed y stando fermo}
+	\label{fig:xystand}
+\end{figure}
+
+La causa del rumore molto probabilmente \`e il magnetometro dello  \textit{smartphone} che offre una misurazione non precisa perch\'e si tratta di un modello economico. Per averne la certezza bisognerebbe fare un confrontro con un modello professionale. Per risolvere, almeno in parte questo problema, prima dei test \`e stato usato il \textit{filtro di Kalman} durante il preprocessamento dei dati per pulire il rumore sui dati.
+
+
+\section{Un rimedio ingenuo al rumore}
+Un approccio ingenuo per risolvere il problema al rumore potrebbe essere quello di prendere meno dati per etichetta. Il seguente grafico pero' ci mostra che ci\`o non \`e vero
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/rumor_graph_knn}
+	\caption{Percentuale d'errore al variare della grandezza dell'insieme di addestramento con KNN}
+	\label{fig:rumorgraphknn}
+\end{figure}
+
+Notiamo che questo grafico dimostra che all'aumentare del dataset otteniamo risultati pi\`u  accurati poich\`e ci stiamo avvicinando alla media e varianza della popolazione.
+
 
 \section{Codice per l'analisi dati col \textit{knn}}
 \lstinputlisting[language=Python]{code/sklearn_classify.py}
-Nel codice \`e stato preso come esempio il \textit{knn}, ma si puo' fare la stessa cosa con tutti gli altri classificatori. E' stata saltata la fase di pre-elaborazione dei dati perche' poco importante nel nostro caso studio mentre ci concentriamo di piu' sulla validazione degli iperparametri e la predizione di risultati per poi terminare con il calcolo dell'accuratezza. Da notare che la validazione \`e stata fatta tramite \textit{cross validation} tramite la tecnica della \textit{grid search}, che consiste semplicemente nel provare tutti i valori all'interno di \textit{$h\_params\_knn$} e selezionare quello con l'accuratezza migliore. Il paraemtro \textit{cv=5} significa che il dataset d'addestrameto \`e stato suddiviso in 5 parti. Dopo la validazione \`e stato preso il k migliore e sono stati confrontati i risultati fra un \textit{knn} con i migliori iperparametri e quelli di \textit{default}. I risultati di tale prova sono piu' avanti.
+Nel codice \`e stato preso come esempio il \textit{knn}, ma si pu\`o fare la stessa cosa con tutti gli altri classificatori. E' stata saltata la fase di pre-elaborazione dei dati perch\'e poco importante nel nostro caso studio mentre ci concentriamo di pi\`u  sulla validazione degli iperparametri e la predizione di risultati per poi terminare con il calcolo dell'accuratezza. Da notare che la validazione \`e stata fatta tramite \textit{cross validation} tramite la tecnica della \textit{grid search}, che consiste semplicemente nel provare tutti i valori all'interno di \textit{$h\_params\_knn$} e selezionare quello con l'accuratezza migliore. Il paraemtro \textit{cv=5} significa che il dataset d'addestrameto \`e stato suddiviso in 5 parti. Dopo la validazione \`e stato preso il k migliore e sono stati confrontati i risultati fra un \textit{knn} con i migliori iperparametri e quelli di \textit{default}. I risultati di tale prova sono pi\`u  avanti.
 
 
 \section{Classificatori a confronto}
@@ -44,7 +69,7 @@ Qui di seguito vediamo i risultati ottenuti da ciascun classificatore con un ist
 \end{figure}
 
 come possiamo notare \textit{Gaussian Naive Bayes} \`e totalmente inadatto alla classificazione di onde magnetiche mentre gli alberi di decisione e \textit{K Nearest Neightbours} si comportano molto bene, con risultati leggermente migliori in quest'ultimo.
-A questo punto qualcuno potrebbe pero' pensare che gli ultimi 2 modelli si sono sovradattati agli esempi (\textit{overfitting}) ed avrebbe ragione, perche' applicando la \textit{cross validation} abbiamo risultati diversi da quelli precedenti.
+A questo punto qualcuno potrebbe pero' pensare che gli ultimi 2 modelli si sono sovradattati agli esempi (\textit{overfitting}) ed avrebbe ragione, perch\'e applicando la \textit{cross validation} abbiamo risultati diversi da quelli precedenti.
 
 \begin{figure}[H]
 	\centering
@@ -61,6 +86,8 @@ Adesso visualizziamo gli errori per etichetta:
 	\caption{Numero di errori nella predizione per etichetta}
 	\label{fig:testerrorperlabel}
 \end{figure}
+Come possiamo vedere, l'errore per etichetta riprende in qualche modo ci\`o che abbiamo visto nel grafico precedente anche se possiamo notare che l'etichetta 1 abbassa notevolmente l'errore medio per \textit{naive bayes} mentre per gli altri 2 classificatori non soffriamo di valori estremi.
+Per avere una visione ancora pi\`u chiara, mostriamo l'errore in percentuale, ovvero il rapporto per ogni etichetta fra il numero di errori ed il totale di esempi a disposizione 
 \medskip
 \begin{figure}[H]
 	\centering
@@ -69,7 +96,9 @@ Adesso visualizziamo gli errori per etichetta:
 	\label{fig:percentagetesterrorsperlabel}
 \end{figure}
 
-\section{Analisi del Knn al variare dell'iper parametro k}
+In percentuale, l'errore di \textit{naive bayes} \`e pi\`u basso per le etichette 2 e 3 sintomo del fatto che ci sono molti pi\`u esempi a disposizione anche se il numero di errori \`e lo stesso dell'etichetta 0.
+
+\section{Analisi approfondita del Knn al variare dell'iper parametro k}
 Un grafico interessante da analizzare \`e l'accuratezza del \textit{Knn} al variare di K. L'accuratezza \`e intesa come la percentuale di predizioni azzeccate sull'insieme di test, inoltre i risultati sono stati \textit{cross validati}.
 \begin{figure}[H]
 	\centering
@@ -77,7 +106,7 @@ Un grafico interessante da analizzare \`e l'accuratezza del \textit{Knn} al vari
 	\caption{Accuratezza del knn al variare di K}
 	\label{fig:accuracyknn}
 \end{figure}
-In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma sarebbe un grave errore che porterebbe a pessimi risultati nel mondo reale. Come mai? Innanzitutto spieghiamo cio' che succede col 1-nn: per ogni nuovo punto la sua etichetta sara' quella del vicino piu' prossimo. I pessimi risultati nel mondo reale sono causati dall'\textit{overfitting}, cioe' che il nostro modello ha imparato troppo bene (a memoria) i nostri dati oppure, detta in termini statistici, vuol dire che il modello si e' adattato troppo al campione ed ha perso la "generalita'" necessaria per effettuare predizioni corrette sulla popolazione. Invece se impostiamo un k troppo alto avremo lo stesso risultato l'\textit{underfitting} ma per il motivo contrario, cioe' il nostro modello ha imparato troppo poco dai dati. Per notare veramente gli effetti dell'\textit{overfitting}, adesso vedremo su un piano cartesiano le sue conseguenze prendendo come esempio una classificazione binaria su due attributi dove ogni punto sara' colorato di blu e rosso in base alla sua etichetta. Nel grafico \`e stata tracciata una linea nera di separazione fra le due aree rosse e blu per indicare che i punti i quali andranno nell'area rossa saranno classificati come rossi dal knn e viceversa per i blu. 
+In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma sarebbe un grave errore che porterebbe a pessimi risultati nel mondo reale. Come mai? Innanzitutto spieghiamo ci\`o che succede col 1-nn: per ogni nuovo punto la sua etichetta sar\`a quella del vicino pi\`u  prossimo. I pessimi risultati nel mondo reale sono causati dall'\textit{overfitting}, cio\`e che il nostro modello ha imparato troppo bene (a memoria) i nostri dati oppure, detta in termini statistici, vuol dire che il modello si \`e adattato troppo al campione ed ha perso la "generalit\`a" necessaria per effettuare predizioni corrette sulla popolazione. Invece se impostiamo un k troppo alto avremo lo stesso risultato l'\textit{underfitting} ma per il motivo contrario, cio\`e il nostro modello ha imparato troppo poco dai dati. Per notare veramente gli effetti dell'\textit{overfitting}, adesso vedremo su un piano cartesiano le sue conseguenze prendendo come esempio una classificazione binaria su due attributi dove ogni punto sar\`a colorato di blu e rosso in base alla sua etichetta. Nel grafico \`e stata tracciata una linea nera di separazione fra le due aree rosse e blu per indicare che i punti i quali andranno nell'area rossa saranno classificati come rossi dal knn e viceversa per i blu. 
 
 \begin{figure}[H]
 	\centering
@@ -92,9 +121,9 @@ In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma
 	\caption{Classificazione binaria con il 20-nn}
 	\label{fig:20nearestneigh}
 \end{figure}
-Come vediamo dal grafico, l'\textit{overfitting} (k=1) porta a linee di separazione tra rossi e blu molto piu' frastagliate mentre un normale adattamento (k=20) porta a una linea piu' smussata e ci possiamo immaginare che l'\textit{underfitting} porti ad una linea troppo smussata, che nel grafico precedente potrebbe essere una semplice bisettrice.
+Come vediamo dal grafico, l'\textit{overfitting} (k=1) porta a linee di separazione tra rossi e blu molto pi\`u  frastagliate mentre un normale adattamento (k=20) porta a una linea pi\`u  smussata e ci possiamo immaginare che l'\textit{underfitting} porti ad una linea troppo smussata, che nel grafico precedente potrebbe essere una semplice bisettrice.
 
-Per evitare problemi di \textit{overfitting} ed \textit{underfitting} ci sono alcuni strumenti per capirlo anche se, il miglior strumento e' l'esperienza sul campo con il modello utilizzato la quale ti fa capire in anticipo se stai sbagliando o no perche' una delle cause principali sono gli iperparametri impostati male.
+Per evitare problemi di \textit{overfitting} ed \textit{underfitting} ci sono alcuni strumenti per capirlo anche se, il miglior strumento \`e l'esperienza sul campo con il modello utilizzato la quale ti fa capire in anticipo se stai sbagliando o no perch\'e una delle cause principali sono gli iperparametri impostati male.
 
 \begin{figure}[H]
 	\centering
@@ -112,29 +141,6 @@ Uno strumento per capire se  c'\`e \textit{overfitting/underfitting} sono le cur
 	\label{fig:validationcurve}
 \end{figure}
 
-Come si vede dal grafico dove c'e' \textit{overfitting} si ha un alta varianza. Cosa vuol dire? Che stiamo modellando anche il rumore generato dai dati e cio' porta a cattive prestazioni quando avremo nuove etichette da predire. Quindi si verifica \textit{overfitting} quando c'e' un alto errore di predizione sull'insieme di test e basso nell'insieme di addestramento. Si ha \textit{underfitting} quando c'e' \textit{High bias}, cioe' quando si ha un alto errore sulle predizioni delle etichette sia sull'insieme di test che di addestramento. Il punto ideale dove ci dovremo posizionare noi e' nel mezzo dove l'errore sull'insieme di test e di addestramento sono entrambi bassi.
-\section{Analisi del rumore durante la cattura dei dati}
-Per analizzare la correttezza dei nostri dati l'approccio usato \`e stato quello di posizionarsi fermo in un punto e verificare tramite grafico che tutti i punti catturati dal magnetometro fossero concentrati in una piccola area del grafico. Purtroppo non \`e stato cosi' e ce lo dimostrano i grafici dove \`e stato messo nell'asse X il valore X catturato e sull'asse Y il valore Y.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{img/xystand}
-	\caption{Valori del magnetometro rispetto agli assi x ed y stando fermo}
-	\label{fig:xystand}
-\end{figure}
-
-
-
-\section{Un rimedio ingenuo al rumore}
-Un approccio ingenuo per risolvere il problema al rumore potrebbe essere quello di prendere meno dati per etichetta. Il seguente grafico pero' ci mostra che cio' non \`e vero
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{img/rumor_graph_knn}
-	\caption{Percentuale d'errore al variare della grandezza dell'insieme di addestramento con KNN}
-	\label{fig:rumorgraphknn}
-\end{figure}
-
-Notiamo che questo grafico dimostra che all'aumentare del dataset otteniamo risultati piu' accurati poiche' ci stiamo avvicinando alla media e varianza della popolazione.
+Come si vede dal grafico dove c'\`e \textit{overfitting} si ha un alta varianza. Cosa vuol dire? Che stiamo modellando anche il rumore generato dai dati e ci\`o porta a cattive prestazioni quando avremo nuove etichette da predire. Quindi si verifica \textit{overfitting} quando c'\`e un alto errore di predizione sull'insieme di test e basso nell'insieme di addestramento. Si ha \textit{underfitting} quando c'\`e \textit{High bias}, cio\`e quando si ha un alto errore sulle predizioni delle etichette sia sull'insieme di test che di addestramento. Il punto ideale dove ci dovremo posizionare noi \`e nel mezzo dove l'errore sull'insieme di test e di addestramento sono entrambi bassi.
 
 %Ricorda di far vedere falsi positivi e veri negativi nei test

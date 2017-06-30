@@ -23,14 +23,16 @@
 \BOOKMARK [1][-]{section.3.5}{Persistenza dei dati}{chapter.3}% 23
 \BOOKMARK [1][-]{section.3.6}{Struttura del codice e design pattern}{chapter.3}% 24
 \BOOKMARK [0][-]{chapter.4}{Test}{}% 25
-\BOOKMARK [1][-]{section.4.1}{Analisi dei dati}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.1}{Linguaggi e librerie utilizzate per i test}{chapter.4}% 26
 \BOOKMARK [1][-]{section.4.2}{Piano dei test}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.3}{Caratteristiche dei dati}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.4}{Codice per l'analisi dati col knn}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.5}{Classificatori a confronto}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.6}{Analisi del Knn al variare dell'iper parametro k}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.7}{Analisi del rumore durante la cattura dei dati}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.8}{Un rimedio ingenuo al rumore}{chapter.4}% 33
-\BOOKMARK [0][-]{chapter.5}{Miglioramenti e conclusioni}{}% 34
-\BOOKMARK [1][-]{section.5.1}{Possibili miglioramenti per la raccolta di dati}{chapter.5}% 35
-\BOOKMARK [1][-]{section.5.2}{Conclusioni}{chapter.5}% 36
+\BOOKMARK [1][-]{section.4.3}{Analisi del rumore durante la cattura dei dati}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.4}{Un rimedio ingenuo al rumore}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.5}{Codice per l'analisi dati col knn}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.6}{Classificatori a confronto}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.7}{Analisi approfondita del Knn al variare dell'iper parametro k}{chapter.4}% 32
+\BOOKMARK [0][-]{chapter.5}{Miglioramenti e conclusioni}{}% 33
+\BOOKMARK [1][-]{section.5.1}{Miglioramenti}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.5.1.1}{Miglioramenti durante la raccolta dati}{section.5.1}% 35
+\BOOKMARK [2][-]{subsection.5.1.2}{Miglioramenti per aumentare l'accuratezza durante la ricerca della posizione}{section.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.1.3}{Miglioramenti dell'applicazione}{section.5.1}% 37
+\BOOKMARK [1][-]{section.5.2}{Conclusioni}{chapter.5}% 38

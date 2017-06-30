@@ -1,9 +1,31 @@
 \chapter{Miglioramenti e conclusioni}
-\section{Possibili miglioramenti per la raccolta di dati}
+\section{Miglioramenti}
+Adesso vediamo i possibili miglioramenti da attuare in tutti i vari aspetti trattati fin'ora, dalla raccolta dati all'accuratezza delle predizioni fino all'applicativo \textit{Android}
+\subsection{Miglioramenti durante la raccolta dati}
 \begin{itemize}
-	\item L'architettura \textit{client-server} e' necessaria per avere un'applicazione che riesca a gestire con fluidita' la ricerca all'interno di grandi edifici. In rifermento alla memoria del telefono poiche' nella maggior parte dei casi possiede un quantitativo di \textit{RAM} e memoria permanente molto limitati, ma anche rispetto al processore perche' la ricerca della posizione, assumendo di usare il \textit{KNN}, ha bisogno di confrontare gli attributi delle nuove onde magnetiche con tutti gli altri e va da se che piu' e' grande il dataset, piu' potenza di calcolo ci vorra' per ottenere una risposta in tempi umani.
-	\item Durante la raccolta sarebbe opportuno applicare il \textit{filtro di Kalman} per ridurre il rumore causato dall'imprecisione dei sensori. E' stata usata in fase di test ma non nel codice che gira su dispositivi \textit{mobile}
-	\item Per migliorare la precisione sarebbe opportuno appoggiarsi anche ad altri sensori presenti sullo \textit{smartphone}. Prendiamo come esempio il Wi-Fi, se il dispositivo e' connesso alla rete dell'edificio potrebbe sfruttare la potenza di segnale per avere una precisione maggiore; sfruttare l'accelerometro per stimare la velocita' del telefono e quindi standardizzare tutte le rilevazioni effettuate col magnetometro. Questa tecnica viene chiamata \textit{sensor fusion}\cite{shala2011indoor}
+	\item L'architettura \textit{client-server} \`e necessaria per avere un'applicazione che riesca a gestire con fluidit\`a la ricerca all'interno di grandi edifici. In rifermento alla memoria del telefono poich\`e nella maggior parte dei casi possiede un quantitativo di \textit{RAM} e memoria permanente molto limitati, ma anche rispetto al processore perch\'e la ricerca della posizione, assumendo di usare il \textit{KNN}, ha bisogno di confrontare gli attributi delle nuove onde magnetiche con tutti gli altri e va da se che pi\`u  \`e grande il \textit{dataset}, pi\`u  potenza di calcolo ci vorra' per ottenere una risposta in tempi umani.
+	\item Durante la raccolta sarebbe opportuno applicare il \textit{filtro di Kalman} per ridurre il rumore causato dall'imprecisione dei sensori. \`E stata usata in fase di test ma non nel codice che gira su dispositivi \textit{mobile}
+	\item Per migliorare la precisione sarebbe opportuno appoggiarsi anche ad altri sensori presenti sullo \textit{smartphone}. Prendiamo come esempio il Wi-Fi, se il dispositivo \`e connesso alla rete dell'edificio potrebbe sfruttare la potenza di segnale per avere una precisione maggiore; sfruttare l'accelerometro per stimare la velocit\`a del telefono e quindi standardizzare tutte le rilevazioni effettuate col magnetometro. Questa tecnica viene chiamata \textit{sensor fusion}\cite{shala2011indoor}
+\end{itemize}
+\subsection{Miglioramenti per aumentare l'accuratezza durante la ricerca della posizione}
+\begin{itemize}
+	\item Valutare anche le prestazioni di altri classificatori pi\`u avanzati come \textit{SVM}, reti neurali multistrato 
+	\item Invece di valutare solamente la predizione di un singolo classificatore, usarne pi\`u di uno e prendere come etichetta la scelta popolare. Questa tecnica viene chiamata \textit{ensemble learning} di cui un famoso modello \`e la \textit{random forest}
+\end{itemize}
+\subsection{Miglioramenti dell'applicazione}
+\begin{itemize}
+	\item Realizzare un'interfaccia grafica \textit{user friendly}
+	\item In particolare, nell'interfaccia mostrare una mappa $2D$ dell'edificio visitato. Ci\`o si ricollega ad uno dei miglioramenti durante la raccolta dati, perch\`e per mostrare la posizione sono necessari altri sensori.
+	\item Trovare i migliori parametri riguardanti la grandezza della \textit{fingerprint} intesa come numero di onde magnetiche di cui \`e composta, quante onde magnetiche raccogliere ogni secondo
 \end{itemize}
 \section{Conclusioni}
-In conclusione abbiamo una base di applicazione Android che, tramite l'uso di tecniche di \textit{machine learning} abbastanza semplici nella loro complessita' rispetto ad altre, ma che offrono comunque un buon grado di accuratezza anche se bisogna stare attenti a non cadere nella trappola dell'\textit{overfitting}. C'e' ancora da migliorare, come abbiamo visto nella sezione precedente, in tutti gli altri campi dell'applicazione, dall'interfaccia grafica alle risorse dedicate all'applicazione fino alle tecniche di raccolta dati.
+In conclusione abbiamo una base di applicazione \textit{Android} che, tramite l'uso del \textit{machine learning}, una branca dell'IA, riesce ad azzeccare con un certo grado di accuratezza la posizione dell'utente all'interno dell'edificio tramite la distorsione del campo magnetico terrestre causata dagli oggetti presenti all'interno dell'edificio. Il \textit{machine learning} \`e solo una parte di tutto il lavoro svolto, che possiamo riassumere con la seguente scaletta:
+\begin{enumerate}
+	\item Raccolta dell'intensit\`a delle onde magnetiche lungo gli assi tramite il magnetometro presente sullo \textit{smartphone}
+	\item Raggruppamento in \textit{fingerprint} di dimensione prefissata
+	\item Serializzazione dei dati per analisi su computer con architettura del processore $X86\_64$
+	\item \textit{Preprocessing} dei dati, cio\`e  estrazione di caratteristiche di natura statistica. \`E stata evitata la normalizzazione perch\'e \`e stato empiricamente verificato che abbassa l'accuratezza del 20\% circa.
+	\item Addestramento del modello, che saltiamo trattandosi del \textit{knn}
+	\item Ricerca della posizione, la quale si traduce nel \textit{machine learning} in classificazione, quindi la predizione di un'etichetta. Nel caso del \textit{knn} si effettua prendendo i primi k elementi che minimizzano la distanza euclidea dagli attributi non ancora classificati, e fra questi l'etichetta quella pi\`u frequente viene assegnata all'istanza non classificata 
+\end{enumerate}
+Su computer sono stati effettuati test riguardanti il dato che abbiamo trattato, le onde magnetiche tramite l'esposizione di grafici. Abbiamo dimostrato che nei dati \`e presente abbastanza rumore, per poi passare ad un confronto di accuratezza fra i classificatori presenti in cui ha ottenuto un minore erroe sull'insieme di test il \textit{knn}. Ma \`e oro tutto ci\`o che luccica? Nella sezione successiva abbiamo visto che l'accuratezza non ci dice tutto, perch\'e il pericolo dell'\textit{overfitting} \`e dietro l'angolo! Abbiamo fatto un esempio col \textit{knn}, in cui abbiamo fatto vedere che con k = 1 abbiamo la massima accuratezza anche se sicuramente si tratta di \textit{overfitting}. Uno dei migliori strumenti per evitare di incapparci \`e l'esperienza sul campo, oppure se non la abbiamo possiamo disegnare a grafico le curve di validazione per cercare i migliori iper-parametri da usare.

@@ -42,8 +42,8 @@
 \contentsline {section}{\numberline {3.2}Applicazione}{27}{section.3.2}
 \contentsline {section}{\numberline {3.3}UML del codice}{30}{section.3.3}
 \contentsline {section}{\numberline {3.4}Interfaccia grafica}{31}{section.3.4}
-\contentsline {section}{\numberline {3.5}Persistenza dei dati}{32}{section.3.5}
-\contentsline {section}{\numberline {3.6}Struttura del codice e design pattern}{32}{section.3.6}
+\contentsline {section}{\numberline {3.5}Persistenza dei dati}{33}{section.3.5}
+\contentsline {section}{\numberline {3.6}Struttura del codice e design pattern}{33}{section.3.6}
 \contentsline {chapter}{\numberline {4}Test}{35}{chapter.4}
 \contentsline {section}{\numberline {4.1}Linguaggi e librerie utilizzate per i test}{35}{section.4.1}
 \contentsline {section}{\numberline {4.2}Piano dei test}{35}{section.4.2}

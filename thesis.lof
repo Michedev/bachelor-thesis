@@ -3,7 +3,7 @@
 \deactivateaddvspace 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Assi x, y, z centrati sul cellulare\relax }}{10}{figure.caption.3}
+\contentsline {figure}{\numberline {1}{\ignorespaces Assi x, y, z centrati sul cellulare su cui vengono catturate le onde magnetiche\relax }}{10}{figure.caption.3}
 \contentsline {figure}{\numberline {2}{\ignorespaces Un esempio di mappa del campo magnetico}}{10}{figure.caption.4}
 \contentsline {figure}{\numberline {3}{\ignorespaces Un esempio grafico di insieme d'addestramento ed una sua classificazione\relax }}{13}{figure.caption.5}
 \contentsline {figure}{\numberline {4}{\ignorespaces Classificazione e regressione a confronto\relax }}{13}{figure.caption.6}
@@ -39,4 +39,6 @@
 \contentsline {figure}{\numberline {32}{\ignorespaces Classificazione binaria con il 20-nn\relax }}{45}{figure.caption.34}
 \contentsline {figure}{\numberline {33}{\ignorespaces \textit {Underfitting} ed \textit {overfitting} nella regressione\relax }}{46}{figure.caption.35}
 \contentsline {figure}{\numberline {34}{\ignorespaces Curve di validazione\relax }}{46}{figure.caption.36}
+\contentsline {figure}{\numberline {35}{\ignorespaces Raffigurazione alternativa delle curve di validazione\relax }}{47}{figure.caption.37}
+\contentsline {figure}{\numberline {36}{\ignorespaces Errore sull'insieme di test ed addestramento al variare di k\relax }}{47}{figure.caption.38}
 \addvspace {10\p@ }

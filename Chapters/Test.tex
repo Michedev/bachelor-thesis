@@ -1,7 +1,7 @@
 \chapter{Test}
 
 \section{Linguaggi e librerie utilizzate per i test}
-La predizione dei risultati \`e stata implementata sia nel software \textit{Android} sia sul computer. Nel codice eseguito su dispositivo mobile \`e stato adoperato solamente il KNN per via della facilita' d'implementazione e non \`e stato  utilizzato per testare la precisione, ma per verificare il corretto funzionamento dell'applicazione. Invece su computer, presi i dati serializzati dal software mobile, sono stati applicati tutti gli algoritmi di apprendimento elencati precedentemente e gia' tutti implementati da librerie di terze parti per verificare la precisione dei dati. Il linguaggio scelto su computer \`e \textit{Python} per via del suo buon supporto all' apprendimento automatico tramite la libreria \textit{sklearn}.
+La predizione dei risultati \`e stata implementata sia su piattaforma \textit{Android} che su computer. Nel codice eseguito su dispositivo \textit{mobile} \`e stato adoperato solamente il \textit{Knn} per via della facilit\`a d'implementazione e non \`e stato  utilizzato per testare la precisione, ma per verificare il corretto funzionamento dell'applicazione. Invece su computer, presi i dati serializzati dal software mobile, sono stati applicati tutti gli algoritmi di apprendimento elencati precedentemente e gi\`a tutti implementati da librerie di terze parti per verificare la precisione dei dati. Il linguaggio scelto su computer \`e \textit{Python} per via del suo buon supporto all' apprendimento automatico tramite la libreria \textit{sklearn}.
 
 
 
@@ -69,7 +69,7 @@ Qui di seguito vediamo i risultati ottenuti da ciascun classificatore con un ist
 \end{figure}
 
 come possiamo notare \textit{Gaussian Naive Bayes} \`e totalmente inadatto alla classificazione di onde magnetiche mentre gli alberi di decisione e \textit{K Nearest Neightbours} si comportano molto bene, con risultati leggermente migliori in quest'ultimo.
-A questo punto qualcuno potrebbe pero' pensare che gli ultimi 2 modelli si sono sovradattati agli esempi (\textit{overfitting}) ed avrebbe ragione, perch\'e applicando la \textit{cross validation} abbiamo risultati diversi da quelli precedenti.
+In questo caso sono stati lasciati i parametri di default impostati dalla libreria \textit{scikit-learn} mentre nel grafico successivo mostriamo in aggiunta i risultati ottenuti con la \textit{cross validation}.
 
 \begin{figure}[H]
 	\centering
@@ -78,7 +78,9 @@ A questo punto qualcuno potrebbe pero' pensare che gli ultimi 2 modelli si sono 
 	\label{fig:testerrorscrossvalidation}
 \end{figure}
 
-Adesso visualizziamo gli errori per etichetta:
+Possiamo notare bene che la ricerca degli iper-parametri migliori porta ad una diminuzione piccola ma presente dell'errore sull'insieme di test rispetto ai parametri di default. C'\`e comunque un lato oscuro in tutto ci\`o che analizzeremo nella sezione successiva.\\
+
+Adesso visualizziamo l'errore del classificatore sull'insieme di test in maniera differente, per etichetta:
 
 \begin{figure}[H]
 	\centering
@@ -87,7 +89,7 @@ Adesso visualizziamo gli errori per etichetta:
 	\label{fig:testerrorperlabel}
 \end{figure}
 Come possiamo vedere, l'errore per etichetta riprende in qualche modo ci\`o che abbiamo visto nel grafico precedente anche se possiamo notare che l'etichetta 1 abbassa notevolmente l'errore medio per \textit{naive bayes} mentre per gli altri 2 classificatori non soffriamo di valori estremi.
-Per avere una visione ancora pi\`u chiara, mostriamo l'errore in percentuale, ovvero il rapporto per ogni etichetta fra il numero di errori ed il totale di esempi a disposizione 
+Per avere una visione ancora pi\`u chiara, mostriamo l'errore in percentuale, ovvero il rapporto per ogni etichetta fra il numero di errori ed il totale di esempi a disposizione.
 \medskip
 \begin{figure}[H]
 	\centering
@@ -99,14 +101,14 @@ Per avere una visione ancora pi\`u chiara, mostriamo l'errore in percentuale, ov
 In percentuale, l'errore di \textit{naive bayes} \`e pi\`u basso per le etichette 2 e 3 sintomo del fatto che ci sono molti pi\`u esempi a disposizione anche se il numero di errori \`e lo stesso dell'etichetta 0.
 
 \section{Analisi approfondita del Knn al variare dell'iper parametro k}
-Un grafico interessante da analizzare \`e l'accuratezza del \textit{Knn} al variare di K. L'accuratezza \`e intesa come la percentuale di predizioni azzeccate sull'insieme di test, inoltre i risultati sono stati \textit{cross validati}.
+Un grafico interessante da analizzare \`e l'accuratezza del \textit{Knn} al variare di K ottenuta tramite la tecnica della \textit{cross validation}. L'accuratezza \`e definita come la percentuale di predizioni azzeccate sull'insieme di test.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/accuracy_knn}
 	\caption{Accuratezza del knn al variare di K}
 	\label{fig:accuracyknn}
 \end{figure}
-In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma sarebbe un grave errore che porterebbe a pessimi risultati nel mondo reale. Come mai? Innanzitutto spieghiamo ci\`o che succede col 1-nn: per ogni nuovo punto la sua etichetta sar\`a quella del vicino pi\`u  prossimo. I pessimi risultati nel mondo reale sono causati dall'\textit{overfitting}, cio\`e che il nostro modello ha imparato troppo bene (a memoria) i nostri dati oppure, detta in termini statistici, vuol dire che il modello si \`e adattato troppo al campione ed ha perso la "generalit\`a" necessaria per effettuare predizioni corrette sulla popolazione. Invece se impostiamo un k troppo alto avremo lo stesso risultato l'\textit{underfitting} ma per il motivo contrario, cio\`e il nostro modello ha imparato troppo poco dai dati. Per notare veramente gli effetti dell'\textit{overfitting}, adesso vedremo su un piano cartesiano le sue conseguenze prendendo come esempio una classificazione binaria su due attributi dove ogni punto sar\`a colorato di blu e rosso in base alla sua etichetta. Nel grafico \`e stata tracciata una linea nera di separazione fra le due aree rosse e blu per indicare che i punti i quali andranno nell'area rossa saranno classificati come rossi dal knn e viceversa per i blu. 
+In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma sarebbe un grave errore che porterebbe a pessimi risultati nel mondo reale. Come mai? Innanzitutto spieghiamo ci\`o che succede col 1-nn: per ogni nuovo punto la sua etichetta diventa quella del vicino pi\`u  prossimo. I pessimi risultati nel mondo reale sono causati dall'\textit{overfitting}, cio\`e che il nostro modello ha imparato troppo bene (a memoria) i nostri dati oppure, detta in termini statistici, vuol dire che il modello si \`e adattato troppo al campione ed ha perso la "generalit\`a" necessaria per effettuare predizioni corrette sulla popolazione. Invece se impostiamo un k troppo alto avremo lo stesso risultato l'\textit{underfitting} ma per il motivo contrario, cio\`e il nostro modello ha imparato troppo poco dai dati. Per notare veramente gli effetti dell'\textit{overfitting}, adesso vediamo su un piano cartesiano le sue conseguenze prendendo come esempio una classificazione binaria su due attributi dove ogni punto \`e colorato di blu e rosso in base alla sua etichetta. Le aree colorate ci indicano che le nuove istanze vengono classificate col colore presente in quel punto.
 
 \begin{figure}[H]
 	\centering
@@ -121,9 +123,9 @@ In base a questo grafico potremmo supporre di prendere \textit{Knn} con k = 1 ma
 	\caption{Classificazione binaria con il 20-nn}
 	\label{fig:20nearestneigh}
 \end{figure}
-Come vediamo dal grafico, l'\textit{overfitting} (k=1) porta a linee di separazione tra rossi e blu molto pi\`u  frastagliate mentre un normale adattamento (k=20) porta a una linea pi\`u  smussata e ci possiamo immaginare che l'\textit{underfitting} porti ad una linea troppo smussata, che nel grafico precedente potrebbe essere una semplice bisettrice.
+Come vediamo dal grafico, l'\textit{overfitting} (k=1) porta a linee di separazione tra rossi e blu molto pi\`u  frastagliate mentre un normale adattamento (k=20) porta a una linea pi\`u  smussata e ci possiamo immaginare che l'\textit{underfitting} porti ad una linea troppo smussata, che potrebbe essere una semplice bisettrice.
 
-Per evitare problemi di \textit{overfitting} ed \textit{underfitting} ci sono alcuni strumenti per capirlo anche se, il miglior strumento \`e l'esperienza sul campo con il modello utilizzato la quale ti fa capire in anticipo se stai sbagliando o no perch\'e una delle cause principali sono gli iperparametri impostati male.
+Per evitare problemi di \textit{overfitting} ed \textit{underfitting} ci sono alcuni strumenti per capirlo anche se, il miglior \`e l'esperienza sul campo con il modello utilizzato perch\'e una delle cause principali sono gli iper-parametri impostati male.
 
 \begin{figure}[H]
 	\centering
@@ -132,7 +134,7 @@ Per evitare problemi di \textit{overfitting} ed \textit{underfitting} ci sono al
 	\label{fig:underfittingoverfitting}
 \end{figure}
 
-Uno strumento per capire se  c'\`e \textit{overfitting/underfitting} sono le curve di validazione. Esse mostrano al variare della complessita' del modello l'errore sia sull'insieme di validazione che sull'insieme di addestramento.
+Uno strumento per capire se  c'\`e \textit{overfitting/underfitting} sono le curve di validazione. Esse mostrano al variare della complessit\`a del modello l'errore sia sull'insieme di validazione che di addestramento.
 
 \begin{figure}[H]
 	\centering
@@ -141,6 +143,20 @@ Uno strumento per capire se  c'\`e \textit{overfitting/underfitting} sono le cur
 	\label{fig:validationcurve}
 \end{figure}
 
-Come si vede dal grafico dove c'\`e \textit{overfitting} si ha un alta varianza. Cosa vuol dire? Che stiamo modellando anche il rumore generato dai dati e ci\`o porta a cattive prestazioni quando avremo nuove etichette da predire. Quindi si verifica \textit{overfitting} quando c'\`e un alto errore di predizione sull'insieme di test e basso nell'insieme di addestramento. Si ha \textit{underfitting} quando c'\`e \textit{High bias}, cio\`e quando si ha un alto errore sulle predizioni delle etichette sia sull'insieme di test che di addestramento. Il punto ideale dove ci dovremo posizionare noi \`e nel mezzo dove l'errore sull'insieme di test e di addestramento sono entrambi bassi.
-
-%Ricorda di far vedere falsi positivi e veri negativi nei test
+Come si vede dal grafico dove c'\`e \textit{overfitting} si ha un alta varianza. Cosa vuol dire? Che stiamo modellando anche il rumore generato dai dati e ci\`o porta a cattive prestazioni quando avremo nuove etichette da predire. Dal grafico possiamo dedurre che si verifica \textit{overfitting} quando c'\`e un alto errore di predizione sull'insieme di test e basso nell'insieme di addestramento. Si ha \textit{underfitting} quando c'\`e \textit{high bias}, cio\`e quando si ha un alto errore sulle predizioni delle etichette sia sull'insieme di test che di addestramento. Il punto ideale dove ci dovremo posizionare noi \`e nel mezzo dove l'errore sull'insieme di test e di addestramento sono entrambi bassi.\\
+Adesso vediamo una rappresentazione alternativa della curva di validazione per aiutarci nel prossimo grafico. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/biasvariance}
+	\caption{Raffigurazione alternativa delle curve di validazione}
+	\label{fig:biasvariance}
+\end{figure}
+Tornando al nostro \textit{knn}, vediamo un grafico in cui visualizziamo l'errore sia sull'insieme di test che di addestramento.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/biasvariance_knn}
+	\caption{Errore sull'insieme di test ed addestramento al variare di k}
+	\label{fig:biasvarianceknn}
+\end{figure}
+La complessit\`a del modello \`e definita in questo caso come la variazione del parametro k decrescente da sinistra verso destra.
+Se lo paragoniamo al precedente, possiamo notare un comportamento molto simile alla curva "\textit{$Bias^2$}" tranne per la leggera concavit\`a della nostra. Questo dimostra che stiamo ignorando totalmente l'errore causato dalla varianza. Oltretutto ci sono altri fattori da tenere in considerazione per valutare le prestazioni: la metrica usata, la misura della complessit\`a del modello. Tutte queste variabili dipendendo dai dati che stiamo analizzando, dal rumore che hanno e dal modello utilizzato. Fare un'analisi variando tutti questi fattori \`e uno spunto per successivi approfondimenti sull'argomento per\`o soffermiamoci un'attimo sulla varianza: secondo wikipedia \footnote{\url{https://en.wikipedia.org/wiki/Bias-variance_tradeoff}} k \`e direttamente proporzionale al \textit{bias} ed inversamente alla varianza. Perci\`o una valida scelta di k potrebbe essere un valore intermedio in un intervallo dove il decremento fra un k e l'altro dell'errore causato dalla varianza non giustifica l'incremento del \textit{bias}.

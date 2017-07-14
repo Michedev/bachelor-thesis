@@ -5,14 +5,18 @@
 \usepackage{amssymb}
 \begin{document}
 	\noindent
+	Candidato: Michele De Vita - michele.devita@stud.unifi.it\\
+	Relatore: Andrea Ceccarelli\\
+	Titolo tesi: Sviluppo di un'applicazione Android per il posizionamento indoor\\\\
+	\noindent
 	La tesi \`e basata sullo sviluppo di un'applicazione per la localizzazione della posizione all'interno degli edifici (\textit{indoor positioning}).\\  Una delle tecniche usate per la localizzazione \textit{outdoor}, la triangolazione GPS, non funziona all'interno degli edifici perch\`e muri, tetti  interferiscono con il collegamento col satellite. Perci\`o in questo periodo molte aziende stanno investendo in soluzioni alternative che permettano la localizzazione dentro gli edifici. Le vie sperimentate sono molte fra cui Wi-Fi, accelerometro, antenne dentro l'edificio ma durante il tirocinio  \`e stata implementata una localizzazione basata sulle onde magnetiche terrestri. Ormai tutti hanno uno \textit{smartphone}, ed essi hanno al loro interno il magnetometro, un sensore capace di rilevare le onde magnetiche terrestri. Il tirocinio \`e stato svolto esternamente con un'azienda del posto che si occupa di Web, \textit{KeepUp s.r.l.} ma che vedendo altre aziende estere che tastavano questo settore, hanno deciso di puntarci perch\'e poco diffuso in Italia.\\
 	\noindent
 	Nella tesi proposta, divisa in 5 capitoli, sono elencati nel seguente modo:
 	\begin{enumerate}
 		\item Una semplice introduzione alla tesi trattata con annessi esempi d'uso.
-		\item Fondamentali: vengono affrontati tutti i principi teorici dietro lo sviluppo e funzionamento dell'applicazione. Si parte dall'analisi del tipo di dato in questo, le onde magnetiche, per poi passare al loro trattamento per poi finire con la teoria dietro l'apprendimento automatico.
+		\item Fondamentali: vengono affrontati tutti i principi teorici dietro lo sviluppo e funzionamento dell'applicazione. Si parte dall'analisi del tipo di dato, le onde magnetiche, passando alla loro elaborazione per poi finire con la teoria dietro l'apprendimento automatico.
 		\item Struttura del software: l'intenzione dell'azienda \`e stata quella di sviluppare un'applicazione su piattaforma \textit{Android} capace di raccogliere dati dal magnetometro, elaborali e ricercare la posizione dentro l'edificio. In questo capitolo viene analizzata la struttura del codice ad alto livello spiegando il \textit{workflow} del software tramite pezzi di codice, UML ed una descrizione accurata. Oltre questo, sono state spiegate le principali funzionalit\`a dell'interfaccia grafica con relativi \textit{screenshot} in allegato.
 		\item Test: in separata sede, su computer con architettura del processore $X86\_64$ sono stati analizzati in maniera pi\`u approfondita i dati  presi dallo \textit{smartphone} eseguendo comparazioni dell'accuratezza tra diversi classificatori, analisi sul rumore presente nei dati in possesso ed un'analisi approfondita del \textit{Knn} al variare del parametro k.
-		\item Miglioramenti e conclusioni: durante il tirocinio \`e stata sviluppata solamente una base di un'applicazione \textit{Android}, quindi ci sono molte migliorie da fare. Ma il lavoro non si ferma qui: si pu\`o fare molto anche per gli algoritmi usati durante la ricerca della posizione ed il modo in cui vengono raccolti i dati. Dopodich\`e, sono state tirate le somme su ci\`o che abbiamo dedotto durante la tesi.
+		\item Miglioramenti e conclusioni: durante il tirocinio \`e stata sviluppata solamente una base di un'applicazione \textit{Android}, quindi ci sono molte migliorie da fare. Ma il lavoro non si ferma qui: si pu\`o fare molto anche per gli algoritmi usati durante la ricerca della posizione ed il modo in cui vengono raccolti i dati. Infine abbiamo evidenziato tutte le conclusioni ottenute nella tesi.
 	\end{enumerate}
 \end{document}
